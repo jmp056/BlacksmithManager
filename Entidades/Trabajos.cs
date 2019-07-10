@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Entidades
 {
-    class Trabajos
+    public class Trabajos
     {
+        [Key]
+        public int TrabajoId { get; set; }
+        public DateTime FechaInicio { get; set; }
+
     }
 }
