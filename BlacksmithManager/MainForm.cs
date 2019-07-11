@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlacksmithManager.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace BlacksmithManager
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rUsuarios rU = new rUsuarios();
+            rU.ShowDialog();
         }
     }
 }
