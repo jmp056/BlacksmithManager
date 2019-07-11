@@ -10,6 +10,7 @@ namespace BlacksmithManager.Registros
         public rUsuarios()
         {
             InitializeComponent();
+            EliminarButton.Enabled = false;
         }
 
         private void Limpiar()
@@ -25,6 +26,7 @@ namespace BlacksmithManager.Registros
             UsuarioTextBox.Text = string.Empty;
             ClaveTextBox.Text = string.Empty;
             FechaDeIngresoDateTimePicker.Value = DateTime.Now;
+            EliminarButton.Enabled = false;
         }
 
         private Usuarios LlenaClase()
@@ -83,14 +85,14 @@ namespace BlacksmithManager.Registros
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(UsuarioTextBox.Text))
+            if (UsuarioTextBox.Text == string.Empty || UsuarioTextBox.Text.Contains(" "))
             {
                 MyErrorProvider.SetError(UsuarioTextBox, "El campo \"Usuario\" no puede estar vacio y/o tener espacio");
                 UsuarioTextBox.Focus();
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(ClaveTextBox.Text))
+            if (ClaveTextBox.Text == string.Empty || ClaveTextBox.Text.Contains(" "))
             {
                 MyErrorProvider.SetError(ClaveTextBox, "El campo \"Clave\" no puede estar vacio y/o tener espacio");
                 ClaveTextBox.Focus();
@@ -118,9 +120,12 @@ namespace BlacksmithManager.Registros
             Usuario = Repositorio.Buscar(id);
 
             if (Usuario != null)
+            {
                 LlenaCampos(Usuario);
+                EliminarButton.Enabled = true;
+            }
             else
-                MessageBox.Show("Usuario no encontrado");
+                MessageBox.Show("Usuario no encontrado!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)

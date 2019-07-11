@@ -18,7 +18,7 @@ namespace Entidades
         public Clientes()
         {
             ClienteId = 0;
-            Nombre = string.Empty;
+            Nombres = string.Empty;
             Celular = string.Empty;
             Telefono = string.Empty;
             Email = string.Empty;
