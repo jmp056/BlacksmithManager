@@ -85,6 +85,13 @@ namespace BlacksmithManager.Registros
                 paso = false;
             }
 
+            if (UsuariosBLL.Existe(UsuarioTextBox.Text) == true)
+            {
+                MyErrorProvider.SetError(UsuarioTextBox, "Ya este usuario existe, por favor eliga otro");
+                UsuarioTextBox.Focus();
+                paso = false;
+            }
+
             if (UsuarioTextBox.Text == string.Empty || UsuarioTextBox.Text.Contains(" "))
             {
                 MyErrorProvider.SetError(UsuarioTextBox, "El campo \"Usuario\" no puede estar vacio y/o tener espacio");
@@ -96,6 +103,13 @@ namespace BlacksmithManager.Registros
             {
                 MyErrorProvider.SetError(ClaveTextBox, "El campo \"Clave\" no puede estar vacio y/o tener espacio");
                 ClaveTextBox.Focus();
+                paso = false;
+            }
+
+            if(FechaDeIngresoDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaDeIngresoDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual");
+                FechaDeIngresoDateTimePicker.Focus();
                 paso = false;
             }
             return paso;
