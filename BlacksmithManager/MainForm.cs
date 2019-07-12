@@ -1,4 +1,5 @@
-﻿using BlacksmithManager.Registros;
+﻿using BlacksmithManager.Consultas;
+using BlacksmithManager.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,12 @@ namespace BlacksmithManager
         {
             rUsuarios rU = new rUsuarios();
             rU.ShowDialog();
+        }
+
+        private void ConsultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cUsuarios cU = new cUsuarios();
+            cU.ShowDialog();
         }
     }
 }

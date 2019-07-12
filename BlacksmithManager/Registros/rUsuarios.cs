@@ -36,13 +36,13 @@ namespace BlacksmithManager.Registros
             Usuario.Nombres = NombresTextBox.Text;
             Usuario.Email = EmailTextBox.Text;
             if (AdministradorRadioButton.Checked == true)
-                Usuario.NivelUsuario = 1;
+                Usuario.NivelUsuario = "Administrador";
             else if (SupervisorRadioButton.Checked == true)
-                Usuario.NivelUsuario = 2;
+                Usuario.NivelUsuario = "Supervisor";
             else if (SoporteRadioButton.Checked == true)
-                Usuario.NivelUsuario = 3;
+                Usuario.NivelUsuario = "Soporte";
             else
-                Usuario.NivelUsuario = 4;
+                Usuario.NivelUsuario = "Usuario";
             Usuario.Usuario = UsuarioTextBox.Text;
             Usuario.Clave = ClaveTextBox.Text;
             Usuario.FechaIngreso = FechaDeIngresoDateTimePicker.Value;
@@ -54,13 +54,13 @@ namespace BlacksmithManager.Registros
             UsuarioIdNumericUpDown.Value = Usuario.UsuarioId;
             NombresTextBox.Text = Usuario.Nombres;
             EmailTextBox.Text = Usuario.Email;
-            if (Usuario.NivelUsuario == 1)
+            if (Usuario.NivelUsuario == "Administrador")
                 AdministradorRadioButton.Checked = true;
-            else if (Usuario.NivelUsuario == 2)
+            else if (Usuario.NivelUsuario == "Supervisor")
                 SupervisorRadioButton.Checked = true;
-            else if (Usuario.NivelUsuario == 3)
+            else if (Usuario.NivelUsuario == "Soporte")
                 SoporteRadioButton.Checked = true;
-            else if (Usuario.NivelUsuario == 4)
+            else if (Usuario.NivelUsuario == "Usuario")
                 UsuarioRadioButton.Checked = true;
             UsuarioTextBox.Text = Usuario.Usuario;
             ClaveTextBox.Text = Usuario.Clave;
