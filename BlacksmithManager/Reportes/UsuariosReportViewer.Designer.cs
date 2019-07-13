@@ -29,21 +29,18 @@
         private void InitializeComponent()
         {
             this.MyCrystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ListadoUsuarios = new BlacksmithManager.Reportes.ListadoUsuarios();
             this.SuspendLayout();
             // 
             // MyCrystalReportViewer
             // 
-            this.MyCrystalReportViewer.ActiveViewIndex = 0;
+            this.MyCrystalReportViewer.ActiveViewIndex = -1;
             this.MyCrystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MyCrystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.MyCrystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MyCrystalReportViewer.Location = new System.Drawing.Point(0, 0);
             this.MyCrystalReportViewer.Name = "MyCrystalReportViewer";
-            this.MyCrystalReportViewer.ReportSource = this.ListadoUsuarios;
             this.MyCrystalReportViewer.Size = new System.Drawing.Size(1077, 450);
             this.MyCrystalReportViewer.TabIndex = 0;
-            this.MyCrystalReportViewer.Load += new System.EventHandler(this.MyCrystalReportViewer_Load);
             // 
             // UsuariosReportViewer
             // 
@@ -52,7 +49,8 @@
             this.ClientSize = new System.Drawing.Size(1077, 450);
             this.Controls.Add(this.MyCrystalReportViewer);
             this.Name = "UsuariosReportViewer";
-            this.Text = "UsuariosReportViewer";
+            this.Text = "ReportViewer";
+            this.Load += new System.EventHandler(this.UsuariosReportViewer_Load);
             this.ResumeLayout(false);
 
         }
@@ -60,6 +58,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer MyCrystalReportViewer;
-        private ListadoUsuarios ListadoUsuarios;
     }
 }

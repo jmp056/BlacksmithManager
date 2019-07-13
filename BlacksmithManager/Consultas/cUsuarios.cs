@@ -88,7 +88,7 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            if(ListaUsuarios == null)
+            if(ListaUsuarios.Count == 0)
             {
                 MessageBox.Show("No hay datos para imprimir");
                 return;

@@ -148,5 +148,17 @@
   <ItemGroup>
     <None Include="Resources\BotonConsultarEstudiantes.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonBuscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonGuardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonEliminar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,14 +7,14 @@ namespace BlacksmithManager.Reportes
 {
     public partial class UsuariosReportViewer : Form
     {
-         List<Usuarios> ListaUsuarios;
+        List<Usuarios> ListaUsuarios = new List<Usuarios>();
         public UsuariosReportViewer(List<Usuarios> usuarios)
         {
             this.ListaUsuarios = usuarios;
             InitializeComponent();
         }
 
-        private void MyCrystalReportViewer_Load(object sender, EventArgs e)
+        private void UsuariosReportViewer_Load(object sender, EventArgs e)
         {
             ListadoUsuarios listadoUsuarios = new ListadoUsuarios();
             listadoUsuarios.SetDataSource(ListaUsuarios);

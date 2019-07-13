@@ -63,9 +63,49 @@ namespace BlacksmithManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonBuscar {
+            get {
+                object obj = ResourceManager.GetObject("BotonBuscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonConsultarEstudiantes {
             get {
                 object obj = ResourceManager.GetObject("BotonConsultarEstudiantes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonEliminar {
+            get {
+                object obj = ResourceManager.GetObject("BotonEliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonGuardar {
+            get {
+                object obj = ResourceManager.GetObject("BotonGuardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonNuevo {
+            get {
+                object obj = ResourceManager.GetObject("BotonNuevo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

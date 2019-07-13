@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cUsuarios));
             this.FiltroFechaTroupBox = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.FiltrarFechaCheckBox = new System.Windows.Forms.CheckBox();
@@ -182,13 +183,14 @@
             // ImprimirButton
             // 
             this.ImprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
             this.ImprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImprimirButton.Location = new System.Drawing.Point(460, 55);
+            this.ImprimirButton.Location = new System.Drawing.Point(460, 79);
             this.ImprimirButton.Name = "ImprimirButton";
-            this.ImprimirButton.Size = new System.Drawing.Size(110, 76);
+            this.ImprimirButton.Size = new System.Drawing.Size(105, 35);
             this.ImprimirButton.TabIndex = 35;
             this.ImprimirButton.Text = "Imprimir";
-            this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = true;
             this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
@@ -197,9 +199,9 @@
             this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultarButton.Image = global::BlacksmithManager.Properties.Resources.BotonConsultarEstudiantes;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarButton.Location = new System.Drawing.Point(460, 19);
+            this.ConsultarButton.Location = new System.Drawing.Point(460, 31);
             this.ConsultarButton.Name = "ConsultarButton";
-            this.ConsultarButton.Size = new System.Drawing.Size(110, 30);
+            this.ConsultarButton.Size = new System.Drawing.Size(105, 35);
             this.ConsultarButton.TabIndex = 32;
             this.ConsultarButton.Text = "     Consultar";
             this.ConsultarButton.UseVisualStyleBackColor = true;
@@ -219,8 +221,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FiltrarComboBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cUsuarios";
-            this.Text = "cUsuarios";
+            this.Text = "Consulta de Usuarios";
             this.FiltroFechaTroupBox.ResumeLayout(false);
             this.FiltroFechaTroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
