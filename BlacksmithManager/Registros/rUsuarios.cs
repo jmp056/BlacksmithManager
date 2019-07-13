@@ -85,13 +85,6 @@ namespace BlacksmithManager.Registros
                 paso = false;
             }
 
-            if (UsuariosBLL.Existe(UsuarioTextBox.Text) == true)
-            {
-                MyErrorProvider.SetError(UsuarioTextBox, "Ya este usuario existe, por favor eliga otro");
-                UsuarioTextBox.Focus();
-                paso = false;
-            }
-
             if (UsuarioTextBox.Text == string.Empty || UsuarioTextBox.Text.Contains(" "))
             {
                 MyErrorProvider.SetError(UsuarioTextBox, "El campo \"Usuario\" no puede estar vacio y/o tener espacio");
@@ -128,7 +121,6 @@ namespace BlacksmithManager.Registros
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
             Usuarios Usuario = new Usuarios();
             int id;
-
             int.TryParse(UsuarioIdNumericUpDown.Text, out id);
             Limpiar();
             Usuario = Repositorio.Buscar(id);
@@ -156,11 +148,28 @@ namespace BlacksmithManager.Registros
             if (!Validar())
                 return;
             Usuario = LlenaClase();
+
+            RepositorioBase<Usuarios> Repositorio2 = new RepositorioBase<Usuarios>();
+            Usuarios Usuario2 = new Usuarios();
+            int id;
+            int.TryParse(UsuarioIdNumericUpDown.Text, out id);
+            Usuario2 = Repositorio2.Buscar(id);
+
             if (UsuarioIdNumericUpDown.Value == 0)
             {
-                paso = Repositorio.Guardar(Usuario);
-                MessageBox.Show("Usuario guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
+                if(UsuariosBLL.Existe(UsuarioTextBox.Text) == true)
+                {
+                    MyErrorProvider.SetError(UsuarioTextBox, "Ya este usuario existe, por favor eliga otro");
+                    UsuarioTextBox.Focus();
+                    return;
+                }
+                else
+                {
+                    paso = Repositorio.Guardar(Usuario);
+                    MessageBox.Show("Usuario guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+
             }
             else
             {
@@ -169,7 +178,13 @@ namespace BlacksmithManager.Registros
                     MessageBox.Show("No se puede modificar un usuario que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (MessageBox.Show("Esta seguro que desea modificar este usuario?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                else if (UsuariosBLL.Existe(UsuarioTextBox.Text) == true && string.Equals(Convert.ToString(Usuario.Usuario), Convert.ToString(Usuario2.Usuario)) == false)
+                {
+                    MyErrorProvider.SetError(UsuarioTextBox, "Ya este usuario existe, por favor eliga otro");
+                    UsuarioTextBox.Focus();
+                    return;
+                }
+                else if (MessageBox.Show("Esta seguro que desea modificar este usuario?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
                     paso = Repositorio.Modificar(Usuario);
                     MessageBox.Show("Usuario modificado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -180,7 +195,6 @@ namespace BlacksmithManager.Registros
             }
             if (!paso)
                 MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
