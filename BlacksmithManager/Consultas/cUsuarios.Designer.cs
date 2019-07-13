@@ -34,13 +34,14 @@
             this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.ConsultarButton = new System.Windows.Forms.Button();
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
             this.CriterioComboBox = new System.Windows.Forms.ComboBox();
+            this.ImprimirButton = new System.Windows.Forms.Button();
+            this.ConsultarButton = new System.Windows.Forms.Button();
             this.FiltroFechaTroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -108,18 +109,6 @@
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 23;
             this.label3.Text = "Hasta";
-            // 
-            // ConsultarButton
-            // 
-            this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarButton.Location = new System.Drawing.Point(458, 37);
-            this.ConsultarButton.Name = "ConsultarButton";
-            this.ConsultarButton.Size = new System.Drawing.Size(110, 30);
-            this.ConsultarButton.TabIndex = 32;
-            this.ConsultarButton.Text = "     Consultar";
-            this.ConsultarButton.UseVisualStyleBackColor = true;
-            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
             // 
             // ConsultaDataGridView
             // 
@@ -190,11 +179,38 @@
             this.CriterioComboBox.TabIndex = 34;
             this.CriterioComboBox.Text = "Seleccione";
             // 
+            // ImprimirButton
+            // 
+            this.ImprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImprimirButton.Location = new System.Drawing.Point(460, 55);
+            this.ImprimirButton.Name = "ImprimirButton";
+            this.ImprimirButton.Size = new System.Drawing.Size(110, 76);
+            this.ImprimirButton.TabIndex = 35;
+            this.ImprimirButton.Text = "Imprimir";
+            this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
+            // 
+            // ConsultarButton
+            // 
+            this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarButton.Image = global::BlacksmithManager.Properties.Resources.BotonConsultarEstudiantes;
+            this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultarButton.Location = new System.Drawing.Point(460, 19);
+            this.ConsultarButton.Name = "ConsultarButton";
+            this.ConsultarButton.Size = new System.Drawing.Size(110, 30);
+            this.ConsultarButton.TabIndex = 32;
+            this.ConsultarButton.Text = "     Consultar";
+            this.ConsultarButton.UseVisualStyleBackColor = true;
+            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
+            // 
             // cUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 308);
+            this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.CriterioComboBox);
             this.Controls.Add(this.FiltroFechaTroupBox);
             this.Controls.Add(this.ConsultarButton);
@@ -228,5 +244,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox FiltrarComboBox;
         private System.Windows.Forms.ComboBox CriterioComboBox;
+        private System.Windows.Forms.Button ImprimirButton;
     }
 }

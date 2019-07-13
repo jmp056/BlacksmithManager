@@ -1,19 +1,17 @@
-﻿using BLL;
+﻿using BlacksmithManager.Reportes;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlacksmithManager.Consultas
 {
     public partial class cUsuarios : Form
     {
+        private List<Usuarios> ListaUsuarios;
         public cUsuarios()
         {
             InitializeComponent();
@@ -68,8 +66,10 @@ namespace BlacksmithManager.Consultas
             }
             if (FiltrarFechaCheckBox.Checked == true)
                 Listado = Listado.Where(p => p.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && p.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
+
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
+            ListaUsuarios = Listado;
         }
 
         private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +84,17 @@ namespace BlacksmithManager.Consultas
                 CriterioComboBox.Visible = false;
                 CriterioTextBox.Visible = true;
             }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            if(ListaUsuarios == null)
+            {
+                MessageBox.Show("No hay datos para imprimir");
+                return;
+            }
+            UsuariosReportViewer usuariosReportViewer = new UsuariosReportViewer(ListaUsuarios);
+            usuariosReportViewer.ShowDialog();
         }
     }
 }
