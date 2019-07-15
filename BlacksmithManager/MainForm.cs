@@ -30,5 +30,11 @@ namespace BlacksmithManager
             cUsuarios cU = new cUsuarios();
             cU.ShowDialog();
         }
+
+        private void RegistroDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEmpleados rE = new rEmpleados();
+            rE.ShowDialog();
+        }
     }
 }

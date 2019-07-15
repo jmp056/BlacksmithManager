@@ -12,7 +12,7 @@ namespace Entidades
         public string Telefono { get; set; }
         public string Email { get; set; }
         public string  Direccion { get; set; }
-        public DateTime FechaCreacion{ get; set; }
+        public DateTime FechaIngreso { get; set; }
         public int UsuarioId { get; set; }
 
         public Clientes()
@@ -23,7 +23,7 @@ namespace Entidades
             Telefono = string.Empty;
             Email = string.Empty;
             Direccion = string.Empty;
-            FechaCreacion = DateTime.Now;
+            FechaIngreso = DateTime.Now;
             UsuarioId = 0;
         }
     }

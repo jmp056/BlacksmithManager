@@ -33,6 +33,7 @@
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeUsuariosToolStripMenuItem});
+            this.registroDeUsuariosToolStripMenuItem,
+            this.registroDeEmpleadosToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -58,7 +60,7 @@
             // registroDeUsuariosToolStripMenuItem
             // 
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
             this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
             // 
@@ -73,9 +75,16 @@
             // consultarUsuariosToolStripMenuItem
             // 
             this.consultarUsuariosToolStripMenuItem.Name = "consultarUsuariosToolStripMenuItem";
-            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.consultarUsuariosToolStripMenuItem.Text = "Consultar Usuarios";
             this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarUsuariosToolStripMenuItem_Click);
+            // 
+            // registroDeEmpleadosToolStripMenuItem
+            // 
+            this.registroDeEmpleadosToolStripMenuItem.Name = "registroDeEmpleadosToolStripMenuItem";
+            this.registroDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.registroDeEmpleadosToolStripMenuItem.Text = "Registro de Empleados";
+            this.registroDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeEmpleadosToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -100,6 +109,7 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeEmpleadosToolStripMenuItem;
     }
 }
 
