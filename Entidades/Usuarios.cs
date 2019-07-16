@@ -9,7 +9,7 @@ namespace Entidades
         public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string Email { get; set; }
-        public string NivelUsuario { get; set; }
+        public int NivelUsuario { get; set; }
         public string Usuario { get; set; }
         public string Clave { get; set; }
         public DateTime FechaIngreso { get; set; }
@@ -19,7 +19,7 @@ namespace Entidades
             UsuarioId = 0;
             Nombres = string.Empty;
             Email = string.Empty;
-            NivelUsuario = string.Empty;
+            NivelUsuario = 0;
             Usuario = string.Empty;
             Clave = string.Empty;
             FechaIngreso = DateTime.Now;

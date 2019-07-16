@@ -52,6 +52,8 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.ConfirmarClave = new System.Windows.Forms.Label();
+            this.ConfirmarClaveTextBox = new System.Windows.Forms.TextBox();
             this.NivelDeUsuarioGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -61,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 227);
+            this.label1.Location = new System.Drawing.Point(164, 232);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 16);
@@ -72,7 +74,7 @@
             // 
             this.Clave.AutoSize = true;
             this.Clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clave.Location = new System.Drawing.Point(164, 192);
+            this.Clave.Location = new System.Drawing.Point(164, 167);
             this.Clave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Clave.Name = "Clave";
             this.Clave.Size = new System.Drawing.Size(48, 16);
@@ -83,7 +85,7 @@
             // 
             this.Usuario.AutoSize = true;
             this.Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usuario.Location = new System.Drawing.Point(164, 157);
+            this.Usuario.Location = new System.Drawing.Point(164, 132);
             this.Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(62, 16);
@@ -182,10 +184,10 @@
             // 
             // FechaDeIngresoDateTimePicker
             // 
-            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDeIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDeIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(297, 225);
+            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(297, 230);
             this.FechaDeIngresoDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
             this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(98, 22);
@@ -194,7 +196,7 @@
             // ClaveTextBox
             // 
             this.ClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClaveTextBox.Location = new System.Drawing.Point(297, 190);
+            this.ClaveTextBox.Location = new System.Drawing.Point(297, 165);
             this.ClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClaveTextBox.Name = "ClaveTextBox";
             this.ClaveTextBox.Size = new System.Drawing.Size(98, 22);
@@ -203,7 +205,7 @@
             // UsuarioTextBox
             // 
             this.UsuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioTextBox.Location = new System.Drawing.Point(297, 155);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(297, 130);
             this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(98, 22);
@@ -311,11 +313,33 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // ConfirmarClave
+            // 
+            this.ConfirmarClave.AutoSize = true;
+            this.ConfirmarClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmarClave.Location = new System.Drawing.Point(163, 197);
+            this.ConfirmarClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ConfirmarClave.Name = "ConfirmarClave";
+            this.ConfirmarClave.Size = new System.Drawing.Size(118, 16);
+            this.ConfirmarClave.TabIndex = 51;
+            this.ConfirmarClave.Text = "Confirmar Clave";
+            // 
+            // ConfirmarClaveTextBox
+            // 
+            this.ConfirmarClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmarClaveTextBox.Location = new System.Drawing.Point(296, 195);
+            this.ConfirmarClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ConfirmarClaveTextBox.Name = "ConfirmarClaveTextBox";
+            this.ConfirmarClaveTextBox.Size = new System.Drawing.Size(98, 22);
+            this.ConfirmarClaveTextBox.TabIndex = 50;
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 337);
+            this.Controls.Add(this.ConfirmarClave);
+            this.Controls.Add(this.ConfirmarClaveTextBox);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -371,5 +395,7 @@
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label ConfirmarClave;
+        private System.Windows.Forms.TextBox ConfirmarClaveTextBox;
     }
 }

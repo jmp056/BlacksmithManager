@@ -86,6 +86,18 @@
     <Compile Include="Registros\rEmpleados.Designer.cs">
       <DependentUpon>rEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rTiposTrabajos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rTiposTrabajos.Designer.cs">
+      <DependentUpon>rTiposTrabajos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTrabajos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rTrabajos.Designer.cs">
+      <DependentUpon>rTrabajos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rEmpleados.resx">
       <DependentUpon>rEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rTiposTrabajos.resx">
+      <DependentUpon>rTiposTrabajos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rTrabajos.resx">
+      <DependentUpon>rTrabajos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
@@ -177,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonAñadir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

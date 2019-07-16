@@ -13,7 +13,6 @@ namespace Entidades
         public string Email { get; set; }
         public string  Direccion { get; set; }
         public DateTime FechaIngreso { get; set; }
-        public int UsuarioId { get; set; }
 
         public Clientes()
         {
@@ -24,7 +23,6 @@ namespace Entidades
             Email = string.Empty;
             Direccion = string.Empty;
             FechaIngreso = DateTime.Now;
-            UsuarioId = 0;
         }
     }
 }

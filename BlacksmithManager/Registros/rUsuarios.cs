@@ -25,6 +25,7 @@ namespace BlacksmithManager.Registros
             UsuarioRadioButton.Checked = false;
             UsuarioTextBox.Text = string.Empty;
             ClaveTextBox.Text = string.Empty;
+            ConfirmarClaveTextBox.Text = string.Empty;
             FechaDeIngresoDateTimePicker.Value = DateTime.Now;
             EliminarButton.Enabled = false;
         }
@@ -36,13 +37,13 @@ namespace BlacksmithManager.Registros
             Usuario.Nombres = NombresTextBox.Text;
             Usuario.Email = EmailTextBox.Text;
             if (AdministradorRadioButton.Checked == true)
-                Usuario.NivelUsuario = "Administrador";
+                Usuario.NivelUsuario = 1;
             else if (SupervisorRadioButton.Checked == true)
-                Usuario.NivelUsuario = "Supervisor";
+                Usuario.NivelUsuario = 2;
             else if (SoporteRadioButton.Checked == true)
-                Usuario.NivelUsuario = "Soporte";
+                Usuario.NivelUsuario = 3;
             else
-                Usuario.NivelUsuario = "Usuario";
+                Usuario.NivelUsuario = 4;
             Usuario.Usuario = UsuarioTextBox.Text;
             Usuario.Clave = ClaveTextBox.Text;
             Usuario.FechaIngreso = FechaDeIngresoDateTimePicker.Value;
@@ -54,16 +55,15 @@ namespace BlacksmithManager.Registros
             UsuarioIdNumericUpDown.Value = Usuario.UsuarioId;
             NombresTextBox.Text = Usuario.Nombres;
             EmailTextBox.Text = Usuario.Email;
-            if (Usuario.NivelUsuario == "Administrador")
+            if (Usuario.NivelUsuario == 1)
                 AdministradorRadioButton.Checked = true;
-            else if (Usuario.NivelUsuario == "Supervisor")
+            else if (Usuario.NivelUsuario == 2)
                 SupervisorRadioButton.Checked = true;
-            else if (Usuario.NivelUsuario == "Soporte")
+            else if (Usuario.NivelUsuario == 3)
                 SoporteRadioButton.Checked = true;
-            else if (Usuario.NivelUsuario == "Usuario")
+            else if (Usuario.NivelUsuario == 4)
                 UsuarioRadioButton.Checked = true;
             UsuarioTextBox.Text = Usuario.Usuario;
-            ClaveTextBox.Text = Usuario.Clave;
             FechaDeIngresoDateTimePicker.Value = Usuario.FechaIngreso;
         }
 
@@ -103,6 +103,13 @@ namespace BlacksmithManager.Registros
             {
                 MyErrorProvider.SetError(FechaDeIngresoDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual");
                 FechaDeIngresoDateTimePicker.Focus();
+                paso = false;
+            }
+            if(string.Compare(ClaveTextBox.Text, ConfirmarClaveTextBox.Text) == 0)
+            {
+                ConfirmarClaveTextBox.Text = string.Empty;
+                MyErrorProvider.SetError(ConfirmarClaveTextBox, "La clave no coincide");
+                ConfirmarClaveTextBox.Focus();
                 paso = false;
             }
             return paso;

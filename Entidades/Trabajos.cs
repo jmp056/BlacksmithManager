@@ -17,7 +17,7 @@ namespace Entidades
         public decimal Precio { get; set; }
         public string Encargado { get; set; }
         public decimal Ajuste { get; set; }
-        public virtual List<Movimientos> Movimientos { get; set; }
+        public virtual List<Movimientos> Detalle { get; set; }
         public decimal Cobrado { get; set; }
         public decimal Balance { get; set; }
         public decimal AjustePagado { get; set; }
@@ -37,7 +37,7 @@ namespace Entidades
             Precio = 0;
             Encargado = String.Empty;
             Ajuste = 0;
-            Movimientos = new List<Movimientos>();
+            Detalle = new List<Movimientos>();
             Cobrado = 0;
             Balance = 0;
             AjustePagado = 0;

@@ -46,6 +46,8 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Direccion = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(70, 16);
             this.Telefono.TabIndex = 79;
-            this.Telefono.Text = "Telefono";
+            this.Telefono.Text = "Teléfono";
             // 
             // CelularMaskedTextBox
             // 
@@ -94,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 89);
+            this.label1.Location = new System.Drawing.Point(268, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 16);
@@ -103,20 +105,20 @@
             // 
             // FechaDeIngresoDateTimePicker
             // 
-            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDeIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDeIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(296, 118);
+            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(284, 120);
             this.FechaDeIngresoDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
-            this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(98, 22);
+            this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(105, 22);
             this.FechaDeIngresoDateTimePicker.TabIndex = 75;
             // 
             // Email
             // 
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(25, 165);
+            this.Email.Location = new System.Drawing.Point(25, 197);
             this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(47, 16);
@@ -137,7 +139,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTextBox.Location = new System.Drawing.Point(130, 163);
+            this.EmailTextBox.Location = new System.Drawing.Point(130, 195);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(279, 22);
@@ -236,11 +238,33 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // Direccion
+            // 
+            this.Direccion.AutoSize = true;
+            this.Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Direccion.Location = new System.Drawing.Point(25, 165);
+            this.Direccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Size = new System.Drawing.Size(74, 16);
+            this.Direccion.TabIndex = 85;
+            this.Direccion.Text = "Dirección";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(130, 163);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(279, 22);
+            this.textBox1.TabIndex = 84;
+            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 286);
+            this.Controls.Add(this.Direccion);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -285,5 +309,7 @@
         private System.Windows.Forms.Label Nombres;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label Direccion;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

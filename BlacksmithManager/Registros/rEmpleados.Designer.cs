@@ -145,7 +145,7 @@
             // 
             // FechaDeIngresoDateTimePicker
             // 
-            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDeIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDeIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(278, 162);
@@ -183,7 +183,7 @@
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(70, 16);
             this.Telefono.TabIndex = 60;
-            this.Telefono.Text = "Telefono";
+            this.Telefono.Text = "Teléfono";
             // 
             // BuscarButton
             // 
