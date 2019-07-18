@@ -48,10 +48,10 @@
             this.AgregarEmpleadoButton = new System.Windows.Forms.Button();
             this.EncargadoComboBox = new System.Windows.Forms.ComboBox();
             this.Encargado = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.AjusteNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Ajuste = new System.Windows.Forms.Label();
             this.FechaMovimiento = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechaMovimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.TipoMovimientoComboBox = new System.Windows.Forms.ComboBox();
             this.TipoMovimiento = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -170,6 +170,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // TipoTrabajo
             // 
@@ -289,13 +290,13 @@
             this.Encargado.TabIndex = 75;
             this.Encargado.Text = "Encargado";
             // 
-            // numericUpDown1
+            // AjusteNumericUpDown
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(472, 211);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 79;
+            this.AjusteNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AjusteNumericUpDown.Location = new System.Drawing.Point(472, 211);
+            this.AjusteNumericUpDown.Name = "AjusteNumericUpDown";
+            this.AjusteNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.AjusteNumericUpDown.TabIndex = 79;
             // 
             // Ajuste
             // 
@@ -318,16 +319,16 @@
             this.FechaMovimiento.TabIndex = 81;
             this.FechaMovimiento.Text = "Fecha del movimiento";
             // 
-            // dateTimePicker1
+            // FechaMovimientoDateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 272);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 22);
-            this.dateTimePicker1.TabIndex = 80;
+            this.FechaMovimientoDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaMovimientoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaMovimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaMovimientoDateTimePicker.Location = new System.Drawing.Point(195, 272);
+            this.FechaMovimientoDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.FechaMovimientoDateTimePicker.Name = "FechaMovimientoDateTimePicker";
+            this.FechaMovimientoDateTimePicker.Size = new System.Drawing.Size(98, 22);
+            this.FechaMovimientoDateTimePicker.TabIndex = 80;
             // 
             // DetalleDataGridView
             // 
@@ -617,8 +618,8 @@
             this.Controls.Add(this.TipoMovimiento);
             this.Controls.Add(this.DetalleDataGridView);
             this.Controls.Add(this.FechaMovimiento);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.FechaMovimientoDateTimePicker);
+            this.Controls.Add(this.AjusteNumericUpDown);
             this.Controls.Add(this.Ajuste);
             this.Controls.Add(this.AgregarEmpleadoButton);
             this.Controls.Add(this.EncargadoComboBox);
@@ -644,7 +645,7 @@
             this.Text = "rTrabajos";
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -674,10 +675,10 @@
         private System.Windows.Forms.Button AgregarEmpleadoButton;
         private System.Windows.Forms.ComboBox EncargadoComboBox;
         private System.Windows.Forms.Label Encargado;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown AjusteNumericUpDown;
         private System.Windows.Forms.Label Ajuste;
         private System.Windows.Forms.Label FechaMovimiento;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechaMovimientoDateTimePicker;
         private System.Windows.Forms.DataGridView DetalleDataGridView;
         private System.Windows.Forms.ComboBox TipoMovimientoComboBox;
         private System.Windows.Forms.Label TipoMovimiento;

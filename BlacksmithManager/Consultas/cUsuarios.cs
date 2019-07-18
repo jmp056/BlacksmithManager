@@ -50,7 +50,8 @@ namespace BlacksmithManager.Consultas
                         }
                     case 4:
                         {
-                            Listado = Repositorio.GetList(p => p.NivelUsuario.Contains(CriterioComboBox.Text));
+                            int id = Convert.ToInt32(CriterioComboBox.Text);
+                            Listado = Repositorio.GetList(p => p.UsuarioId == id);
                             break;
                         }
                     case 5:
