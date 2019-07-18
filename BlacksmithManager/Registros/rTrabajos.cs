@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -106,22 +107,145 @@ namespace BlacksmithManager.Registros
 
         private void LlenaCampos(Trabajos Trabajo)
         {
-            RepositorioBase<Trabajos> Repositorio = new RepositorioBase<Trabajos>();
-            InscripcionIdNumericUpDown.Value = Inscripcion.InscripcionId;
-            FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
-            EstudianteIdNumericUpDown.Value = Inscripcion.EstudianteId;
-            NombreTextBox.Text = Inscripcion.Nombre;
-            NombreTextBox.Text = Convert.ToString(contexto.Estudiantes.Find(Inscripcion.EstudianteId).Nombre);
-            PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
-            ValorTextBox.Text = Convert.ToString(Inscripcion.Valor);
-            Detalle = new List<InscripcionDetalle>();
-            this.Detalle = Inscripcion.Detalle;
+            Contexto contexto = new Contexto();
+
+            TrabajoIdNumericUpDown.Value = Trabajo.TrabajoId;
+            FechaCreacionDateTimePicker.Value = Trabajo.FechaInicio;
+            ClienteComboBox.Text = Trabajo.Cliente;
+            TipoTrabajoComboBox.Text = Trabajo.TipoTrabajo;
+            DescripcionTrabajoTextBox.Text = Trabajo.Descripcion;
+            DireccionTextBox.Text = Trabajo.Direccion;
+            PrecioNumericUpDown.Value = Convert.ToDecimal(Trabajo.Precio);
+            EncargadoComboBox.Text = Trabajo.Encargado;
+            AjusteNumericUpDown.Value = Convert.ToDecimal(Trabajo.Ajuste);
+            this.Detalle = Trabajo.Detalle;
             CargaGrid();
+            CobradoTextBox.Text = Convert.ToString(Trabajo.Cobrado);
+            BalanceTextBox.Text = Convert.ToString(Trabajo.Balance);
+            AjustePagadoTextBox.Text = Convert.ToString(Trabajo.AjustePagado);
+            AjustePendienteTextBox.Text = Convert.ToString(Trabajo.AjustePendiente);
+            GastosTextBox.Text = Convert.ToString(Trabajo.Materiales);
+            GananciaBrutaTextBox.Text = Convert.ToString(Trabajo.GananciaBruta);
+            GananciaNetaTextBox.Text = Convert.ToString(Trabajo.GananciaNeta);
+        }
+
+        private bool Validar()
+        {
+            MyErrorProvider.Clear();
+            bool paso = true;
+            return paso;
+        }
+
+        private bool ExisteEnLaBaseDeDatos()
+        {
+            RepositorioBase<Trabajos> Repositorio = new RepositorioBase<Trabajos>();
+            Trabajos Trabajo = Repositorio.Buscar((int)TrabajoIdNumericUpDown.Value);
+            return Trabajo != null;
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+            MyErrorProvider.Clear();
+            int id;
+            Trabajos Trabajo = new Trabajos();
+            int.TryParse(TrabajoIdNumericUpDown.Text, out id);
+            Trabajo = BLL.TrabajosBLL.Buscar(id);
+            if (Trabajo != null)
+            {
+                LlenaCampos(Trabajo);
+                EliminarButton.Enabled = true;
+            }
+            else
+                MessageBox.Show("Trabajo no encontrado!");
+        }
 
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            EliminarButton.Enabled = false;
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            Trabajos Trabajo;
+            bool paso = false;
+            if (!Validar())
+                return;
+            Trabajo = LlenaClase();
+            if (TrabajoIdNumericUpDown.Value == 0)
+            {
+                paso = BLL.TrabajosBLL.Guardar(Trabajo);
+                MessageBox.Show("Trabajo guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se puede modificar un trabajo que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Esta seguro que desea modificar este trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    paso = BLL.TrabajosBLL.Modificar(Trabajo);
+                    MessageBox.Show("Modificado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                    return;
+            }
+            if (!paso)
+                MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void AgregarMovimientoButton_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            RepositorioBase<Movimientos> Repositorio = new RepositorioBase<Movimientos>();
+            Movimientos Movimiento = new Movimientos();
+            if (DetalleDataGridView.DataSource != null)
+                Detalle = (List<Movimientos>)DetalleDataGridView.DataSource;
+            this.Detalle.Add(
+                new Movimientos(
+                movimientoId: 0,
+                trabajoId: (int)TrabajoIdNumericUpDown.Value,
+                fechaMovimiento: FechaMovimientoDateTimePicker.Value,
+                tipoMovimiento: TipoMovimientoComboBox.Text,
+                descripcion: DescripcionMovimientoTextBox.Text,
+                valor: Convert.ToDecimal(ValorNumericUpDown.Value)
+            )
+            );
+            CargaGrid();
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea eliminar este trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                MyErrorProvider.Clear();
+                int id;
+                int.TryParse(TrabajoIdNumericUpDown.Text, out id);
+                if (BLL.TrabajosBLL.Eliminar(id))
+                {
+                    MessageBox.Show("El trabajo fue eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    EliminarButton.Enabled = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("El trabajo no pudo ser eliminada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
+
+        private void RemoverButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
+            {
+                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
+                CargaGrid();
+            }
         }
     }
 }

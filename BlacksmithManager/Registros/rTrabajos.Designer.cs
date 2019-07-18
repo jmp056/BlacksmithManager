@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.IdTrabajo = new System.Windows.Forms.Label();
             this.TrabajoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechaInicio = new System.Windows.Forms.Label();
@@ -78,11 +79,13 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // IdTrabajo
@@ -405,6 +408,7 @@
             this.AgregarMovimientoButton.TabIndex = 89;
             this.AgregarMovimientoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarMovimientoButton.UseVisualStyleBackColor = true;
+            this.AgregarMovimientoButton.Click += new System.EventHandler(this.AgregarMovimientoButton_Click);
             // 
             // RemoverButton
             // 
@@ -417,6 +421,7 @@
             this.RemoverButton.Text = "Remover Movimiento";
             this.RemoverButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RemoverButton.UseVisualStyleBackColor = true;
+            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
             // Cobrado
             // 
@@ -557,6 +562,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -571,6 +577,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -585,6 +592,11 @@
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rTrabajos
             // 
@@ -648,6 +660,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -705,5 +718,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
