@@ -36,5 +36,23 @@ namespace BlacksmithManager
             rEmpleados rE = new rEmpleados();
             rE.ShowDialog();
         }
+
+        private void RegistroDeTiposDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rTiposTrabajos rTT = new rTiposTrabajos();
+            rTT.ShowDialog();
+        }
+
+        private void RegistroDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rTrabajos rT = new rTrabajos();
+            rT.ShowDialog();
+        }
+
+        private void RegistroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rClientes rC = new rClientes();
+            rC.ShowDialog();
+        }
     }
 }
