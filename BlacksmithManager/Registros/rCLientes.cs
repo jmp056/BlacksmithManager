@@ -28,6 +28,7 @@ namespace BlacksmithManager.Registros
             CelularMaskedTextBox.Text = string.Empty;
             TelefonoMaskedTextBox.Text = string.Empty;
             FechaDeIngresoDateTimePicker.Value = DateTime.Now;
+            DireccionTextBox.Text = string.Empty;
             EmailTextBox.Text = string.Empty;
             EliminarButton.Enabled = false;
         }
@@ -38,7 +39,8 @@ namespace BlacksmithManager.Registros
             Cliente.ClienteId = Convert.ToInt32(ClienteIdNumericUpDown.Value);
             Cliente.Nombres = NombresTextBox.Text;
             Cliente.Celular = CelularMaskedTextBox.Text;
-            Cliente.Telefono = CelularMaskedTextBox.Text;
+            Cliente.Telefono = TelefonoMaskedTextBox.Text;
+            Cliente.Direccion = DireccionTextBox.Text;
             Cliente.Email = EmailTextBox.Text;
             Cliente.FechaIngreso = FechaDeIngresoDateTimePicker.Value;
             return Cliente;
@@ -48,8 +50,9 @@ namespace BlacksmithManager.Registros
         {
             ClienteIdNumericUpDown.Value = Cliente.ClienteId;
             NombresTextBox.Text = Cliente.Nombres;
-            Celular.Text = Cliente.Celular;
-            Telefono.Text = Cliente.Telefono;
+            CelularMaskedTextBox.Text = Cliente.Celular;
+            TelefonoMaskedTextBox.Text = Cliente.Telefono;
+            DireccionTextBox.Text = Cliente.Direccion;
             EmailTextBox.Text = Cliente.Email;
             FechaDeIngresoDateTimePicker.Value = Cliente.FechaIngreso;
         }
@@ -64,16 +67,10 @@ namespace BlacksmithManager.Registros
                 NombresTextBox.Focus();
                 paso = false;
             }
-            if (CelularMaskedTextBox.Text != String.Empty && CelularMaskedTextBox.Text.Contains(" ") == true)
+            if (CelularMaskedTextBox.Text.Trim().Length < 12 || CelularMaskedTextBox.Text.Contains(" "))
             {
-                MyErrorProvider.SetError(CelularMaskedTextBox, "Este numero de celular no es valido, por favor ingrese uno nuevo");
+                MyErrorProvider.SetError(CelularMaskedTextBox, "Ingrese un numero de celular valido");
                 CelularMaskedTextBox.Focus();
-                paso = false;
-            }
-            if (TelefonoMaskedTextBox.Text != String.Empty && TelefonoMaskedTextBox.Text.Contains(" ") == true)
-            {
-                MyErrorProvider.SetError(TelefonoMaskedTextBox, "Este numero de telefono no es valido, por favor ingrese uno nuevo");
-                TelefonoMaskedTextBox.Focus();
                 paso = false;
             }
             if (FechaDeIngresoDateTimePicker.Value > DateTime.Now)
@@ -108,13 +105,18 @@ namespace BlacksmithManager.Registros
                 EliminarButton.Enabled = true;
             }
             else
+            {
                 MessageBox.Show("Cliente no encontrado!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClienteIdNumericUpDown.Focus();
+            }
+
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
             EliminarButton.Enabled = false;
+            ClienteIdNumericUpDown.Focus();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)

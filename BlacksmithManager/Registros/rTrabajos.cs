@@ -21,6 +21,9 @@ namespace BlacksmithManager.Registros
             InitializeComponent();
             Detalle = new List<Movimientos>();
             EliminarButton.Enabled = false;
+            LlenaComboBoxClientes();
+            LlenaComboBoxTipoTrabajo();
+            LlenaComboBoxEmpleados();
         }
 
         private void CargaGrid()
@@ -43,8 +46,8 @@ namespace BlacksmithManager.Registros
             RepositorioBase<TiposTrabajos> Repositorio = new RepositorioBase<TiposTrabajos>();
             var tiposTrabajos = new List<TiposTrabajos>();
             tiposTrabajos = Repositorio.GetList(p => true);
-            ClienteComboBox.DataSource = tiposTrabajos;
-            ClienteComboBox.DisplayMember = "Descripcion";
+            TipoTrabajoComboBox.DataSource = tiposTrabajos;
+            TipoTrabajoComboBox.DisplayMember = "Descripcion";
         }
 
         public void LlenaComboBoxEmpleados()
@@ -79,7 +82,7 @@ namespace BlacksmithManager.Registros
             AjustePendienteTextBox.Text = string.Empty;
             GastosTextBox.Text = string.Empty;
             GananciaBrutaTextBox.Text = string.Empty;
-            GananciaNeta.Text = string.Empty;
+            GananciaNetaTextBox.Text = string.Empty;
         }
 
         private Trabajos LlenaClase()

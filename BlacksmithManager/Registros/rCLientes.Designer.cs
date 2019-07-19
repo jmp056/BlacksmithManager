@@ -47,7 +47,7 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Direccion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DireccionTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -249,14 +249,14 @@
             this.Direccion.TabIndex = 85;
             this.Direccion.Text = "Dirección";
             // 
-            // textBox1
+            // DireccionTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(130, 163);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 22);
-            this.textBox1.TabIndex = 84;
+            this.DireccionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DireccionTextBox.Location = new System.Drawing.Point(130, 163);
+            this.DireccionTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.DireccionTextBox.Name = "DireccionTextBox";
+            this.DireccionTextBox.Size = new System.Drawing.Size(279, 22);
+            this.DireccionTextBox.TabIndex = 84;
             // 
             // rClientes
             // 
@@ -264,7 +264,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 286);
             this.Controls.Add(this.Direccion);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DireccionTextBox);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -310,6 +310,6 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label Direccion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DireccionTextBox;
     }
 }

@@ -24,6 +24,7 @@ namespace BlacksmithManager.Registros
         {
             MyErrorProvider.Clear();
             TipoTrabajoIdNumericUpDown.Value = 0;
+            DescripcionTextBox.Text = string.Empty;
             FechaCreacionDateTimePicker.Value = DateTime.Now;
             EliminarButton.Enabled = false;
         }
@@ -93,7 +94,7 @@ namespace BlacksmithManager.Registros
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
-                Limpiar();
+            Limpiar();
             EliminarButton.Enabled = false;
         }
 
