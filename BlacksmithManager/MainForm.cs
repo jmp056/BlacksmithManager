@@ -40,7 +40,7 @@ namespace BlacksmithManager
         private void RegistroDeTiposDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rTiposTrabajos rTT = new rTiposTrabajos();
-            rTT.ShowDialog();
+           rTT.ShowDialog();
         }
 
         private void RegistroDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)

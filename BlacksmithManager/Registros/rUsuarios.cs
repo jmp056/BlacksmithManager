@@ -105,7 +105,7 @@ namespace BlacksmithManager.Registros
                 FechaDeIngresoDateTimePicker.Focus();
                 paso = false;
             }
-            if(string.Compare(ClaveTextBox.Text, ConfirmarClaveTextBox.Text) == 0)
+            if(string.Compare(ClaveTextBox.Text, ConfirmarClaveTextBox.Text) != 0)
             {
                 ConfirmarClaveTextBox.Text = string.Empty;
                 MyErrorProvider.SetError(ConfirmarClaveTextBox, "La clave no coincide");
