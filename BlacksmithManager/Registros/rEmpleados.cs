@@ -44,9 +44,9 @@ namespace BlacksmithManager.Registros
             EmpleadoIdNumericUpDown.Value = Empleado.EmpleadoId;
             NombresTextBox.Text = Empleado.Nombres;
             CedulaMaskedTextBox.Text = Empleado.Cedula;
+            CelularMaskedTextBox.Text = Empleado.Celular;
+            TelefonoMaskedTextBox.Text = Empleado.Telefono;
             EmailTextBox.Text = Empleado.Email;
-            Celular.Text = Empleado.Celular;
-            Telefono.Text = Empleado.Telefono;
             FechaDeIngresoDateTimePicker.Value = Empleado.FechaIngreso;
         }
 
@@ -60,28 +60,16 @@ namespace BlacksmithManager.Registros
                 NombresTextBox.Focus();
                 paso = false;
             }
-            if (CedulaMaskedTextBox.Text == string.Empty)
+            if (CedulaMaskedTextBox.Text.Trim().Length < 13 || CedulaMaskedTextBox.Text.Contains(" "))
             {
-                MyErrorProvider.SetError(NombresTextBox, "El campo \"Cedula\" no puede estar vacio");
-                NombresTextBox.Focus();
+                MyErrorProvider.SetError(CedulaMaskedTextBox, "Ingrese un numero de cedula valido");
+                CedulaMaskedTextBox.Focus();
                 paso = false;
             }
-            if (CedulaMaskedTextBox.Text.Contains(" ") == true)
+            if (CelularMaskedTextBox.Text.Trim().Length < 12 || CelularMaskedTextBox.Text.Contains(" "))
             {
-                MyErrorProvider.SetError(CedulaMaskedTextBox, "Esta cedula no es valida, por favor ingrese una nueva");
-                NombresTextBox.Focus();
-                paso = false;
-            }
-            if(CelularMaskedTextBox.Text != String.Empty && CelularMaskedTextBox.Text.Contains(" ") == true)
-            {
-                MyErrorProvider.SetError(CelularMaskedTextBox, "Este numero de celular no es valido, por favor ingrese uno nuevo");
+                MyErrorProvider.SetError(CelularMaskedTextBox, "Ingrese un numero de celular valido");
                 CelularMaskedTextBox.Focus();
-                paso = false;
-            }
-            if (TelefonoMaskedTextBox.Text != String.Empty && TelefonoMaskedTextBox.Text.Contains(" ") == true)
-            {
-                MyErrorProvider.SetError(TelefonoMaskedTextBox, "Este numero de telefono no es valido, por favor ingrese uno nuevo");
-                TelefonoMaskedTextBox.Focus();
                 paso = false;
             }
             if (FechaDeIngresoDateTimePicker.Value > DateTime.Now)
