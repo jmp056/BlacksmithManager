@@ -67,7 +67,7 @@
             // TipoTrabajoIdNumericUpDown
             // 
             this.TipoTrabajoIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoTrabajoIdNumericUpDown.Location = new System.Drawing.Point(123, 27);
+            this.TipoTrabajoIdNumericUpDown.Location = new System.Drawing.Point(160, 27);
             this.TipoTrabajoIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.TipoTrabajoIdNumericUpDown.Name = "TipoTrabajoIdNumericUpDown";
             this.TipoTrabajoIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
@@ -164,6 +164,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // MyErrorProvider
             // 

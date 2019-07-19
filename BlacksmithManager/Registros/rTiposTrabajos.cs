@@ -72,7 +72,6 @@ namespace BlacksmithManager.Registros
             TiposTrabajos TipoTrabajo = Repositorio.Buscar((int)TipoTrabajoIdNumericUpDown.Value);
             return (TipoTrabajo != null);
         }
-
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
@@ -176,5 +175,7 @@ namespace BlacksmithManager.Registros
                 return;
             }
         }
+
+
     }
 }
