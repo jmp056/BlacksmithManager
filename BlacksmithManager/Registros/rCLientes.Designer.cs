@@ -162,6 +162,7 @@
             this.ClienteIdNumericUpDown.Name = "ClienteIdNumericUpDown";
             this.ClienteIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.ClienteIdNumericUpDown.TabIndex = 68;
+            this.ClienteIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClienteIdNumericUpDown_KeyPress);
             // 
             // Nombres
             // 
@@ -224,7 +225,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::BlacksmithManager.Properties.Resources.BotonBuscar;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(288, -1);
+            this.BuscarButton.Location = new System.Drawing.Point(284, 4);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(94, 36);

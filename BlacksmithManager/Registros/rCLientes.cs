@@ -20,7 +20,7 @@ namespace BlacksmithManager.Registros
             EliminarButton.Enabled = false;
         }
 
-        private void Limpiar()
+        private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
             MyErrorProvider.Clear();
             ClienteIdNumericUpDown.Value = 0;
@@ -33,7 +33,7 @@ namespace BlacksmithManager.Registros
             EliminarButton.Enabled = false;
         }
 
-        private Clientes LlenaClase()
+        private Clientes LlenaClase() // Funcion encargada de llenar el objeto
         {
             Clientes Cliente = new Clientes();
             Cliente.ClienteId = Convert.ToInt32(ClienteIdNumericUpDown.Value);
@@ -46,7 +46,7 @@ namespace BlacksmithManager.Registros
             return Cliente;
         }
 
-        private void LlenaCampos(Clientes Cliente)
+        private void LlenaCampos(Clientes Cliente) // Funcion encargada de llenar los campos con los datos de un objeto
         {
             ClienteIdNumericUpDown.Value = Cliente.ClienteId;
             NombresTextBox.Text = Cliente.Nombres;
@@ -57,17 +57,17 @@ namespace BlacksmithManager.Registros
             FechaDeIngresoDateTimePicker.Value = Cliente.FechaIngreso;
         }
 
-        private bool Validar()
+        private bool Validar() //Funcion que valida todo el registro
         {
             bool paso = true;
             MyErrorProvider.Clear();
-            if (NombresTextBox.Text == string.Empty)
+            if (NombresTextBox.Text == string.Empty) //Validando que el nombre no este vacio
             {
                 MyErrorProvider.SetError(NombresTextBox, "El campo \"Nombre\" no puede estar vacio");
                 NombresTextBox.Focus();
                 paso = false;
             }
-            if (CelularMaskedTextBox.Text.Trim().Length < 12 || CelularMaskedTextBox.Text.Contains(" "))
+            if (CelularMaskedTextBox.Text.Trim().Length < 12 || CelularMaskedTextBox.Text.Contains(" ")) //Validando que el celular no este vacio o no este completo
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox, "Ingrese un numero de celular valido");
                 CelularMaskedTextBox.Focus();
@@ -75,14 +75,14 @@ namespace BlacksmithManager.Registros
             }
             if (FechaDeIngresoDateTimePicker.Value > DateTime.Now)
             {
-                MyErrorProvider.SetError(FechaDeIngresoDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual");
+                MyErrorProvider.SetError(FechaDeIngresoDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual"); //Validando que la fecha no se mayor a la fecha actual
                 FechaDeIngresoDateTimePicker.Focus();
                 paso = false;
             }
             return paso;
         }
 
-        private bool ExisteEnLaBaseDeDatos()
+        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en la base de datos
         {
             RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
             Clientes Cliente = Repositorio.Buscar((int)ClienteIdNumericUpDown.Value);
@@ -173,6 +173,11 @@ namespace BlacksmithManager.Registros
                 MessageBox.Show("El cliente no pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+        }
+
+        private void ClienteIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

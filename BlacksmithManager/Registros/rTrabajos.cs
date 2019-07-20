@@ -102,6 +102,7 @@ namespace BlacksmithManager.Registros
             var clientes = new List<Clientes>();
             clientes = Repositorio.GetList(p => true);
             ClienteComboBox.DataSource = clientes;
+            ClienteComboBox.ValueMember = "ClienteId";
             ClienteComboBox.DisplayMember = "Nombres";
         } 
 
@@ -111,6 +112,7 @@ namespace BlacksmithManager.Registros
             var tiposTrabajos = new List<TiposTrabajos>();
             tiposTrabajos = Repositorio.GetList(p => true);
             TipoTrabajoComboBox.DataSource = tiposTrabajos;
+            TipoTrabajoComboBox.ValueMember = "TipoTrabajoId";
             TipoTrabajoComboBox.DisplayMember = "Descripcion";
         } 
 
@@ -120,6 +122,7 @@ namespace BlacksmithManager.Registros
             var empleados = new List<Empleados>();
             empleados = Repositorio.GetList(p => true);
             EncargadoComboBox.DataSource = empleados;
+            EncargadoComboBox.ValueMember = "EmpleadoId";
             EncargadoComboBox.DisplayMember = "Nombres";
         } 
 
@@ -128,15 +131,12 @@ namespace BlacksmithManager.Registros
             Trabajos Trabajo = new Trabajos();
             Trabajo.TrabajoId = Convert.ToInt32(TrabajoIdNumericUpDown.Value);
             Trabajo.FechaInicio = FechaCreacionDateTimePicker.Value;
-
             Trabajo.ClienteId = Convert.ToInt32(ClienteComboBox.SelectedValue);
-
-
-            Trabajo.TipoTrabajo = TipoTrabajoComboBox.Text;
+            Trabajo.TipoTrabajoId = Convert.ToInt32(TipoTrabajoComboBox.SelectedValue);
             Trabajo.Descripcion = DescripcionTrabajoTextBox.Text;
             Trabajo.Direccion = DireccionTextBox.Text;
             Trabajo.Precio = Convert.ToDecimal(PrecioNumericUpDown.Value);
-            Trabajo.Encargado = EncargadoComboBox.Text;
+            Trabajo.EmpleadoId = Convert.ToInt32(EncargadoComboBox.SelectedValue);
             Trabajo.Ajuste = Convert.ToDecimal(AjusteNumericUpDown.Value);
             Trabajo.Detalle = this.Detalle;
             Trabajo.Cobrado = Convert.ToDecimal(CobradoTextBox.Text);
@@ -155,16 +155,12 @@ namespace BlacksmithManager.Registros
 
             TrabajoIdNumericUpDown.Value = Trabajo.TrabajoId;
             FechaCreacionDateTimePicker.Value = Trabajo.FechaInicio;
-
-
-            ClienteComboBox.Text = Convert.ToString(Trabajo.Cliente.Nombres);
-
-
-            TipoTrabajoComboBox.Text = Trabajo.TipoTrabajo;
+            ClienteComboBox.SelectedValue = Trabajo.ClienteId;
+            TipoTrabajoComboBox.SelectedValue = Trabajo.TipoTrabajoId;
             DescripcionTrabajoTextBox.Text = Trabajo.Descripcion;
             DireccionTextBox.Text = Trabajo.Direccion;
             PrecioNumericUpDown.Value = Convert.ToDecimal(Trabajo.Precio);
-            EncargadoComboBox.Text = Trabajo.Encargado;
+            EncargadoComboBox.SelectedValue = Trabajo.EmpleadoId;
             AjusteNumericUpDown.Value = Convert.ToDecimal(Trabajo.Ajuste);
             this.Detalle = Trabajo.Detalle;
             CargaGrid();
@@ -177,7 +173,7 @@ namespace BlacksmithManager.Registros
             GananciaNetaTextBox.Text = Convert.ToString(Trabajo.GananciaNeta);
         } 
 
-        private void RTrabajos_Load(object sender, EventArgs e)//Llena todos los ComboBox al cargar el registro de trabajos
+        private void RTrabajos_Load(object sender, EventArgs e) // Llena todos los ComboBox al cargar el registro de trabajos
         {
             LlenaComboBoxClientes();
             LlenaComboBoxEmpleados();
@@ -186,41 +182,41 @@ namespace BlacksmithManager.Registros
         //--------------------------------------------------------------------------------------------------------
 
         //Validaciones -------------------------------------------------------------------------------------------
-        private bool Validar() //Funcion que valida todo el registro 
+        private bool Validar() // Funcion que valida todo el registro 
         {
             MyErrorProvider.Clear();
             bool paso = true;
-            if (ClienteComboBox.Text == string.Empty)
+            if (ClienteComboBox.Text == string.Empty) // Validando que elija un cliente
             {
-                MyErrorProvider.SetError(ClienteComboBox, "Debe elegir un cliente");
+                MyErrorProvider.SetError(ClienteComboBox, "Debe elegir un cliente"); 
                 ClienteComboBox.Focus();
                 paso = false;
             }
-            if (TipoTrabajoComboBox.Text == string.Empty)
+            if (TipoTrabajoComboBox.Text == string.Empty) // Validando que elija el tipo de trabajo
             {
                 MyErrorProvider.SetError(TipoTrabajoComboBox, "Debe un tipo de trabajo");
                 TipoTrabajoComboBox.Focus();
                 paso = false;
             }
-            if(DescripcionTrabajoTextBox.Text == String.Empty)
+            if(DescripcionTrabajoTextBox.Text == String.Empty) // Validando que el trabajo tenga una descripcion
             {
                 MyErrorProvider.SetError(DescripcionTrabajoTextBox, "Debe agregar una descripcion al trabajo");
                 DescripcionTrabajoTextBox.Focus();
                 paso = false;
             }
-            if (PrecioNumericUpDown.Value <= 0)
+            if (PrecioNumericUpDown.Value <= 0) // Validando que el precio sea mayor a 0
             {
                 MyErrorProvider.SetError(PrecioNumericUpDown, "El precio del trabajo tiene que ser mayor que 0");
                 PrecioNumericUpDown.Focus();
                 paso = false;
             }
-            if (DireccionTextBox.Text == String.Empty)
+            if (DireccionTextBox.Text == String.Empty)  // Validando que el trabajo tenga una direccion
             {
                 MyErrorProvider.SetError(DireccionTextBox, "Debe agregar una direccion al trabajo");
                 DireccionTextBox.Focus();
                 paso = false;
             }
-            if (EncargadoComboBox.Text == string.Empty)
+            if (EncargadoComboBox.Text == string.Empty)  // Validando que elija un encargado
             {
                 MyErrorProvider.SetError(EncargadoComboBox, "Debe elegir un encargado");
                 EncargadoComboBox.Focus();
@@ -228,13 +224,13 @@ namespace BlacksmithManager.Registros
             }
             if (AjusteNumericUpDown.Value <= 0)
             {
-                MyErrorProvider.SetError(AjusteNumericUpDown, "El ajuste debe ser mayor a 0");
+                MyErrorProvider.SetError(AjusteNumericUpDown, "El ajuste debe ser mayor a 0"); // Validando que el precio sea mayor a 0
                 AjusteNumericUpDown.Focus();
                 paso = false;
             }
             if (AjusteNumericUpDown.Value > PrecioNumericUpDown.Value)
             {
-                MyErrorProvider.SetError(AjusteNumericUpDown, "El ajuste no puede ser mayor al precio del trabajo");
+                MyErrorProvider.SetError(AjusteNumericUpDown, "El ajuste no puede ser mayor al precio del trabajo"); // Validando que el ajuste no sea mayor al precio
                 AjusteNumericUpDown.Focus();
                 paso = false;
             }
@@ -247,32 +243,32 @@ namespace BlacksmithManager.Registros
             bool paso = true;
             if (FechaMovimientoDateTimePicker.Value > DateTime.Now)
             {
-                MyErrorProvider.SetError(FechaMovimientoDateTimePicker, "La fecha del movimiento no puede ser mayor a la fecha de hoy");
+                MyErrorProvider.SetError(FechaMovimientoDateTimePicker, "La fecha del movimiento no puede ser mayor a la fecha de hoy"); // Validando que la fecha del movimiento no sea mayor a la fecha actual
                 FechaMovimientoDateTimePicker.Focus();
                 paso = false;
             }
             if (string.Compare(TipoMovimientoComboBox.Text, "Cobro al Cliente") != 0 && string.Compare(TipoMovimientoComboBox.Text, "Pago de Ajuste") != 0 && string.Compare(TipoMovimientoComboBox.Text, "Compra de Materiales") != 0)
             {
-                MyErrorProvider.SetError(TipoMovimientoComboBox, "Debe elegir el tipo de movimiento");
+                MyErrorProvider.SetError(TipoMovimientoComboBox, "Debe elegir el tipo de movimiento"); // Validando que alla elegio el tipo de movimiento
                 TipoMovimientoComboBox.Focus();
                 paso = false;
             }
             if (DescripcionMovimientoTextBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(DescripcionMovimientoTextBox, "Debe agregar una descripcion al movimiento");
+                MyErrorProvider.SetError(DescripcionMovimientoTextBox, "Debe agregar una descripcion al movimiento"); // Validando que el movimiento tenga una descripcion
                 DescripcionMovimientoTextBox.Focus();
                 paso = false;
             }
             if (ValorNumericUpDown.Value <= 0)
             {
-                MyErrorProvider.SetError(ValorNumericUpDown, "El Valor del movimiento debe ser mayor que \"0.00\"");
+                MyErrorProvider.SetError(ValorNumericUpDown, "El Valor del movimiento debe ser mayor que \"0.00\""); // Validando que el valor del movimiento sea mayor que 0
                 ValorNumericUpDown.Focus();
                 paso = false;
             }
             return paso;
         } 
 
-        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en una base de datos
+        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en la base de datos
         {
             RepositorioBase<Trabajos> Repositorio = new RepositorioBase<Trabajos>();
             Trabajos Trabajo = Repositorio.Buscar((int)TrabajoIdNumericUpDown.Value);

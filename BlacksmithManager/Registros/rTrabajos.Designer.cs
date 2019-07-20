@@ -102,6 +102,11 @@
             // 
             this.TrabajoIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrabajoIdNumericUpDown.Location = new System.Drawing.Point(139, 28);
+            this.TrabajoIdNumericUpDown.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.TrabajoIdNumericUpDown.Name = "TrabajoIdNumericUpDown";
             this.TrabajoIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.TrabajoIdNumericUpDown.TabIndex = 1;
@@ -254,8 +259,19 @@
             // 
             // PrecioNumericUpDown
             // 
+            this.PrecioNumericUpDown.DecimalPlaces = 2;
             this.PrecioNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioNumericUpDown.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.PrecioNumericUpDown.Location = new System.Drawing.Point(425, 132);
+            this.PrecioNumericUpDown.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.PrecioNumericUpDown.TabIndex = 74;
@@ -309,8 +325,19 @@
             // 
             // AjusteNumericUpDown
             // 
+            this.AjusteNumericUpDown.DecimalPlaces = 2;
             this.AjusteNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AjusteNumericUpDown.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.AjusteNumericUpDown.Location = new System.Drawing.Point(472, 211);
+            this.AjusteNumericUpDown.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.AjusteNumericUpDown.Name = "AjusteNumericUpDown";
             this.AjusteNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.AjusteNumericUpDown.TabIndex = 79;
@@ -402,8 +429,19 @@
             // 
             // ValorNumericUpDown
             // 
+            this.ValorNumericUpDown.DecimalPlaces = 2;
             this.ValorNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorNumericUpDown.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.ValorNumericUpDown.Location = new System.Drawing.Point(391, 303);
+            this.ValorNumericUpDown.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.ValorNumericUpDown.Name = "ValorNumericUpDown";
             this.ValorNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.ValorNumericUpDown.TabIndex = 88;
