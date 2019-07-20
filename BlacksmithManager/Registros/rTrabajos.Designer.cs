@@ -140,6 +140,7 @@
             // 
             // ClienteComboBox
             // 
+            this.ClienteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClienteComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClienteComboBox.FormattingEnabled = true;
             this.ClienteComboBox.Location = new System.Drawing.Point(120, 94);
@@ -159,6 +160,7 @@
             this.AgregarClienteButton.TabIndex = 64;
             this.AgregarClienteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarClienteButton.UseVisualStyleBackColor = true;
+            this.AgregarClienteButton.Click += new System.EventHandler(this.AgregarClienteButton_Click);
             // 
             // BuscarButton
             // 
@@ -187,6 +189,7 @@
             // 
             // TipoTrabajoComboBox
             // 
+            this.TipoTrabajoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoTrabajoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoTrabajoComboBox.FormattingEnabled = true;
             this.TipoTrabajoComboBox.Location = new System.Drawing.Point(424, 91);
@@ -206,6 +209,7 @@
             this.AgregarTipoTrabajoButton.TabIndex = 68;
             this.AgregarTipoTrabajoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarTipoTrabajoButton.UseVisualStyleBackColor = true;
+            this.AgregarTipoTrabajoButton.Click += new System.EventHandler(this.AgregarTipoTrabajoButton_Click);
             // 
             // DescripcionTrabajo
             // 
@@ -250,6 +254,7 @@
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.PrecioNumericUpDown.TabIndex = 74;
+            this.PrecioNumericUpDown.ValueChanged += new System.EventHandler(this.PrecioNumericUpDown_ValueChanged);
             // 
             // Precio
             // 
@@ -273,9 +278,11 @@
             this.AgregarEmpleadoButton.TabIndex = 77;
             this.AgregarEmpleadoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarEmpleadoButton.UseVisualStyleBackColor = true;
+            this.AgregarEmpleadoButton.Click += new System.EventHandler(this.AgregarEmpleadoButton_Click);
             // 
             // EncargadoComboBox
             // 
+            this.EncargadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EncargadoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EncargadoComboBox.FormattingEnabled = true;
             this.EncargadoComboBox.Location = new System.Drawing.Point(172, 220);
@@ -300,6 +307,7 @@
             this.AjusteNumericUpDown.Name = "AjusteNumericUpDown";
             this.AjusteNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.AjusteNumericUpDown.TabIndex = 79;
+            this.AjusteNumericUpDown.ValueChanged += new System.EventHandler(this.AjusteNumericUpDown_ValueChanged);
             // 
             // Ajuste
             // 
@@ -343,8 +351,13 @@
             // 
             // TipoMovimientoComboBox
             // 
+            this.TipoMovimientoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoMovimientoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoMovimientoComboBox.FormattingEnabled = true;
+            this.TipoMovimientoComboBox.Items.AddRange(new object[] {
+            "Cobro al Cliente",
+            "Pago de Ajuste",
+            "Compra de Materiales"});
             this.TipoMovimientoComboBox.Location = new System.Drawing.Point(472, 267);
             this.TipoMovimientoComboBox.Name = "TipoMovimientoComboBox";
             this.TipoMovimientoComboBox.Size = new System.Drawing.Size(121, 24);
@@ -445,6 +458,7 @@
             // 
             // BalanceTextBox
             // 
+            this.BalanceTextBox.Enabled = false;
             this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BalanceTextBox.Location = new System.Drawing.Point(62, 550);
             this.BalanceTextBox.Name = "BalanceTextBox";
@@ -453,6 +467,7 @@
             // 
             // CobradoTextBox
             // 
+            this.CobradoTextBox.Enabled = false;
             this.CobradoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CobradoTextBox.Location = new System.Drawing.Point(62, 491);
             this.CobradoTextBox.Name = "CobradoTextBox";
@@ -461,6 +476,7 @@
             // 
             // AjustePagadoTextBox
             // 
+            this.AjustePagadoTextBox.Enabled = false;
             this.AjustePagadoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AjustePagadoTextBox.Location = new System.Drawing.Point(228, 491);
             this.AjustePagadoTextBox.Name = "AjustePagadoTextBox";
@@ -469,6 +485,7 @@
             // 
             // AjustePendienteTextBox
             // 
+            this.AjustePendienteTextBox.Enabled = false;
             this.AjustePendienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AjustePendienteTextBox.Location = new System.Drawing.Point(228, 550);
             this.AjustePendienteTextBox.Name = "AjustePendienteTextBox";
@@ -497,6 +514,7 @@
             // 
             // GastosTextBox
             // 
+            this.GastosTextBox.Enabled = false;
             this.GastosTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GastosTextBox.Location = new System.Drawing.Point(411, 472);
             this.GastosTextBox.Name = "GastosTextBox";
@@ -505,6 +523,7 @@
             // 
             // GananciaBrutaTextBox
             // 
+            this.GananciaBrutaTextBox.Enabled = false;
             this.GananciaBrutaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GananciaBrutaTextBox.Location = new System.Drawing.Point(411, 531);
             this.GananciaBrutaTextBox.Name = "GananciaBrutaTextBox";
@@ -533,6 +552,7 @@
             // 
             // GananciaNetaTextBox
             // 
+            this.GananciaNetaTextBox.Enabled = false;
             this.GananciaNetaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GananciaNetaTextBox.Location = new System.Drawing.Point(369, 586);
             this.GananciaNetaTextBox.Name = "GananciaNetaTextBox";

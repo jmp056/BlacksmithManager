@@ -20,10 +20,10 @@ namespace BlacksmithManager.Registros
         {
             InitializeComponent();
             Detalle = new List<Movimientos>();
-            EliminarButton.Enabled = false;
             LlenaComboBoxClientes();
             LlenaComboBoxTipoTrabajo();
             LlenaComboBoxEmpleados();
+            EliminarButton.Enabled = false;
         }
 
         private void CargaGrid()
@@ -83,6 +83,7 @@ namespace BlacksmithManager.Registros
             GastosTextBox.Text = string.Empty;
             GananciaBrutaTextBox.Text = string.Empty;
             GananciaNetaTextBox.Text = string.Empty;
+            EliminarButton.Enabled = false;
         }
 
         private Trabajos LlenaClase()
@@ -132,10 +133,157 @@ namespace BlacksmithManager.Registros
             GananciaNetaTextBox.Text = Convert.ToString(Trabajo.GananciaNeta);
         }
 
+        private void Calculadora()
+        {
+            if(TipoMovimientoComboBox.Text == "Cobro al Cliente") // Haciendo el calculo de cuando se le cobra al cliente
+            {
+                decimal valor, balance, bruta, neta;
+
+                if (CobradoTextBox.Text == string.Empty)// Dando valor a lo cobrado
+                    CobradoTextBox.Text = "0";
+                valor = Convert.ToDecimal(CobradoTextBox.Text);
+
+                if (BalanceTextBox.Text == string.Empty)// Dando valor al balance
+                    BalanceTextBox.Text = "0";
+                balance = Convert.ToDecimal(BalanceTextBox.Text);
+
+                if (GananciaBrutaTextBox.Text == string.Empty)// Dando valor a la ganancia neta
+                    GananciaBrutaTextBox.Text = "0";
+                bruta = Convert.ToDecimal(GananciaBrutaTextBox.Text);
+
+                if (GananciaNetaTextBox.Text == string.Empty)// Dando valor a la ganancia bruta
+                    GananciaNetaTextBox.Text = "0";
+                neta = Convert.ToDecimal(GananciaNetaTextBox.Text);
+
+                CobradoTextBox.Text = Convert.ToString(valor + ValorNumericUpDown.Value);//Sumando cobros
+                BalanceTextBox.Text = Convert.ToString(balance - ValorNumericUpDown.Value);//Restando a balance
+                GananciaBrutaTextBox.Text = Convert.ToString(neta + ValorNumericUpDown.Value);//Sumando a ganancia bruta
+                GananciaNetaTextBox.Text = Convert.ToString(neta + ValorNumericUpDown.Value);//Sumando a ganancia neta
+            }
+            else if (TipoMovimientoComboBox.Text == "Pago de Ajuste") // Haciendo el calculo de cuando se paga al empleado
+            {
+                decimal pagado, pendiente, bruta, neta;
+                if (AjustePagadoTextBox.Text == string.Empty)// Dando valor al ajuste pagado
+                    AjustePagadoTextBox.Text = "0";
+                pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
+
+                if (AjustePendienteTextBox.Text == string.Empty)//Dando valor al ajuste pendiente
+                    AjustePendienteTextBox.Text = "0";
+                pendiente = Convert.ToDecimal(AjustePendienteTextBox.Text);
+
+                if (GananciaBrutaTextBox.Text == string.Empty)// Dando valor a la ganancia bruta
+                    GananciaBrutaTextBox.Text = "0";
+                bruta = Convert.ToDecimal(GananciaBrutaTextBox.Text);
+
+                if (GananciaNetaTextBox.Text == string.Empty)// Dando valor a la ganancia neta
+                    GananciaNetaTextBox.Text = "0";
+                neta = Convert.ToDecimal(GananciaNetaTextBox.Text);
+
+                AjustePagadoTextBox.Text = Convert.ToString(pagado + ValorNumericUpDown.Value);// Sumando al ajuste pagado
+                AjustePendienteTextBox.Text = Convert.ToString(pendiente - ValorNumericUpDown.Value); //Restando al ajuste pendiente
+                GananciaBrutaTextBox.Text = Convert.ToString(bruta - ValorNumericUpDown.Value);//Restando a ganancia bruta
+                GananciaNetaTextBox.Text = Convert.ToString(neta - ValorNumericUpDown.Value);//Restando a ganancia neta
+            }
+            else  // Haciendo el calculo de cuando se compran materiales
+            {
+                decimal materiales, neta;
+                if (GastosTextBox.Text == string.Empty)// Dando valor a los gastos en materiales
+                    GastosTextBox.Text = "0";
+                materiales = Convert.ToDecimal(GastosTextBox.Text);
+
+                if (GananciaNetaTextBox.Text == string.Empty)// Dando valor a la ganancia neta
+                    GananciaNetaTextBox.Text = "0";
+                neta = Convert.ToDecimal(GananciaNetaTextBox.Text);
+
+                GastosTextBox.Text = Convert.ToString(materiales + ValorNumericUpDown.Value);// Sumando a gastos en materiales
+                GananciaNetaTextBox.Text = Convert.ToString(neta - ValorNumericUpDown.Value);//Restando a ganancia neta
+            }
+
+        }
+
         private bool Validar()
         {
             MyErrorProvider.Clear();
             bool paso = true;
+            if (ClienteComboBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(ClienteComboBox, "Debe elegir un cliente");
+                ClienteComboBox.Focus();
+                paso = false;
+            }
+            if (TipoTrabajoComboBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(TipoTrabajoComboBox, "Debe un tipo de trabajo");
+                TipoTrabajoComboBox.Focus();
+                paso = false;
+            }
+            if(DescripcionTrabajoTextBox.Text == String.Empty)
+            {
+                MyErrorProvider.SetError(DescripcionTrabajoTextBox, "Debe agregar una descripcion al trabajo");
+                DescripcionTrabajoTextBox.Focus();
+                paso = false;
+            }
+            if (PrecioNumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(PrecioNumericUpDown, "El precio del trabajo tiene que ser mayor que 0");
+                PrecioNumericUpDown.Focus();
+                paso = false;
+            }
+            if (DireccionTextBox.Text == String.Empty)
+            {
+                MyErrorProvider.SetError(DireccionTextBox, "Debe agregar una direccion al trabajo");
+                DireccionTextBox.Focus();
+                paso = false;
+            }
+            if (EncargadoComboBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(EncargadoComboBox, "Debe elegir un encargado");
+                EncargadoComboBox.Focus();
+                paso = false;
+            }
+            if (AjusteNumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(AjusteNumericUpDown, "El ajuste debe ser mayor a 0");
+                AjusteNumericUpDown.Focus();
+                paso = false;
+            }
+            if (AjusteNumericUpDown.Value > PrecioNumericUpDown.Value)
+            {
+                MyErrorProvider.SetError(AjusteNumericUpDown, "El ajuste no puede ser mayor al precio del trabajo");
+                AjusteNumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+
+        private bool ValidarDetalle()
+        {
+            MyErrorProvider.Clear();
+            bool paso = true;
+            if (FechaMovimientoDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaMovimientoDateTimePicker, "La fecha del movimiento no puede ser mayor a la fecha de hoy");
+                FechaMovimientoDateTimePicker.Focus();
+                paso = false;
+            }
+            if (string.Compare(TipoMovimientoComboBox.Text, "Cobro al Cliente") != 0 && string.Compare(TipoMovimientoComboBox.Text, "Pago de Ajuste") != 0 && string.Compare(TipoMovimientoComboBox.Text, "Compra de Materiales") != 0)
+            {
+                MyErrorProvider.SetError(TipoMovimientoComboBox, "Debe elegir el tipo de movimiento");
+                TipoMovimientoComboBox.Focus();
+                paso = false;
+            }
+            if (DescripcionMovimientoTextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(DescripcionMovimientoTextBox, "Debe agregar una descripcion al movimiento");
+                DescripcionMovimientoTextBox.Focus();
+                paso = false;
+            }
+            if (ValorNumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(ValorNumericUpDown, "El Valor del movimiento debe ser mayor que \"0.00\"");
+                ValorNumericUpDown.Focus();
+                paso = false;
+            }
             return paso;
         }
 
@@ -204,6 +352,9 @@ namespace BlacksmithManager.Registros
         private void AgregarMovimientoButton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
+            if (!ValidarDetalle())
+                return;
+            
             RepositorioBase<Movimientos> Repositorio = new RepositorioBase<Movimientos>();
             Movimientos Movimiento = new Movimientos();
             if (DetalleDataGridView.DataSource != null)
@@ -219,6 +370,7 @@ namespace BlacksmithManager.Registros
             )
             );
             CargaGrid();
+            Calculadora();
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -249,6 +401,49 @@ namespace BlacksmithManager.Registros
                 Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
                 CargaGrid();
             }
+        }
+
+        private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (CobradoTextBox.Text == string.Empty)
+                CobradoTextBox.Text = "0";
+
+            if (BalanceTextBox.Text == string.Empty)
+                CobradoTextBox.Text = "0";
+
+            BalanceTextBox.Text = Convert.ToString(PrecioNumericUpDown.Value - Convert.ToDecimal(CobradoTextBox.Text));
+        }
+
+        private void AjusteNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (AjustePagadoTextBox.Text == string.Empty)
+                AjustePagadoTextBox.Text = "0";
+
+            if (AjustePendienteTextBox.Text == string.Empty)
+                AjustePendienteTextBox.Text = "0";
+
+            AjustePendienteTextBox.Text = Convert.ToString(AjusteNumericUpDown.Value - Convert.ToDecimal(AjustePagadoTextBox.Text));
+        }
+
+        private void AgregarClienteButton_Click(object sender, EventArgs e)
+        {
+            rClientes rC = new rClientes();
+            rC.ShowDialog();
+            LlenaComboBoxClientes();
+        }
+
+        private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e)
+        {
+            rTiposTrabajos rTT = new rTiposTrabajos();
+            rTT.ShowDialog();
+            LlenaComboBoxTipoTrabajo();
+        }
+
+        private void AgregarEmpleadoButton_Click(object sender, EventArgs e)
+        {
+            rEmpleados rE = new rEmpleados();
+            rE.ShowDialog();
+            LlenaComboBoxEmpleados();
         }
     }
 }
