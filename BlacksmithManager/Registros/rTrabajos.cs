@@ -128,7 +128,10 @@ namespace BlacksmithManager.Registros
             Trabajos Trabajo = new Trabajos();
             Trabajo.TrabajoId = Convert.ToInt32(TrabajoIdNumericUpDown.Value);
             Trabajo.FechaInicio = FechaCreacionDateTimePicker.Value;
-            Trabajo.Cliente = ClienteComboBox.Text;
+
+            Trabajo.ClienteId = Convert.ToInt32(ClienteComboBox.SelectedValue);
+
+
             Trabajo.TipoTrabajo = TipoTrabajoComboBox.Text;
             Trabajo.Descripcion = DescripcionTrabajoTextBox.Text;
             Trabajo.Direccion = DireccionTextBox.Text;
@@ -152,7 +155,11 @@ namespace BlacksmithManager.Registros
 
             TrabajoIdNumericUpDown.Value = Trabajo.TrabajoId;
             FechaCreacionDateTimePicker.Value = Trabajo.FechaInicio;
-            ClienteComboBox.Text = Trabajo.Cliente;
+
+
+            ClienteComboBox.Text = Convert.ToString(Trabajo.Cliente.Nombres);
+
+
             TipoTrabajoComboBox.Text = Trabajo.TipoTrabajo;
             DescripcionTrabajoTextBox.Text = Trabajo.Descripcion;
             DireccionTextBox.Text = Trabajo.Direccion;
@@ -548,22 +555,25 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void DireccionTextBox_TextChanged(object sender, EventArgs e)// De la direccion al encargado
+        private void DireccionTextBox_KeyPress(object sender, KeyPressEventArgs e)//De la direccion al Encargado
         {
-            EncargadoComboBox.Focus();
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                EncargadoComboBox.Focus();
+            }
         }
 
         private void AjusteNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del ajuste al boton guardar
         {
-            GuardarButton.Focus();
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                GuardarButton.Focus();
+            }
         }
 
         private void DescripcionMovimientoTextBox_KeyPress(object sender, KeyPressEventArgs e)//De la descripcion del movimiento al valor
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                ValorNumericUpDown.Focus();
-            }
+            ValorNumericUpDown.Focus();
         }
 
         private void ValorNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del valor al boton agregar movimiento
@@ -573,11 +583,6 @@ namespace BlacksmithManager.Registros
                 AgregarMovimientoButton.Focus();
             }
         }
-
-
-
-
-
         //---------------------------------------------------------------------------------------------------------------
     }
 }

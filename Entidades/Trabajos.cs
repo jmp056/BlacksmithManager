@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entidades
 {
@@ -10,7 +10,12 @@ namespace Entidades
         [Key]
         public int TrabajoId { get; set; }
         public DateTime FechaInicio { get; set; }
-        public string Cliente { get; set; }
+        
+
+        public int ClienteId { get; set; }
+        public virtual Clientes Cliente { get; set; }
+
+
         public string TipoTrabajo { get; set; }
         public string Descripcion { get; set; }
         public string Direccion { get; set; }
@@ -30,7 +35,8 @@ namespace Entidades
         {
             TrabajoId = 0;
             FechaInicio = DateTime.Now;
-            Cliente = string.Empty;
+            ClienteId = 0;
+            //Cliente = string.Empty;
             TipoTrabajo = string.Empty;
             Descripcion = string.Empty;
             Direccion = String.Empty;
