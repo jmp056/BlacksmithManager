@@ -91,6 +91,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(279, 22);
             this.NombresTextBox.TabIndex = 50;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // EmpleadoIdNumericUpDown
             // 

@@ -147,6 +147,7 @@
             this.ClienteComboBox.Name = "ClienteComboBox";
             this.ClienteComboBox.Size = new System.Drawing.Size(121, 24);
             this.ClienteComboBox.TabIndex = 63;
+            this.ClienteComboBox.Click += new System.EventHandler(this.ClienteComboBox_Click);
             // 
             // AgregarClienteButton
             // 
@@ -196,6 +197,7 @@
             this.TipoTrabajoComboBox.Name = "TipoTrabajoComboBox";
             this.TipoTrabajoComboBox.Size = new System.Drawing.Size(121, 24);
             this.TipoTrabajoComboBox.TabIndex = 67;
+            this.TipoTrabajoComboBox.Click += new System.EventHandler(this.TipoTrabajoComboBox_Click);
             // 
             // AgregarTipoTrabajoButton
             // 
@@ -289,6 +291,7 @@
             this.EncargadoComboBox.Name = "EncargadoComboBox";
             this.EncargadoComboBox.Size = new System.Drawing.Size(121, 24);
             this.EncargadoComboBox.TabIndex = 76;
+            this.EncargadoComboBox.Click += new System.EventHandler(this.EncargadoComboBox_Click);
             // 
             // Encargado
             // 
@@ -464,6 +467,7 @@
             this.BalanceTextBox.Name = "BalanceTextBox";
             this.BalanceTextBox.Size = new System.Drawing.Size(100, 22);
             this.BalanceTextBox.TabIndex = 93;
+            this.BalanceTextBox.Text = "0";
             // 
             // CobradoTextBox
             // 
@@ -473,6 +477,8 @@
             this.CobradoTextBox.Name = "CobradoTextBox";
             this.CobradoTextBox.Size = new System.Drawing.Size(100, 22);
             this.CobradoTextBox.TabIndex = 94;
+            this.CobradoTextBox.Text = "0";
+            this.CobradoTextBox.TextChanged += new System.EventHandler(this.CobradoTextBox_TextChanged);
             // 
             // AjustePagadoTextBox
             // 
@@ -482,6 +488,8 @@
             this.AjustePagadoTextBox.Name = "AjustePagadoTextBox";
             this.AjustePagadoTextBox.Size = new System.Drawing.Size(100, 22);
             this.AjustePagadoTextBox.TabIndex = 98;
+            this.AjustePagadoTextBox.Text = "0";
+            this.AjustePagadoTextBox.TextChanged += new System.EventHandler(this.AjustePagadoTextBox_TextChanged);
             // 
             // AjustePendienteTextBox
             // 
@@ -491,6 +499,7 @@
             this.AjustePendienteTextBox.Name = "AjustePendienteTextBox";
             this.AjustePendienteTextBox.Size = new System.Drawing.Size(100, 22);
             this.AjustePendienteTextBox.TabIndex = 97;
+            this.AjustePendienteTextBox.Text = "0";
             // 
             // AjustePendiente
             // 
@@ -520,6 +529,7 @@
             this.GastosTextBox.Name = "GastosTextBox";
             this.GastosTextBox.Size = new System.Drawing.Size(100, 22);
             this.GastosTextBox.TabIndex = 102;
+            this.GastosTextBox.Text = "0";
             // 
             // GananciaBrutaTextBox
             // 
@@ -529,6 +539,7 @@
             this.GananciaBrutaTextBox.Name = "GananciaBrutaTextBox";
             this.GananciaBrutaTextBox.Size = new System.Drawing.Size(100, 22);
             this.GananciaBrutaTextBox.TabIndex = 101;
+            this.GananciaBrutaTextBox.Text = "0";
             // 
             // GananciaBruta
             // 
@@ -558,6 +569,7 @@
             this.GananciaNetaTextBox.Name = "GananciaNetaTextBox";
             this.GananciaNetaTextBox.Size = new System.Drawing.Size(100, 22);
             this.GananciaNetaTextBox.TabIndex = 106;
+            this.GananciaNetaTextBox.Text = "0";
             // 
             // GananciaNeta
             // 
@@ -571,6 +583,7 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Enabled = false;
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::BlacksmithManager.Properties.Resources.BotonEliminar;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

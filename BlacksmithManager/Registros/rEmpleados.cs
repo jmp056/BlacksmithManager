@@ -168,5 +168,13 @@ namespace BlacksmithManager.Registros
                 return;
             }
         }
+
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                CedulaMaskedTextBox.Focus();
+            }
+        }
     }
 }

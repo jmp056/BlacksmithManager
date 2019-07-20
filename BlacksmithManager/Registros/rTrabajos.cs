@@ -20,10 +20,6 @@ namespace BlacksmithManager.Registros
         {
             InitializeComponent();
             Detalle = new List<Movimientos>();
-            LlenaComboBoxClientes();
-            LlenaComboBoxTipoTrabajo();
-            LlenaComboBoxEmpleados();
-            EliminarButton.Enabled = false;
         }
 
         private void CargaGrid()
@@ -72,17 +68,17 @@ namespace BlacksmithManager.Registros
             AjusteNumericUpDown.Value = 0;
             FechaMovimientoDateTimePicker.Value = DateTime.Now;
             TipoMovimientoComboBox.Text = string.Empty;
-            DescripcionMovimiento.Text = string.Empty;
+            DescripcionMovimientoTextBox.Text = string.Empty;
             ValorNumericUpDown.Value = 0;
             this.Detalle = new List<Movimientos>();
             CargaGrid();
-            CobradoTextBox.Text = string.Empty;
-            BalanceTextBox.Text = string.Empty;
-            AjustePagadoTextBox.Text = string.Empty;
-            AjustePendienteTextBox.Text = string.Empty;
-            GastosTextBox.Text = string.Empty;
-            GananciaBrutaTextBox.Text = string.Empty;
-            GananciaNetaTextBox.Text = string.Empty;
+            CobradoTextBox.Text = "0";
+            BalanceTextBox.Text = "0";
+            AjustePagadoTextBox.Text = "0";
+            AjustePendienteTextBox.Text = "0";
+            GastosTextBox.Text = "0";
+            GananciaBrutaTextBox.Text = "0";
+            GananciaNetaTextBox.Text = "0";
             EliminarButton.Enabled = false;
         }
 
@@ -293,7 +289,7 @@ namespace BlacksmithManager.Registros
             Trabajos Trabajo = Repositorio.Buscar((int)TrabajoIdNumericUpDown.Value);
             return Trabajo != null;
         }
-
+        //Botones -------------------------------------------------------------------------------------------------
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
@@ -308,6 +304,79 @@ namespace BlacksmithManager.Registros
             }
             else
                 MessageBox.Show("Trabajo no encontrado!");
+        }
+
+        private void AgregarClienteButton_Click(object sender, EventArgs e)
+        {
+            rClientes rC = new rClientes();
+            rC.Show();
+        }
+
+        private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e)
+        {
+            rTiposTrabajos rTT = new rTiposTrabajos();
+            rTT.Show();
+        }
+
+        private void AgregarEmpleadoButton_Click(object sender, EventArgs e)
+        {
+            rEmpleados rE = new rEmpleados();
+            rE.Show();
+        }
+
+        private void AgregarMovimientoButton_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            if (!ValidarDetalle())
+                return;
+            
+            RepositorioBase<Movimientos> Repositorio = new RepositorioBase<Movimientos>();
+            Movimientos Movimiento = new Movimientos();
+            if (DetalleDataGridView.DataSource != null)
+                Detalle = (List<Movimientos>)DetalleDataGridView.DataSource;
+            this.Detalle.Add(
+                new Movimientos(
+                movimientoId: 0,
+                trabajoId: (int)TrabajoIdNumericUpDown.Value,
+                fechaMovimiento: FechaMovimientoDateTimePicker.Value,
+                tipoMovimiento: TipoMovimientoComboBox.Text,
+                descripcion: DescripcionMovimientoTextBox.Text,
+                valor: Convert.ToDecimal(ValorNumericUpDown.Value)
+            )
+            );
+            CargaGrid();
+            Calculadora();
+        }
+
+        private void RemoverButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
+            {
+                if (string.Compare("Cobro al Cliente", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// Tomando el valor de el registro que sera eliminado
+                {
+                    decimal valor, cobrado;
+
+                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());
+
+                    if (CobradoTextBox.Text == string.Empty)
+                        CobradoTextBox.Text = "0";
+                    cobrado = Convert.ToDecimal(CobradoTextBox.Text);
+
+                    CobradoTextBox.Text = Convert.ToString(cobrado - valor);
+                }
+                else if (string.Compare("Pago de Ajuste", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)
+                {
+                    decimal valor, pagado;
+
+                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());// Tomando el valor de el registro que sera eliminado
+
+                    pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
+
+                    AjustePagadoTextBox.Text = Convert.ToString(pagado - valor);
+                }
+                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
+                CargaGrid();
+            }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -349,30 +418,6 @@ namespace BlacksmithManager.Registros
                 MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void AgregarMovimientoButton_Click(object sender, EventArgs e)
-        {
-            MyErrorProvider.Clear();
-            if (!ValidarDetalle())
-                return;
-            
-            RepositorioBase<Movimientos> Repositorio = new RepositorioBase<Movimientos>();
-            Movimientos Movimiento = new Movimientos();
-            if (DetalleDataGridView.DataSource != null)
-                Detalle = (List<Movimientos>)DetalleDataGridView.DataSource;
-            this.Detalle.Add(
-                new Movimientos(
-                movimientoId: 0,
-                trabajoId: (int)TrabajoIdNumericUpDown.Value,
-                fechaMovimiento: FechaMovimientoDateTimePicker.Value,
-                tipoMovimiento: TipoMovimientoComboBox.Text,
-                descripcion: DescripcionMovimientoTextBox.Text,
-                valor: Convert.ToDecimal(ValorNumericUpDown.Value)
-            )
-            );
-            CargaGrid();
-            Calculadora();
-        }
-
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro que desea eliminar este trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
@@ -394,56 +439,51 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void RemoverButton_Click(object sender, EventArgs e)
+        //--------------------------------------------------------------------------------------------------------
+
+
+        private void ClienteComboBox_Click(object sender, EventArgs e)
         {
-            if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
-            {
-                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
-                CargaGrid();
-            }
-        }
-
-        private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            if (CobradoTextBox.Text == string.Empty)
-                CobradoTextBox.Text = "0";
-
-            if (BalanceTextBox.Text == string.Empty)
-                CobradoTextBox.Text = "0";
-
-            BalanceTextBox.Text = Convert.ToString(PrecioNumericUpDown.Value - Convert.ToDecimal(CobradoTextBox.Text));
-        }
-
-        private void AjusteNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            if (AjustePagadoTextBox.Text == string.Empty)
-                AjustePagadoTextBox.Text = "0";
-
-            if (AjustePendienteTextBox.Text == string.Empty)
-                AjustePendienteTextBox.Text = "0";
-
-            AjustePendienteTextBox.Text = Convert.ToString(AjusteNumericUpDown.Value - Convert.ToDecimal(AjustePagadoTextBox.Text));
-        }
-
-        private void AgregarClienteButton_Click(object sender, EventArgs e)
-        {
-            rClientes rC = new rClientes();
-            rC.ShowDialog();
             LlenaComboBoxClientes();
         }
 
-        private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e)
+        private void TipoTrabajoComboBox_Click(object sender, EventArgs e)
         {
-            rTiposTrabajos rTT = new rTiposTrabajos();
-            rTT.ShowDialog();
             LlenaComboBoxTipoTrabajo();
         }
 
-        private void AgregarEmpleadoButton_Click(object sender, EventArgs e)
+        private void EncargadoComboBox_Click(object sender, EventArgs e)
         {
-            rEmpleados rE = new rEmpleados();
-            rE.ShowDialog();
             LlenaComboBoxEmpleados();
         }
+
+        //Afectando el balance por cobrar al cliente, Ganancia bruta(Si el cliente paga)------------------------------------
+        private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            BalanceTextBox.Text = Convert.ToString(PrecioNumericUpDown.Value - Convert.ToDecimal(CobradoTextBox.Text));
+        }
+
+        private void CobradoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            BalanceTextBox.Text = Convert.ToString(PrecioNumericUpDown.Value - Convert.ToDecimal(CobradoTextBox.Text));
+
+            GananciaBrutaTextBox.Text = Convert.ToString(Convert.ToDecimal(CobradoTextBox.Text) - Convert.ToDecimal(AjustePagadoTextBox.Text));
+        }
+        //---------------------------------------------------------------------------------------------------------------
+
+        //Afectando el ajuste, Ganancia bruta(Si el empleado cobra) -----------------------------------------------------
+        private void AjusteNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            AjustePendienteTextBox.Text = Convert.ToString(AjusteNumericUpDown.Value - Convert.ToDecimal(AjustePagadoTextBox.Text));
+        }
+
+        private void AjustePagadoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            AjustePendienteTextBox.Text = Convert.ToString(AjusteNumericUpDown.Value - Convert.ToDecimal(AjustePagadoTextBox.Text));
+
+            GananciaBrutaTextBox.Text = Convert.ToString(Convert.ToDecimal(CobradoTextBox.Text) - Convert.ToDecimal(AjustePagadoTextBox.Text));
+        }
+
+        //---------------------------------------------------------------------------------------------------------------
     }
 }
