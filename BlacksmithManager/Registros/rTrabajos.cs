@@ -133,70 +133,32 @@ namespace BlacksmithManager.Registros
         {
             if(TipoMovimientoComboBox.Text == "Cobro al Cliente") // Haciendo el calculo de cuando se le cobra al cliente
             {
-                decimal valor, balance, bruta, neta;
+                decimal valor;
 
-                if (CobradoTextBox.Text == string.Empty)// Dando valor a lo cobrado
-                    CobradoTextBox.Text = "0";
                 valor = Convert.ToDecimal(CobradoTextBox.Text);
 
-                if (BalanceTextBox.Text == string.Empty)// Dando valor al balance
-                    BalanceTextBox.Text = "0";
-                balance = Convert.ToDecimal(BalanceTextBox.Text);
-
-                if (GananciaBrutaTextBox.Text == string.Empty)// Dando valor a la ganancia neta
-                    GananciaBrutaTextBox.Text = "0";
-                bruta = Convert.ToDecimal(GananciaBrutaTextBox.Text);
-
-                if (GananciaNetaTextBox.Text == string.Empty)// Dando valor a la ganancia bruta
-                    GananciaNetaTextBox.Text = "0";
-                neta = Convert.ToDecimal(GananciaNetaTextBox.Text);
-
-                CobradoTextBox.Text = Convert.ToString(valor + ValorNumericUpDown.Value);//Sumando cobros
-                BalanceTextBox.Text = Convert.ToString(balance - ValorNumericUpDown.Value);//Restando a balance
-                GananciaBrutaTextBox.Text = Convert.ToString(neta + ValorNumericUpDown.Value);//Sumando a ganancia bruta
-                GananciaNetaTextBox.Text = Convert.ToString(neta + ValorNumericUpDown.Value);//Sumando a ganancia neta
+                CobradoTextBox.Text = Convert.ToString(valor + ValorNumericUpDown.Value);//Sumando a cobrado
             }
             else if (TipoMovimientoComboBox.Text == "Pago de Ajuste") // Haciendo el calculo de cuando se paga al empleado
             {
-                decimal pagado, pendiente, bruta, neta;
-                if (AjustePagadoTextBox.Text == string.Empty)// Dando valor al ajuste pagado
-                    AjustePagadoTextBox.Text = "0";
+                decimal pagado;
+
                 pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
 
-                if (AjustePendienteTextBox.Text == string.Empty)//Dando valor al ajuste pendiente
-                    AjustePendienteTextBox.Text = "0";
-                pendiente = Convert.ToDecimal(AjustePendienteTextBox.Text);
-
-                if (GananciaBrutaTextBox.Text == string.Empty)// Dando valor a la ganancia bruta
-                    GananciaBrutaTextBox.Text = "0";
-                bruta = Convert.ToDecimal(GananciaBrutaTextBox.Text);
-
-                if (GananciaNetaTextBox.Text == string.Empty)// Dando valor a la ganancia neta
-                    GananciaNetaTextBox.Text = "0";
-                neta = Convert.ToDecimal(GananciaNetaTextBox.Text);
-
                 AjustePagadoTextBox.Text = Convert.ToString(pagado + ValorNumericUpDown.Value);// Sumando al ajuste pagado
-                AjustePendienteTextBox.Text = Convert.ToString(pendiente - ValorNumericUpDown.Value); //Restando al ajuste pendiente
-                GananciaBrutaTextBox.Text = Convert.ToString(bruta - ValorNumericUpDown.Value);//Restando a ganancia bruta
-                GananciaNetaTextBox.Text = Convert.ToString(neta - ValorNumericUpDown.Value);//Restando a ganancia neta
             }
             else  // Haciendo el calculo de cuando se compran materiales
             {
-                decimal materiales, neta;
-                if (GastosTextBox.Text == string.Empty)// Dando valor a los gastos en materiales
-                    GastosTextBox.Text = "0";
-                materiales = Convert.ToDecimal(GastosTextBox.Text);
+                decimal gastos;
 
-                if (GananciaNetaTextBox.Text == string.Empty)// Dando valor a la ganancia neta
-                    GananciaNetaTextBox.Text = "0";
-                neta = Convert.ToDecimal(GananciaNetaTextBox.Text);
+                gastos = Convert.ToDecimal(GastosTextBox.Text);
 
-                GastosTextBox.Text = Convert.ToString(materiales + ValorNumericUpDown.Value);// Sumando a gastos en materiales
-                GananciaNetaTextBox.Text = Convert.ToString(neta - ValorNumericUpDown.Value);//Restando a ganancia neta
+                GastosTextBox.Text = Convert.ToString(gastos + ValorNumericUpDown.Value);// Sumando a gastos en materiales
             }
 
         }
 
+        //Validaciones -------------------------------------------------------------------------------------------
         private bool Validar()
         {
             MyErrorProvider.Clear();
@@ -289,6 +251,8 @@ namespace BlacksmithManager.Registros
             Trabajos Trabajo = Repositorio.Buscar((int)TrabajoIdNumericUpDown.Value);
             return Trabajo != null;
         }
+        //--------------------------------------------------------------------------------------------------------
+
         //Botones -------------------------------------------------------------------------------------------------
         private void BuscarButton_Click(object sender, EventArgs e)
         {
@@ -352,11 +316,11 @@ namespace BlacksmithManager.Registros
         {
             if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
             {
-                if (string.Compare("Cobro al Cliente", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// Tomando el valor de el registro que sera eliminado
+                if (string.Compare("Cobro al Cliente", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// verificando el tipo de movimiento que sera eliminado
                 {
                     decimal valor, cobrado;
 
-                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());
+                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString()); // Tomando el valor de el registro que sera eliminado
 
                     if (CobradoTextBox.Text == string.Empty)
                         CobradoTextBox.Text = "0";
@@ -364,7 +328,7 @@ namespace BlacksmithManager.Registros
 
                     CobradoTextBox.Text = Convert.ToString(cobrado - valor);
                 }
-                else if (string.Compare("Pago de Ajuste", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)
+                else if (string.Compare("Pago de Ajuste", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// verificando el tipo de movimiento que sera eliminado
                 {
                     decimal valor, pagado;
 
@@ -374,7 +338,18 @@ namespace BlacksmithManager.Registros
 
                     AjustePagadoTextBox.Text = Convert.ToString(pagado - valor);
                 }
-                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
+                else // Eliminando gastos en materiales 
+                {
+                    decimal valor, gastos;
+
+                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());// Tomando el valor de el registro que sera eliminado
+
+                    gastos = Convert.ToDecimal(GastosTextBox.Text);
+
+                    GastosTextBox.Text = Convert.ToString(gastos - valor);
+                }
+
+                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
                 CargaGrid();
             }
         }
@@ -441,7 +416,7 @@ namespace BlacksmithManager.Registros
 
         //--------------------------------------------------------------------------------------------------------
 
-
+        //ComboBox's ---------------------------------------------------------------------------------------------
         private void ClienteComboBox_Click(object sender, EventArgs e)
         {
             LlenaComboBoxClientes();
@@ -456,6 +431,7 @@ namespace BlacksmithManager.Registros
         {
             LlenaComboBoxEmpleados();
         }
+        //---------------------------------------------------------------------------------------------------------------
 
         //Afectando el balance por cobrar al cliente, Ganancia bruta(Si el cliente paga)------------------------------------
         private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -483,7 +459,18 @@ namespace BlacksmithManager.Registros
 
             GananciaBrutaTextBox.Text = Convert.ToString(Convert.ToDecimal(CobradoTextBox.Text) - Convert.ToDecimal(AjustePagadoTextBox.Text));
         }
+        //---------------------------------------------------------------------------------------------------------------
 
+        //Afectando la ganancia neta ------------------------------------------------------------------------------------
+        private void GastosTextBox_TextChanged(object sender, EventArgs e)
+        {
+            GananciaNetaTextBox.Text = Convert.ToString(Convert.ToDecimal(GananciaBrutaTextBox.Text) - Convert.ToDecimal(GastosTextBox.Text));
+        }
+
+        private void GananciaBrutaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            GananciaNetaTextBox.Text = Convert.ToString(Convert.ToDecimal(GananciaBrutaTextBox.Text) - Convert.ToDecimal(GastosTextBox.Text));
+        }
         //---------------------------------------------------------------------------------------------------------------
     }
 }

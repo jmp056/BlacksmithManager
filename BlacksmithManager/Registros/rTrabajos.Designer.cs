@@ -530,6 +530,7 @@
             this.GastosTextBox.Size = new System.Drawing.Size(100, 22);
             this.GastosTextBox.TabIndex = 102;
             this.GastosTextBox.Text = "0";
+            this.GastosTextBox.TextChanged += new System.EventHandler(this.GastosTextBox_TextChanged);
             // 
             // GananciaBrutaTextBox
             // 
@@ -540,6 +541,7 @@
             this.GananciaBrutaTextBox.Size = new System.Drawing.Size(100, 22);
             this.GananciaBrutaTextBox.TabIndex = 101;
             this.GananciaBrutaTextBox.Text = "0";
+            this.GananciaBrutaTextBox.TextChanged += new System.EventHandler(this.GananciaBrutaTextBox_TextChanged);
             // 
             // GananciaBruta
             // 
