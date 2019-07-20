@@ -101,6 +101,7 @@
             this.EmpleadoIdNumericUpDown.Name = "EmpleadoIdNumericUpDown";
             this.EmpleadoIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.EmpleadoIdNumericUpDown.TabIndex = 49;
+            this.EmpleadoIdNumericUpDown.ValueChanged += new System.EventHandler(this.EmpleadoIdNumericUpDown_ValueChanged);
             // 
             // Nombres
             // 

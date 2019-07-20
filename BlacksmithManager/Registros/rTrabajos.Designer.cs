@@ -105,6 +105,7 @@
             this.TrabajoIdNumericUpDown.Name = "TrabajoIdNumericUpDown";
             this.TrabajoIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.TrabajoIdNumericUpDown.TabIndex = 1;
+            this.TrabajoIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TrabajoIdNumericUpDown_KeyPress);
             // 
             // FechaInicio
             // 
@@ -230,6 +231,7 @@
             this.DescripcionTrabajoTextBox.Name = "DescripcionTrabajoTextBox";
             this.DescripcionTrabajoTextBox.Size = new System.Drawing.Size(100, 22);
             this.DescripcionTrabajoTextBox.TabIndex = 70;
+            this.DescripcionTrabajoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTrabajoTextBox_KeyPress);
             // 
             // DireccionTextBox
             // 
@@ -238,6 +240,7 @@
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(414, 22);
             this.DireccionTextBox.TabIndex = 72;
+            this.DireccionTextBox.TextChanged += new System.EventHandler(this.DireccionTextBox_TextChanged);
             // 
             // Direccion
             // 
@@ -257,6 +260,7 @@
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.PrecioNumericUpDown.TabIndex = 74;
             this.PrecioNumericUpDown.ValueChanged += new System.EventHandler(this.PrecioNumericUpDown_ValueChanged);
+            this.PrecioNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioNumericUpDown_KeyPress);
             // 
             // Precio
             // 
@@ -311,6 +315,7 @@
             this.AjusteNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.AjusteNumericUpDown.TabIndex = 79;
             this.AjusteNumericUpDown.ValueChanged += new System.EventHandler(this.AjusteNumericUpDown_ValueChanged);
+            this.AjusteNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AjusteNumericUpDown_KeyPress);
             // 
             // Ajuste
             // 
@@ -383,6 +388,7 @@
             this.DescripcionMovimientoTextBox.Name = "DescripcionMovimientoTextBox";
             this.DescripcionMovimientoTextBox.Size = new System.Drawing.Size(100, 22);
             this.DescripcionMovimientoTextBox.TabIndex = 86;
+            this.DescripcionMovimientoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionMovimientoTextBox_KeyPress);
             // 
             // DescripcionMovimiento
             // 
@@ -401,6 +407,7 @@
             this.ValorNumericUpDown.Name = "ValorNumericUpDown";
             this.ValorNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.ValorNumericUpDown.TabIndex = 88;
+            this.ValorNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorNumericUpDown_KeyPress);
             // 
             // Valor
             // 
@@ -690,6 +697,7 @@
             this.Controls.Add(this.IdTrabajo);
             this.Name = "rTrabajos";
             this.Text = "rTrabajos";
+            this.Load += new System.EventHandler(this.RTrabajos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).EndInit();

@@ -176,5 +176,10 @@ namespace BlacksmithManager.Registros
                 CedulaMaskedTextBox.Focus();
             }
         }
+
+        private void EmpleadoIdNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

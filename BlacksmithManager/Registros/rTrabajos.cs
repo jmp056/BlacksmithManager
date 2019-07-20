@@ -16,40 +16,14 @@ namespace BlacksmithManager.Registros
     public partial class rTrabajos : Form
     {
         public List<Movimientos> Detalle;
+
         public rTrabajos()
         {
             InitializeComponent();
             Detalle = new List<Movimientos>();
         }
 
-        private void Limpiar()
-        {
-            TrabajoIdNumericUpDown.Value = 0;
-            FechaCreacionDateTimePicker.Value = DateTime.Now;
-            ClienteComboBox.Text = string.Empty;
-            TipoTrabajoComboBox.Text = string.Empty;
-            DescripcionTrabajoTextBox.Text = string.Empty;
-            PrecioNumericUpDown.Value = 0;
-            DireccionTextBox.Text = string.Empty;
-            EncargadoComboBox.Text = string.Empty;
-            AjusteNumericUpDown.Value = 0;
-            FechaMovimientoDateTimePicker.Value = DateTime.Now;
-            TipoMovimientoComboBox.Text = string.Empty;
-            DescripcionMovimientoTextBox.Text = string.Empty;
-            ValorNumericUpDown.Value = 0;
-            this.Detalle = new List<Movimientos>();
-            CargaGrid();
-            CobradoTextBox.Text = "0";
-            BalanceTextBox.Text = "0";
-            AjustePagadoTextBox.Text = "0";
-            AjustePendienteTextBox.Text = "0";
-            GastosTextBox.Text = "0";
-            GananciaBrutaTextBox.Text = "0";
-            GananciaNetaTextBox.Text = "0";
-            EliminarButton.Enabled = false;
-        }
-
-        private void Calculadora()
+        private void Calculadora() // Funcion que hac el calculo cuando se agrega un movimiento
         {
             if(TipoMovimientoComboBox.Text == "Cobro al Cliente") // Haciendo el calculo de cuando se le cobra al cliente
             {
@@ -76,43 +50,80 @@ namespace BlacksmithManager.Registros
                 GastosTextBox.Text = Convert.ToString(gastos + ValorNumericUpDown.Value);// Sumando a gastos en materiales
             }
 
+        } 
+
+        //Limpiadores -------------------------------------------------------------------------------------------
+        private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
+        {
+            TrabajoIdNumericUpDown.Value = 0;
+            FechaCreacionDateTimePicker.Value = DateTime.Now;
+            ClienteComboBox.Text = string.Empty;
+            TipoTrabajoComboBox.Text = string.Empty;
+            DescripcionTrabajoTextBox.Text = string.Empty;
+            PrecioNumericUpDown.Value = 0;
+            DireccionTextBox.Text = string.Empty;
+            EncargadoComboBox.Text = string.Empty;
+            AjusteNumericUpDown.Value = 0;
+            FechaMovimientoDateTimePicker.Value = DateTime.Now;
+            TipoMovimientoComboBox.Text = string.Empty;
+            DescripcionMovimientoTextBox.Text = string.Empty;
+            ValorNumericUpDown.Value = 0;
+            this.Detalle = new List<Movimientos>();
+            CargaGrid();
+            CobradoTextBox.Text = "0";
+            BalanceTextBox.Text = "0";
+            AjustePagadoTextBox.Text = "0";
+            AjustePendienteTextBox.Text = "0";
+            GastosTextBox.Text = "0";
+            GananciaBrutaTextBox.Text = "0";
+            GananciaNetaTextBox.Text = "0";
+            EliminarButton.Enabled = false;
         }
 
+        private void LimpiarMovimiento() // Funcion encargada de limpiar todos los campos de movimientos
+        {
+            FechaMovimientoDateTimePicker.Value = DateTime.Now;
+            TipoMovimientoComboBox.Text = string.Empty;
+            DescripcionMovimientoTextBox.Text = string.Empty;
+            ValorNumericUpDown.Value = 0;
+        } 
+        //--------------------------------------------------------------------------------------------------------
+
         //Llenadores y cargadores --------------------------------------------------------------------------------
-        private void CargaGrid()
+        private void CargaGrid() // FUncion encargada de cargar el Grid
         {
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = this.Detalle;
-        }
+        } 
 
-        public void LlenaComboBoxClientes()
+        public void LlenaComboBoxClientes() // Funcion encargada de llenar el ComboBox de los clientes 
         {
             RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
             var clientes = new List<Clientes>();
             clientes = Repositorio.GetList(p => true);
             ClienteComboBox.DataSource = clientes;
             ClienteComboBox.DisplayMember = "Nombres";
-        }
+        } 
 
-        public void LlenaComboBoxTipoTrabajo()
+        public void LlenaComboBoxTipoTrabajo() // Funcion encargada de llenar el ComboBox del los tipos de trabajo
         {
             RepositorioBase<TiposTrabajos> Repositorio = new RepositorioBase<TiposTrabajos>();
             var tiposTrabajos = new List<TiposTrabajos>();
             tiposTrabajos = Repositorio.GetList(p => true);
             TipoTrabajoComboBox.DataSource = tiposTrabajos;
             TipoTrabajoComboBox.DisplayMember = "Descripcion";
-        }
+        } 
 
-        public void LlenaComboBoxEmpleados()
+        public void LlenaComboBoxEmpleados() // Funcion encargada de llenar el ComboBox de los empleados
         {
             RepositorioBase<Empleados> Repositorio = new RepositorioBase<Empleados>();
             var empleados = new List<Empleados>();
             empleados = Repositorio.GetList(p => true);
             EncargadoComboBox.DataSource = empleados;
             EncargadoComboBox.DisplayMember = "Nombres";
-        }
+        } 
 
-        private Trabajos LlenaClase()
+        private Trabajos LlenaClase() // Funcion encargada de llenar el objeto
         {
             Trabajos Trabajo = new Trabajos();
             Trabajo.TrabajoId = Convert.ToInt32(TrabajoIdNumericUpDown.Value);
@@ -133,9 +144,9 @@ namespace BlacksmithManager.Registros
             Trabajo.GananciaNeta = Convert.ToDecimal(GananciaNetaTextBox.Text);
             Trabajo.GananciaBruta = Convert.ToDecimal(GananciaBrutaTextBox.Text);
             return Trabajo;
-        }
+        } 
 
-        private void LlenaCampos(Trabajos Trabajo)
+        private void LlenaCampos(Trabajos Trabajo) // Funcion encargada de llenar los campos con los datos de un objeto
         {
             Contexto contexto = new Contexto();
 
@@ -157,12 +168,18 @@ namespace BlacksmithManager.Registros
             GastosTextBox.Text = Convert.ToString(Trabajo.Materiales);
             GananciaBrutaTextBox.Text = Convert.ToString(Trabajo.GananciaBruta);
             GananciaNetaTextBox.Text = Convert.ToString(Trabajo.GananciaNeta);
-        }
+        } 
 
+        private void RTrabajos_Load(object sender, EventArgs e)//Llena todos los ComboBox al cargar el registro de trabajos
+        {
+            LlenaComboBoxClientes();
+            LlenaComboBoxEmpleados();
+            LlenaComboBoxTipoTrabajo();
+        }
         //--------------------------------------------------------------------------------------------------------
 
         //Validaciones -------------------------------------------------------------------------------------------
-        private bool Validar()
+        private bool Validar() //Funcion que valida todo el registro 
         {
             MyErrorProvider.Clear();
             bool paso = true;
@@ -215,9 +232,9 @@ namespace BlacksmithManager.Registros
                 paso = false;
             }
             return paso;
-        }
+        } 
 
-        private bool ValidarDetalle()
+        private bool ValidarDetalle() //Funcion que valida el agregado al detalle
         {
             MyErrorProvider.Clear();
             bool paso = true;
@@ -246,18 +263,41 @@ namespace BlacksmithManager.Registros
                 paso = false;
             }
             return paso;
-        }
+        } 
 
-        private bool ExisteEnLaBaseDeDatos()
+        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en una base de datos
         {
             RepositorioBase<Trabajos> Repositorio = new RepositorioBase<Trabajos>();
             Trabajos Trabajo = Repositorio.Buscar((int)TrabajoIdNumericUpDown.Value);
             return Trabajo != null;
-        }
+        } 
+
+        private bool AvisoDetalle() //Funcion que avisa si hay un descuadre al agregar un movimiento al detalle
+        {
+            bool paso = true;
+            if (TipoMovimientoComboBox.Text == "Cobro al Cliente")
+            {
+                if (ValorNumericUpDown.Value + Convert.ToDecimal(BalanceTextBox.Text) > PrecioNumericUpDown.Value)
+                {
+                    if (MessageBox.Show("Si agrega este cobro, lo cobrado sera mayor al precio del trabajo, desea continuar?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.Cancel)
+                        paso = false;
+                }
+            }//Avisando si al cliente se le cobra de mas
+            if (TipoMovimientoComboBox.Text == "Pago de Ajuste")
+            {
+                if (ValorNumericUpDown.Value + Convert.ToDecimal(AjustePagadoTextBox.Text) > AjusteNumericUpDown.Value)
+                {
+                    if (MessageBox.Show("Si agrega este pago el ajuste pagado superara el ajuste, desea continuar?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.Cancel)
+                        paso = false;
+                }
+            }
+
+            return paso;
+        } 
         //--------------------------------------------------------------------------------------------------------
 
         //Botones -------------------------------------------------------------------------------------------------
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void BuscarButton_Click(object sender, EventArgs e) //Boton buscar
         {
             MyErrorProvider.Clear();
             int id;
@@ -270,31 +310,37 @@ namespace BlacksmithManager.Registros
                 EliminarButton.Enabled = true;
             }
             else
+            {
                 MessageBox.Show("Trabajo no encontrado!");
-        }
+                TrabajoIdNumericUpDown.Focus();
+            }
+        } 
 
-        private void AgregarClienteButton_Click(object sender, EventArgs e)
+        private void AgregarClienteButton_Click(object sender, EventArgs e) //Boton que abre el registro de clientes
         {
             rClientes rC = new rClientes();
             rC.Show();
-        }
+        } 
 
-        private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e)
+        private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e) //Boton que abre el registro de tipos de trabajo
         {
             rTiposTrabajos rTT = new rTiposTrabajos();
             rTT.Show();
-        }
+        } 
 
-        private void AgregarEmpleadoButton_Click(object sender, EventArgs e)
+        private void AgregarEmpleadoButton_Click(object sender, EventArgs e) //Boton que abre el registro de empleados
         {
             rEmpleados rE = new rEmpleados();
             rE.Show();
-        }
+        } 
 
-        private void AgregarMovimientoButton_Click(object sender, EventArgs e)
+        private void AgregarMovimientoButton_Click(object sender, EventArgs e) //Boton que agrega los movimientos
         {
             MyErrorProvider.Clear();
             if (!ValidarDetalle())
+                return;
+
+            if (!AvisoDetalle())
                 return;
             
             RepositorioBase<Movimientos> Repositorio = new RepositorioBase<Movimientos>();
@@ -313,9 +359,10 @@ namespace BlacksmithManager.Registros
             );
             CargaGrid();
             Calculadora();
-        }
+            LimpiarMovimiento();
+        } 
 
-        private void RemoverButton_Click(object sender, EventArgs e)
+        private void RemoverButton_Click(object sender, EventArgs e) //Boton que remueve los movimientos
         {
             if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
             {
@@ -355,15 +402,15 @@ namespace BlacksmithManager.Registros
                 Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
                 CargaGrid();
             }
-        }
+        } 
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void NuevoButton_Click(object sender, EventArgs e) //Boton nuevo 
         {
             Limpiar();
             EliminarButton.Enabled = false;
-        }
+        } 
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click(object sender, EventArgs e) //Boton Guardar
         {
             Trabajos Trabajo;
             bool paso = false;
@@ -396,7 +443,7 @@ namespace BlacksmithManager.Registros
                 MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e) //Boton Eliminar
         {
             if (MessageBox.Show("Esta seguro que desea eliminar este trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
@@ -474,6 +521,63 @@ namespace BlacksmithManager.Registros
         {
             GananciaNetaTextBox.Text = Convert.ToString(Convert.ToDecimal(GananciaBrutaTextBox.Text) - Convert.ToDecimal(GastosTextBox.Text));
         }
+        //---------------------------------------------------------------------------------------------------------------
+
+        //Moviendo el foco al precionar enter en los campos -------------------------------------------------------------
+        private void TrabajoIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)// Del id trabajo al Boton buscar
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                BuscarButton.Focus();
+            }
+        }
+
+        private void DescripcionTrabajoTextBox_KeyPress(object sender, KeyPressEventArgs e)// De la descripcion del trabajo al precio
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                PrecioNumericUpDown.Focus();
+            }
+        }
+
+        private void PrecioNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)// Del precio a la direccion
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                DireccionTextBox.Focus();
+            }
+        }
+
+        private void DireccionTextBox_TextChanged(object sender, EventArgs e)// De la direccion al encargado
+        {
+            EncargadoComboBox.Focus();
+        }
+
+        private void AjusteNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del ajuste al boton guardar
+        {
+            GuardarButton.Focus();
+        }
+
+        private void DescripcionMovimientoTextBox_KeyPress(object sender, KeyPressEventArgs e)//De la descripcion del movimiento al valor
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                ValorNumericUpDown.Focus();
+            }
+        }
+
+        private void ValorNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del valor al boton agregar movimiento
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                AgregarMovimientoButton.Focus();
+            }
+        }
+
+
+
+
+
         //---------------------------------------------------------------------------------------------------------------
     }
 }
