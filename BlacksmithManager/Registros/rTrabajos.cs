@@ -22,6 +22,63 @@ namespace BlacksmithManager.Registros
             Detalle = new List<Movimientos>();
         }
 
+        private void Limpiar()
+        {
+            TrabajoIdNumericUpDown.Value = 0;
+            FechaCreacionDateTimePicker.Value = DateTime.Now;
+            ClienteComboBox.Text = string.Empty;
+            TipoTrabajoComboBox.Text = string.Empty;
+            DescripcionTrabajoTextBox.Text = string.Empty;
+            PrecioNumericUpDown.Value = 0;
+            DireccionTextBox.Text = string.Empty;
+            EncargadoComboBox.Text = string.Empty;
+            AjusteNumericUpDown.Value = 0;
+            FechaMovimientoDateTimePicker.Value = DateTime.Now;
+            TipoMovimientoComboBox.Text = string.Empty;
+            DescripcionMovimientoTextBox.Text = string.Empty;
+            ValorNumericUpDown.Value = 0;
+            this.Detalle = new List<Movimientos>();
+            CargaGrid();
+            CobradoTextBox.Text = "0";
+            BalanceTextBox.Text = "0";
+            AjustePagadoTextBox.Text = "0";
+            AjustePendienteTextBox.Text = "0";
+            GastosTextBox.Text = "0";
+            GananciaBrutaTextBox.Text = "0";
+            GananciaNetaTextBox.Text = "0";
+            EliminarButton.Enabled = false;
+        }
+
+        private void Calculadora()
+        {
+            if(TipoMovimientoComboBox.Text == "Cobro al Cliente") // Haciendo el calculo de cuando se le cobra al cliente
+            {
+                decimal valor;
+
+                valor = Convert.ToDecimal(CobradoTextBox.Text);
+
+                CobradoTextBox.Text = Convert.ToString(valor + ValorNumericUpDown.Value);//Sumando a cobrado
+            }
+            else if (TipoMovimientoComboBox.Text == "Pago de Ajuste") // Haciendo el calculo de cuando se paga al empleado
+            {
+                decimal pagado;
+
+                pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
+
+                AjustePagadoTextBox.Text = Convert.ToString(pagado + ValorNumericUpDown.Value);// Sumando al ajuste pagado
+            }
+            else  // Haciendo el calculo de cuando se compran materiales
+            {
+                decimal gastos;
+
+                gastos = Convert.ToDecimal(GastosTextBox.Text);
+
+                GastosTextBox.Text = Convert.ToString(gastos + ValorNumericUpDown.Value);// Sumando a gastos en materiales
+            }
+
+        }
+
+        //Llenadores y cargadores --------------------------------------------------------------------------------
         private void CargaGrid()
         {
             DetalleDataGridView.DataSource = null;
@@ -53,33 +110,6 @@ namespace BlacksmithManager.Registros
             empleados = Repositorio.GetList(p => true);
             EncargadoComboBox.DataSource = empleados;
             EncargadoComboBox.DisplayMember = "Nombres";
-        }
-
-        private void Limpiar()
-        {
-            TrabajoIdNumericUpDown.Value = 0;
-            FechaCreacionDateTimePicker.Value = DateTime.Now;
-            ClienteComboBox.Text = string.Empty;
-            TipoTrabajoComboBox.Text = string.Empty;
-            DescripcionTrabajoTextBox.Text = string.Empty;
-            PrecioNumericUpDown.Value = 0;
-            DireccionTextBox.Text = string.Empty;
-            EncargadoComboBox.Text = string.Empty;
-            AjusteNumericUpDown.Value = 0;
-            FechaMovimientoDateTimePicker.Value = DateTime.Now;
-            TipoMovimientoComboBox.Text = string.Empty;
-            DescripcionMovimientoTextBox.Text = string.Empty;
-            ValorNumericUpDown.Value = 0;
-            this.Detalle = new List<Movimientos>();
-            CargaGrid();
-            CobradoTextBox.Text = "0";
-            BalanceTextBox.Text = "0";
-            AjustePagadoTextBox.Text = "0";
-            AjustePendienteTextBox.Text = "0";
-            GastosTextBox.Text = "0";
-            GananciaBrutaTextBox.Text = "0";
-            GananciaNetaTextBox.Text = "0";
-            EliminarButton.Enabled = false;
         }
 
         private Trabajos LlenaClase()
@@ -129,34 +159,7 @@ namespace BlacksmithManager.Registros
             GananciaNetaTextBox.Text = Convert.ToString(Trabajo.GananciaNeta);
         }
 
-        private void Calculadora()
-        {
-            if(TipoMovimientoComboBox.Text == "Cobro al Cliente") // Haciendo el calculo de cuando se le cobra al cliente
-            {
-                decimal valor;
-
-                valor = Convert.ToDecimal(CobradoTextBox.Text);
-
-                CobradoTextBox.Text = Convert.ToString(valor + ValorNumericUpDown.Value);//Sumando a cobrado
-            }
-            else if (TipoMovimientoComboBox.Text == "Pago de Ajuste") // Haciendo el calculo de cuando se paga al empleado
-            {
-                decimal pagado;
-
-                pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
-
-                AjustePagadoTextBox.Text = Convert.ToString(pagado + ValorNumericUpDown.Value);// Sumando al ajuste pagado
-            }
-            else  // Haciendo el calculo de cuando se compran materiales
-            {
-                decimal gastos;
-
-                gastos = Convert.ToDecimal(GastosTextBox.Text);
-
-                GastosTextBox.Text = Convert.ToString(gastos + ValorNumericUpDown.Value);// Sumando a gastos en materiales
-            }
-
-        }
+        //--------------------------------------------------------------------------------------------------------
 
         //Validaciones -------------------------------------------------------------------------------------------
         private bool Validar()
