@@ -20,7 +20,7 @@ namespace BlacksmithManager.Registros
             EliminarButton.Enabled = false;
         }
 
-        private void Limpiar()
+        private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
             MyErrorProvider.Clear();
             TipoTrabajoIdNumericUpDown.Value = 0;
@@ -29,7 +29,7 @@ namespace BlacksmithManager.Registros
             EliminarButton.Enabled = false;
         }
 
-        private TiposTrabajos LlenaClase()
+        private TiposTrabajos LlenaClase()  // Funcion encargada de llenar el objeto
         {
             TiposTrabajos TipoTrabajo = new TiposTrabajos();
             TipoTrabajo.TipoTrabajoId = Convert.ToInt32(TipoTrabajoIdNumericUpDown.Value);
@@ -38,25 +38,30 @@ namespace BlacksmithManager.Registros
             return TipoTrabajo;
         }
 
-        private void LlenaCampos(TiposTrabajos TipoTrabajo)
+        private void LlenaCampos(TiposTrabajos TipoTrabajo)  // Funcion encargada de llenar los campos con los datos de un objeto
         {
             TipoTrabajoIdNumericUpDown.Value = TipoTrabajo.TipoTrabajoId;
             DescripcionTextBox.Text = TipoTrabajo.Descripcion;
             FechaCreacionDateTimePicker.Value = TipoTrabajo.FechaCreacion;
         }
 
-        private bool Validar()
+        private bool Validar()  //Funcion que valida todo el registro
         {
             bool paso = true;
             MyErrorProvider.Clear();
             if (DescripcionTextBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(DescripcionTextBox, "El campo \"Descripcion\" no puede estar vacio");
+                MyErrorProvider.SetError(DescripcionTextBox, "El campo \"Descripcion\" no puede estar vacio"); // Validando que la descripcion no este vacia
                 DescripcionTextBox.Focus();
                 paso = false;
             }
-
-            if (FechaCreacionDateTimePicker.Value > DateTime.Now)
+            if (TiposTrabajosBLL.Existe(DescripcionTextBox.Text) == true) // Validando que la descripcon no exista
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "Este tipo de trabajo ya existe");
+                DescripcionTextBox.Focus();
+                paso = false;
+            }
+            if (FechaCreacionDateTimePicker.Value > DateTime.Now) // Validando que la fecha de creacion no sea mayor a la actual
             {
                 MyErrorProvider.SetError(FechaCreacionDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual");
                 FechaCreacionDateTimePicker.Focus();
@@ -66,13 +71,15 @@ namespace BlacksmithManager.Registros
             return paso;
         }
 
-        private bool ExisteEnLaBaseDeDatos()
+        private bool ExisteEnLaBaseDeDatos()  //Funcion que valida si existe en la base de datos
         {
             RepositorioBase<TiposTrabajos> Repositorio = new RepositorioBase<TiposTrabajos>();
             TiposTrabajos TipoTrabajo = Repositorio.Buscar((int)TipoTrabajoIdNumericUpDown.Value);
             return (TipoTrabajo != null);
         }
-        private void BuscarButton_Click(object sender, EventArgs e)
+
+        //Botones -------------------------------------------------------------------------------------------------
+        private void BuscarButton_Click(object sender, EventArgs e) // Boton buscar
         {
             MyErrorProvider.Clear();
             RepositorioBase<TiposTrabajos> Repositorio = new RepositorioBase<TiposTrabajos>();
@@ -91,13 +98,13 @@ namespace BlacksmithManager.Registros
                 MessageBox.Show("Este tipo de trabajo no pudo ser encontrado!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void NuevoButton_Click(object sender, EventArgs e) // Boton Nuevo
         {
             Limpiar();
             EliminarButton.Enabled = false;
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click(object sender, EventArgs e) // Boton Guardar
         {
             RepositorioBase<TiposTrabajos> Repositorio = new RepositorioBase<TiposTrabajos>();
             TiposTrabajos TipoTrabajo;
@@ -114,19 +121,9 @@ namespace BlacksmithManager.Registros
 
             if (TipoTrabajoIdNumericUpDown.Value == 0)
             {
-                if (TiposTrabajosBLL.Existe(DescripcionTextBox.Text) == true)
-                {
-                    MyErrorProvider.SetError(DescripcionTextBox, "Este tipo de trabajo ya existe");
-                    DescripcionTextBox.Focus();
-                    return;
-                }
-                else
-                {
-                    paso = Repositorio.Guardar(TipoTrabajo);
-                    MessageBox.Show("Tipo de trabajo guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                }
-
+                paso = Repositorio.Guardar(TipoTrabajo);
+                MessageBox.Show("Tipo de trabajo guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
             {
@@ -154,7 +151,7 @@ namespace BlacksmithManager.Registros
                 MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e) // Boton Eliminar
         {
             if (MessageBox.Show("Esta seguro que desea eliminar este tipo de trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
@@ -175,7 +172,32 @@ namespace BlacksmithManager.Registros
                 return;
             }
         }
+        //--------------------------------------------------------------------------------------------------------
 
+        //Moviendo el foco al precionar enter en los campos -------------------------------------------------------------
+        private void TipoTrabajoIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e) // Del Id al boton buscar
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                BuscarButton.Focus();
+            }
+        }
 
+        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e) // De la descripcion a la fecha de creacion
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                FechaCreacionDateTimePicker.Focus();
+            }
+        }
+
+        private void FechaCreacionDateTimePicker_KeyPress(object sender, KeyPressEventArgs e) // De la fecha de creacion al boton guardar
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                GuardarButton.Focus();
+            }
+        }
+        //--------------------------------------------------------------------------------------------------------
     }
 }

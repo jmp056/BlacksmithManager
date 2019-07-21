@@ -13,7 +13,7 @@ namespace BlacksmithManager.Registros
             EliminarButton.Enabled = false;
         }
 
-        private void Limpiar()  // Funcion encargada de limpiar todos los campos del registro
+        private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
             MyErrorProvider.Clear();
             EmpleadoIdNumericUpDown.Value = 0;
@@ -99,7 +99,7 @@ namespace BlacksmithManager.Registros
             return paso;
         }
 
-        private bool ExisteEnLaBaseDeDatos()  //Funcion que valida si existe en la base de datos
+        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en la base de datos
         {
             RepositorioBase<Empleados> Repositorio = new RepositorioBase<Empleados>();
             Empleados Empleado = Repositorio.Buscar((int)EmpleadoIdNumericUpDown.Value);
@@ -107,7 +107,7 @@ namespace BlacksmithManager.Registros
         }
 
         //Botones -------------------------------------------------------------------------------------------------
-        private void BuscarButton_Click(object sender, EventArgs e)  // Boton buscar
+        private void BuscarButton_Click(object sender, EventArgs e) // Boton buscar
         {
             MyErrorProvider.Clear();
             RepositorioBase<Empleados> Repositorio = new RepositorioBase<Empleados>();

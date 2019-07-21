@@ -63,6 +63,7 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(279, 22);
             this.DescripcionTextBox.TabIndex = 56;
+            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // TipoTrabajoIdNumericUpDown
             // 
@@ -72,6 +73,7 @@
             this.TipoTrabajoIdNumericUpDown.Name = "TipoTrabajoIdNumericUpDown";
             this.TipoTrabajoIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.TipoTrabajoIdNumericUpDown.TabIndex = 55;
+            this.TipoTrabajoIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TipoTrabajoIdNumericUpDown_KeyPress);
             // 
             // Descripcion
             // 
@@ -105,6 +107,7 @@
             this.FechaCreacionDateTimePicker.Name = "FechaCreacionDateTimePicker";
             this.FechaCreacionDateTimePicker.Size = new System.Drawing.Size(98, 22);
             this.FechaCreacionDateTimePicker.TabIndex = 58;
+            this.FechaCreacionDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechaCreacionDateTimePicker_KeyPress);
             // 
             // EliminarButton
             // 
