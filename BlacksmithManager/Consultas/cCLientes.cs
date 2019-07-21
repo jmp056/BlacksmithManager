@@ -75,7 +75,7 @@ namespace BlacksmithManager.Consultas
                 ConsultaDataGridView.DataSource = null;
                 ConsultaDataGridView.DataSource = Listado;
                 ListaClientes = Listado;
-            }
+        }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {

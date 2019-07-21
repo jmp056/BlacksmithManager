@@ -165,12 +165,15 @@
             this.FiltrarComboBox.Name = "FiltrarComboBox";
             this.FiltrarComboBox.Size = new System.Drawing.Size(119, 24);
             this.FiltrarComboBox.TabIndex = 27;
+            this.FiltrarComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrarComboBox_SelectedIndexChanged);
             // 
             // CriterioComboBox
             // 
+            this.CriterioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CriterioComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CriterioComboBox.FormattingEnabled = true;
             this.CriterioComboBox.Items.AddRange(new object[] {
+            "Todos",
             "Administrador",
             "Supervisor",
             "Soporte",
@@ -179,7 +182,6 @@
             this.CriterioComboBox.Name = "CriterioComboBox";
             this.CriterioComboBox.Size = new System.Drawing.Size(119, 24);
             this.CriterioComboBox.TabIndex = 34;
-            this.CriterioComboBox.Text = "Seleccione";
             // 
             // ImprimirButton
             // 

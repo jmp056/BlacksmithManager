@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -10,27 +11,20 @@ namespace Entidades
         [Key]
         public int TrabajoId { get; set; }
         public DateTime FechaInicio { get; set; }
-
-
         public int ClienteId { get; set; }
         [ForeignKey("ClienteId")]
         public virtual Clientes Cliente{ get; set; }
-
-
         public int TipoTrabajoId { get; set; }
         [ForeignKey("TipoTrabajoId")]
         public virtual TiposTrabajos TipoTrabajo { get; set; }
-
         public string Descripcion { get; set; }
         public string Direccion { get; set; }
         public decimal Precio { get; set; }
-
-
         public int EmpleadoId { get; set; }
         [ForeignKey("EmpleadoId")]
         public virtual Empleados Empleado { get; set; }
-
         public decimal Ajuste { get; set; }
+        [Browsable(false)]
         public virtual List<Movimientos> Detalle { get; set; }
         public decimal Cobrado { get; set; }
         public decimal Balance { get; set; }
