@@ -40,6 +40,7 @@
             this.consultarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTiposDeTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,8 @@
             this.consultarUsuariosToolStripMenuItem,
             this.consultarClientesToolStripMenuItem,
             this.consultaEmpleadosToolStripMenuItem,
-            this.consultarTiposDeTrabajosToolStripMenuItem});
+            this.consultarTiposDeTrabajosToolStripMenuItem,
+            this.consultarTrabajosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -140,6 +142,13 @@
             this.consultarTiposDeTrabajosToolStripMenuItem.Text = "Consultar Tipos de Trabajos";
             this.consultarTiposDeTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTiposDeTrabajosToolStripMenuItem_Click);
             // 
+            // consultarTrabajosToolStripMenuItem
+            // 
+            this.consultarTrabajosToolStripMenuItem.Name = "consultarTrabajosToolStripMenuItem";
+            this.consultarTrabajosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.consultarTrabajosToolStripMenuItem.Text = "Consultar  Trabajos";
+            this.consultarTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTrabajosToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultarClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaEmpleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarTiposDeTrabajosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarTrabajosToolStripMenuItem;
     }
 }
 

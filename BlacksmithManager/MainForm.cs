@@ -57,7 +57,7 @@ namespace BlacksmithManager
 
         private void ConsultarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cCLientes cC = new cCLientes();
+            cClientes cC = new cClientes();
             cC.ShowDialog();
         }
 
@@ -71,6 +71,12 @@ namespace BlacksmithManager
         {
             cTiposTrabajos cTT = new cTiposTrabajos();
             cTT.ShowDialog();
+        }
+
+        private void ConsultarTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cTrabajos cT = new cTrabajos();
+            cT.ShowDialog();
         }
     }
 }

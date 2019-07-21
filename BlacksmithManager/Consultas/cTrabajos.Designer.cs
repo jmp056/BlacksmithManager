@@ -40,10 +40,16 @@
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.Filtro = new System.Windows.Forms.Label();
-            this.Criterio = new System.Windows.Forms.Label();
+            this.CriterioLabel = new System.Windows.Forms.Label();
             this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
+            this.ALabel = new System.Windows.Forms.Label();
+            this.Delabel = new System.Windows.Forms.Label();
+            this.DeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ANumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FiltroFechaTroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ANumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // ImprimirButton
@@ -164,15 +170,15 @@
             this.Filtro.TabIndex = 47;
             this.Filtro.Text = "Filtro";
             // 
-            // Criterio
+            // CriterioLabel
             // 
-            this.Criterio.AutoSize = true;
-            this.Criterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Criterio.Location = new System.Drawing.Point(12, 93);
-            this.Criterio.Name = "Criterio";
-            this.Criterio.Size = new System.Drawing.Size(58, 16);
-            this.Criterio.TabIndex = 46;
-            this.Criterio.Text = "Criterio";
+            this.CriterioLabel.AutoSize = true;
+            this.CriterioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CriterioLabel.Location = new System.Drawing.Point(12, 93);
+            this.CriterioLabel.Name = "CriterioLabel";
+            this.CriterioLabel.Size = new System.Drawing.Size(58, 16);
+            this.CriterioLabel.TabIndex = 46;
+            this.CriterioLabel.Text = "Criterio";
             // 
             // FiltrarComboBox
             // 
@@ -182,34 +188,118 @@
             this.FiltrarComboBox.Items.AddRange(new object[] {
             "Todo",
             "Id",
-            "Nombres",
-            "Celular",
-            "Telefono",
+            "Cliente",
+            "Trabajo",
+            "Descripcion",
+            "Precio",
             "Direccion",
-            "Email"});
+            "Encargado",
+            "Ajuste",
+            "Cobrado",
+            "Balance",
+            "Ajuste pagado",
+            "Ajuste pendiente",
+            "Gastos",
+            "Ganancia Bruta",
+            "Ganancia neta"});
             this.FiltrarComboBox.Location = new System.Drawing.Point(92, 40);
             this.FiltrarComboBox.Name = "FiltrarComboBox";
             this.FiltrarComboBox.Size = new System.Drawing.Size(119, 24);
             this.FiltrarComboBox.TabIndex = 45;
+            this.FiltrarComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrarComboBox_SelectedIndexChanged);
+            // 
+            // ALabel
+            // 
+            this.ALabel.AutoSize = true;
+            this.ALabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ALabel.Location = new System.Drawing.Point(128, 95);
+            this.ALabel.Name = "ALabel";
+            this.ALabel.Size = new System.Drawing.Size(18, 16);
+            this.ALabel.TabIndex = 53;
+            this.ALabel.Text = "A";
+            // 
+            // Delabel
+            // 
+            this.Delabel.AutoSize = true;
+            this.Delabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delabel.Location = new System.Drawing.Point(12, 93);
+            this.Delabel.Name = "Delabel";
+            this.Delabel.Size = new System.Drawing.Size(28, 16);
+            this.Delabel.TabIndex = 54;
+            this.Delabel.Text = "De";
+            // 
+            // DeNumericUpDown
+            // 
+            this.DeNumericUpDown.DecimalPlaces = 2;
+            this.DeNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeNumericUpDown.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.DeNumericUpDown.Location = new System.Drawing.Point(42, 91);
+            this.DeNumericUpDown.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.DeNumericUpDown.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
+            this.DeNumericUpDown.Name = "DeNumericUpDown";
+            this.DeNumericUpDown.Size = new System.Drawing.Size(80, 22);
+            this.DeNumericUpDown.TabIndex = 55;
+            // 
+            // ANumericUpDown
+            // 
+            this.ANumericUpDown.DecimalPlaces = 2;
+            this.ANumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ANumericUpDown.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.ANumericUpDown.Location = new System.Drawing.Point(152, 91);
+            this.ANumericUpDown.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.ANumericUpDown.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
+            this.ANumericUpDown.Name = "ANumericUpDown";
+            this.ANumericUpDown.Size = new System.Drawing.Size(70, 22);
+            this.ANumericUpDown.TabIndex = 56;
             // 
             // cTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(618, 450);
+            this.Controls.Add(this.ANumericUpDown);
+            this.Controls.Add(this.DeNumericUpDown);
+            this.Controls.Add(this.Delabel);
+            this.Controls.Add(this.ALabel);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.FiltroFechaTroupBox);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ConsultaDataGridView);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.Filtro);
-            this.Controls.Add(this.Criterio);
+            this.Controls.Add(this.CriterioLabel);
             this.Controls.Add(this.FiltrarComboBox);
             this.Name = "cTrabajos";
             this.Text = "cTrabajos";
             this.FiltroFechaTroupBox.ResumeLayout(false);
             this.FiltroFechaTroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ANumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,7 +318,11 @@
         private System.Windows.Forms.DataGridView ConsultaDataGridView;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Label Filtro;
-        private System.Windows.Forms.Label Criterio;
+        private System.Windows.Forms.Label CriterioLabel;
         private System.Windows.Forms.ComboBox FiltrarComboBox;
+        private System.Windows.Forms.Label ALabel;
+        private System.Windows.Forms.Label Delabel;
+        private System.Windows.Forms.NumericUpDown DeNumericUpDown;
+        private System.Windows.Forms.NumericUpDown ANumericUpDown;
     }
 }

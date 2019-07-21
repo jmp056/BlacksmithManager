@@ -13,15 +13,18 @@ namespace Entidades
         public DateTime FechaInicio { get; set; }
         public int ClienteId { get; set; }
         [ForeignKey("ClienteId")]
+        [Browsable(false)]
         public virtual Clientes Cliente{ get; set; }
         public int TipoTrabajoId { get; set; }
         [ForeignKey("TipoTrabajoId")]
+        [Browsable(false)]
         public virtual TiposTrabajos TipoTrabajo { get; set; }
         public string Descripcion { get; set; }
         public string Direccion { get; set; }
         public decimal Precio { get; set; }
         public int EmpleadoId { get; set; }
         [ForeignKey("EmpleadoId")]
+        [Browsable(false)]
         public virtual Empleados Empleado { get; set; }
         public decimal Ajuste { get; set; }
         [Browsable(false)]

@@ -1,6 +1,6 @@
 ﻿namespace BlacksmithManager.Consultas
 {
-    partial class cCLientes
+    partial class cClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cCLientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cClientes));
             this.FiltroFechaTroupBox = new System.Windows.Forms.GroupBox();
             this.Desde = new System.Windows.Forms.Label();
             this.FiltrarFechaCheckBox = new System.Windows.Forms.CheckBox();

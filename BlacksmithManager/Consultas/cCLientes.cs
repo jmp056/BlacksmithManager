@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace BlacksmithManager.Consultas
 {
-    public partial class cCLientes : Form
+    public partial class cClientes : Form
     {
         private List<Clientes> ListaClientes;
-        public cCLientes()
+        public cClientes()
         {
             InitializeComponent();
         }
