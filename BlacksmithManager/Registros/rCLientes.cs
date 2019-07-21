@@ -73,6 +73,24 @@ namespace BlacksmithManager.Registros
                 CelularMaskedTextBox.Focus();
                 paso = false;
             }
+            if(TelefonoMaskedTextBox.Text.Contains("0") ||
+               TelefonoMaskedTextBox.Text.Contains("1") ||
+               TelefonoMaskedTextBox.Text.Contains("2") ||
+               TelefonoMaskedTextBox.Text.Contains("3") ||
+               TelefonoMaskedTextBox.Text.Contains("4") ||
+               TelefonoMaskedTextBox.Text.Contains("5") ||
+               TelefonoMaskedTextBox.Text.Contains("6") ||
+               TelefonoMaskedTextBox.Text.Contains("7") ||
+               TelefonoMaskedTextBox.Text.Contains("8") ||
+               TelefonoMaskedTextBox.Text.Contains("9"))// Validando el numero de telefono, si tiene
+            {
+                if (TelefonoMaskedTextBox.Text.Trim().Length < 12)
+                {
+                    MyErrorProvider.SetError(TelefonoMaskedTextBox, "Ingrese un numero de celular valido"); //Validando que la fecha no se mayor a la fecha actual
+                    TelefonoMaskedTextBox.Focus();
+                    paso = false;
+                }
+            }
             if (FechaDeIngresoDateTimePicker.Value > DateTime.Now)
             {
                 MyErrorProvider.SetError(FechaDeIngresoDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual"); //Validando que la fecha no se mayor a la fecha actual
@@ -89,7 +107,8 @@ namespace BlacksmithManager.Registros
             return (Cliente != null);
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        //Botones -------------------------------------------------------------------------------------------------
+        private void BuscarButton_Click(object sender, EventArgs e) // Boton buscar
         {
             MyErrorProvider.Clear();
             RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
@@ -112,14 +131,14 @@ namespace BlacksmithManager.Registros
 
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void NuevoButton_Click(object sender, EventArgs e) // Boton Nuevo
         {
             Limpiar();
             EliminarButton.Enabled = false;
             ClienteIdNumericUpDown.Focus();
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click(object sender, EventArgs e) // Boton Guardar
         {
             RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
             Clientes Cliente;
@@ -153,7 +172,7 @@ namespace BlacksmithManager.Registros
                 MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e) // Boton Eliminar
         {
             if (MessageBox.Show("Esta seguro que desea eliminar este cliente?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
@@ -174,10 +193,64 @@ namespace BlacksmithManager.Registros
                 return;
             }
         }
+        //--------------------------------------------------------------------------------------------------------
 
-        private void ClienteIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        //Moviendo el foco al precionar enter en los campos -------------------------------------------------------------
+        private void ClienteIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e) // Del Id del cliente al boton buscar
         {
-
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                BuscarButton.Focus();
+            }
         }
+
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                CelularMaskedTextBox.Focus();
+            }
+        }
+
+        private void CelularMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                TelefonoMaskedTextBox.Focus();
+            }
+        }
+
+        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                FechaDeIngresoDateTimePicker.Focus();
+            }
+        }
+
+        private void FechaDeIngresoDateTimePicker_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                DireccionTextBox.Focus();
+            }
+        }
+
+        private void DireccionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                EmailTextBox.Focus();
+            }
+        }
+
+        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                GuardarButton.Focus();
+            }
+        }
+        //---------------------------------------------------------------------------------------------------------------
     }
 }

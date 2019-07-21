@@ -60,6 +60,7 @@
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.TelefonoMaskedTextBox.TabIndex = 80;
+            this.TelefonoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoMaskedTextBox_KeyPress);
             // 
             // Telefono
             // 
@@ -80,6 +81,7 @@
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.CelularMaskedTextBox.TabIndex = 78;
+            this.CelularMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularMaskedTextBox_KeyPress);
             // 
             // Celular
             // 
@@ -113,6 +115,7 @@
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
             this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(105, 22);
             this.FechaDeIngresoDateTimePicker.TabIndex = 75;
+            this.FechaDeIngresoDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechaDeIngresoDateTimePicker_KeyPress);
             // 
             // Email
             // 
@@ -144,6 +147,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(279, 22);
             this.EmailTextBox.TabIndex = 70;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // NombresTextBox
             // 
@@ -153,6 +157,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(279, 22);
             this.NombresTextBox.TabIndex = 69;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // ClienteIdNumericUpDown
             // 
@@ -258,6 +263,7 @@
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(279, 22);
             this.DireccionTextBox.TabIndex = 84;
+            this.DireccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DireccionTextBox_KeyPress);
             // 
             // rClientes
             // 

@@ -3,12 +3,6 @@ using DAL;
 using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlacksmithManager.Registros
@@ -569,7 +563,10 @@ namespace BlacksmithManager.Registros
 
         private void DescripcionMovimientoTextBox_KeyPress(object sender, KeyPressEventArgs e)//De la descripcion del movimiento al valor
         {
-            ValorNumericUpDown.Focus();
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                ValorNumericUpDown.Focus();
+            }
         }
 
         private void ValorNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del valor al boton agregar movimiento
