@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace BlacksmithManager.Reportes
 {
-    public partial class UsuariosReportViewer : Form
+    public partial class ReportViewer : Form
     {
         List<Usuarios> ListaUsuarios = new List<Usuarios>();
-        public UsuariosReportViewer(List<Usuarios> usuarios)
+        public ReportViewer(List<Usuarios> usuarios)
         {
             this.ListaUsuarios = usuarios;
             InitializeComponent();

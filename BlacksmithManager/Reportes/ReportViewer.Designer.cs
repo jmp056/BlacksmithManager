@@ -1,6 +1,6 @@
 ﻿namespace BlacksmithManager.Reportes
 {
-    partial class UsuariosReportViewer
+    partial class ReportViewer
     {
         /// <summary>
         /// Required designer variable.

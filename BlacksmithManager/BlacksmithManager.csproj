@@ -128,17 +128,23 @@
     <Compile Include="Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ListadoUsuarios.cs">
+    <Compile Include="Reportes\ListadoClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
+      <DependentUpon>ListadoClientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\UsuariosReportViewer.cs">
+    <Compile Include="Reportes\Modelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\UsuariosReportViewer.Designer.cs">
-      <DependentUpon>UsuariosReportViewer.cs</DependentUpon>
+    <Compile Include="Reportes\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas\cCLientes.resx">
       <DependentUpon>cCLientes.cs</DependentUpon>
@@ -183,12 +189,16 @@
     <EmbeddedResource Include="Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ListadoUsuarios.rpt">
+    <EmbeddedResource Include="Reportes\ListadoClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
+      <LastGenOutput>ListadoClientes.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\UsuariosReportViewer.resx">
-      <DependentUpon>UsuariosReportViewer.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\Modelo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Modelo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

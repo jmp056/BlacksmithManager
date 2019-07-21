@@ -16,14 +16,14 @@ namespace BlacksmithManager.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ListadoUsuarios : ReportClass {
+    public class Modelo : ReportClass {
         
-        public ListadoUsuarios() {
+        public Modelo() {
         }
         
         public override string ResourceName {
             get {
-                return "ListadoUsuarios.rpt";
+                return "Modelo.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BlacksmithManager.Reportes {
         
         public override string FullResourceName {
             get {
-                return "BlacksmithManager.Reportes.ListadoUsuarios.rpt";
+                return "BlacksmithManager.Reportes.Modelo.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace BlacksmithManager.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedListadoUsuarios : Component, ICachedReport {
+    public class CachedModelo : Component, ICachedReport {
         
-        public CachedListadoUsuarios() {
+        public CachedModelo() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace BlacksmithManager.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ListadoUsuarios rpt = new ListadoUsuarios();
+            Modelo rpt = new Modelo();
             rpt.Site = this.Site;
             return rpt;
         }

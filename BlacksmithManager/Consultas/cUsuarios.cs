@@ -89,7 +89,7 @@ namespace BlacksmithManager.Consultas
                 MessageBox.Show("No hay datos para imprimir");
                 return;
             }
-            UsuariosReportViewer usuariosReportViewer = new UsuariosReportViewer(ListaUsuarios);
+            ReportViewer usuariosReportViewer = new ReportViewer(ListaUsuarios);
             usuariosReportViewer.ShowDialog();
         }
 
