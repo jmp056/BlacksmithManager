@@ -60,5 +60,17 @@ namespace BlacksmithManager
             cCLientes cC = new cCLientes();
             cC.ShowDialog();
         }
+
+        private void ConsultaEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cEmpleados cE = new cEmpleados();
+            cE.ShowDialog();
+        }
+
+        private void ConsultarTiposDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cTiposTrabajos cTT = new cTiposTrabajos();
+            cTT.ShowDialog();
+        }
     }
 }

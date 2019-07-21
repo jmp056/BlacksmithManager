@@ -28,12 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cTiposTrabajos));
+            this.ImprimirButton = new System.Windows.Forms.Button();
+            this.FiltroFechaTroupBox = new System.Windows.Forms.GroupBox();
+            this.Desde = new System.Windows.Forms.Label();
+            this.FiltrarFechaCheckBox = new System.Windows.Forms.CheckBox();
+            this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Hasta = new System.Windows.Forms.Label();
+            this.ConsultarButton = new System.Windows.Forms.Button();
+            this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
+            this.CriterioTextBox = new System.Windows.Forms.TextBox();
+            this.Filtro = new System.Windows.Forms.Label();
+            this.Criterio = new System.Windows.Forms.Label();
+            this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
+            this.FiltroFechaTroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ImprimirButton
+            // 
+            this.ImprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
+            this.ImprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImprimirButton.Location = new System.Drawing.Point(457, 85);
+            this.ImprimirButton.Name = "ImprimirButton";
+            this.ImprimirButton.Size = new System.Drawing.Size(105, 35);
+            this.ImprimirButton.TabIndex = 52;
+            this.ImprimirButton.Text = "Imprimir";
+            this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
+            // 
+            // FiltroFechaTroupBox
+            // 
+            this.FiltroFechaTroupBox.Controls.Add(this.Desde);
+            this.FiltroFechaTroupBox.Controls.Add(this.FiltrarFechaCheckBox);
+            this.FiltroFechaTroupBox.Controls.Add(this.HastaDateTimePicker);
+            this.FiltroFechaTroupBox.Controls.Add(this.DesdeDateTimePicker);
+            this.FiltroFechaTroupBox.Controls.Add(this.Hasta);
+            this.FiltroFechaTroupBox.Location = new System.Drawing.Point(232, 11);
+            this.FiltroFechaTroupBox.Name = "FiltroFechaTroupBox";
+            this.FiltroFechaTroupBox.Size = new System.Drawing.Size(203, 126);
+            this.FiltroFechaTroupBox.TabIndex = 51;
+            this.FiltroFechaTroupBox.TabStop = false;
+            // 
+            // Desde
+            // 
+            this.Desde.AutoSize = true;
+            this.Desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Desde.Location = new System.Drawing.Point(10, 55);
+            this.Desde.Name = "Desde";
+            this.Desde.Size = new System.Drawing.Size(54, 16);
+            this.Desde.TabIndex = 24;
+            this.Desde.Text = "Desde";
+            // 
+            // FiltrarFechaCheckBox
+            // 
+            this.FiltrarFechaCheckBox.AutoSize = true;
+            this.FiltrarFechaCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FiltrarFechaCheckBox.Location = new System.Drawing.Point(10, 20);
+            this.FiltrarFechaCheckBox.Name = "FiltrarFechaCheckBox";
+            this.FiltrarFechaCheckBox.Size = new System.Drawing.Size(187, 20);
+            this.FiltrarFechaCheckBox.TabIndex = 25;
+            this.FiltrarFechaCheckBox.Text = "Añadir el filtro de fecha";
+            this.FiltrarFechaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // HastaDateTimePicker
+            // 
+            this.HastaDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.HastaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(75, 87);
+            this.HastaDateTimePicker.Name = "HastaDateTimePicker";
+            this.HastaDateTimePicker.Size = new System.Drawing.Size(110, 22);
+            this.HastaDateTimePicker.TabIndex = 21;
+            // 
+            // DesdeDateTimePicker
+            // 
+            this.DesdeDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.DesdeDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(75, 52);
+            this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
+            this.DesdeDateTimePicker.Size = new System.Drawing.Size(110, 22);
+            this.DesdeDateTimePicker.TabIndex = 22;
+            // 
+            // Hasta
+            // 
+            this.Hasta.AutoSize = true;
+            this.Hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hasta.Location = new System.Drawing.Point(10, 90);
+            this.Hasta.Name = "Hasta";
+            this.Hasta.Size = new System.Drawing.Size(49, 16);
+            this.Hasta.TabIndex = 23;
+            this.Hasta.Text = "Hasta";
+            // 
+            // ConsultarButton
+            // 
+            this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarButton.Image = global::BlacksmithManager.Properties.Resources.BotonConsultarEstudiantes;
+            this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultarButton.Location = new System.Drawing.Point(457, 37);
+            this.ConsultarButton.Name = "ConsultarButton";
+            this.ConsultarButton.Size = new System.Drawing.Size(105, 35);
+            this.ConsultarButton.TabIndex = 50;
+            this.ConsultarButton.Text = "     Consultar";
+            this.ConsultarButton.UseVisualStyleBackColor = true;
+            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
+            // 
+            // ConsultaDataGridView
+            // 
+            this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultaDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(12, 151);
+            this.ConsultaDataGridView.Name = "ConsultaDataGridView";
+            this.ConsultaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(550, 150);
+            this.ConsultaDataGridView.TabIndex = 49;
+            // 
+            // CriterioTextBox
+            // 
+            this.CriterioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CriterioTextBox.Location = new System.Drawing.Point(92, 93);
+            this.CriterioTextBox.Name = "CriterioTextBox";
+            this.CriterioTextBox.Size = new System.Drawing.Size(120, 22);
+            this.CriterioTextBox.TabIndex = 48;
+            // 
+            // Filtro
+            // 
+            this.Filtro.AutoSize = true;
+            this.Filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filtro.Location = new System.Drawing.Point(12, 46);
+            this.Filtro.Name = "Filtro";
+            this.Filtro.Size = new System.Drawing.Size(43, 16);
+            this.Filtro.TabIndex = 47;
+            this.Filtro.Text = "Filtro";
+            // 
+            // Criterio
+            // 
+            this.Criterio.AutoSize = true;
+            this.Criterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Criterio.Location = new System.Drawing.Point(12, 96);
+            this.Criterio.Name = "Criterio";
+            this.Criterio.Size = new System.Drawing.Size(58, 16);
+            this.Criterio.TabIndex = 46;
+            this.Criterio.Text = "Criterio";
+            // 
+            // FiltrarComboBox
+            // 
+            this.FiltrarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltrarComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FiltrarComboBox.FormattingEnabled = true;
+            this.FiltrarComboBox.Items.AddRange(new object[] {
+            "Todo",
+            "Id",
+            "Descripcion"});
+            this.FiltrarComboBox.Location = new System.Drawing.Point(92, 43);
+            this.FiltrarComboBox.Name = "FiltrarComboBox";
+            this.FiltrarComboBox.Size = new System.Drawing.Size(119, 24);
+            this.FiltrarComboBox.TabIndex = 45;
+            // 
+            // cTiposTrabajos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ImprimirButton);
+            this.Controls.Add(this.FiltroFechaTroupBox);
+            this.Controls.Add(this.ConsultarButton);
+            this.Controls.Add(this.ConsultaDataGridView);
+            this.Controls.Add(this.CriterioTextBox);
+            this.Controls.Add(this.Filtro);
+            this.Controls.Add(this.Criterio);
+            this.Controls.Add(this.FiltrarComboBox);
+            this.Name = "cTiposTrabajos";
             this.Text = "cTiposTrabajos";
+            this.FiltroFechaTroupBox.ResumeLayout(false);
+            this.FiltroFechaTroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button ImprimirButton;
+        private System.Windows.Forms.GroupBox FiltroFechaTroupBox;
+        private System.Windows.Forms.Label Desde;
+        private System.Windows.Forms.CheckBox FiltrarFechaCheckBox;
+        private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
+        private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
+        private System.Windows.Forms.Label Hasta;
+        private System.Windows.Forms.Button ConsultarButton;
+        private System.Windows.Forms.DataGridView ConsultaDataGridView;
+        private System.Windows.Forms.TextBox CriterioTextBox;
+        private System.Windows.Forms.Label Filtro;
+        private System.Windows.Forms.Label Criterio;
+        private System.Windows.Forms.ComboBox FiltrarComboBox;
     }
 }

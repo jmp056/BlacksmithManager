@@ -143,6 +143,12 @@
     <EmbeddedResource Include="Consultas\cCLientes.resx">
       <DependentUpon>cCLientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cEmpleados.resx">
+      <DependentUpon>cEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cTiposTrabajos.resx">
+      <DependentUpon>cTiposTrabajos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cUsuarios.resx">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </EmbeddedResource>

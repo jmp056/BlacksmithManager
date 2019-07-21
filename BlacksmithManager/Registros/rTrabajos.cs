@@ -576,6 +576,7 @@ namespace BlacksmithManager.Registros
                 AgregarMovimientoButton.Focus();
             }
         }
+
         //---------------------------------------------------------------------------------------------------------------
     }
 }
