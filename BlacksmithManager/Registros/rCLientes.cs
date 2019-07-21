@@ -67,7 +67,7 @@ namespace BlacksmithManager.Registros
                 NombresTextBox.Focus();
                 paso = false;
             }
-            if (CelularMaskedTextBox.Text.Trim().Length < 12 || CelularMaskedTextBox.Text.Contains(" ")) //Validando que el celular no este vacio o no este completo
+            if (CelularMaskedTextBox.Text.Trim().Length < 12 || CelularMaskedTextBox.Text.Contains(" ")) //Validando que el celular no este vacio o incompleto
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox, "Ingrese un numero de celular valido");
                 CelularMaskedTextBox.Focus();
@@ -91,7 +91,7 @@ namespace BlacksmithManager.Registros
                     paso = false;
                 }
             }
-            if (FechaDeIngresoDateTimePicker.Value > DateTime.Now)
+            if (FechaDeIngresoDateTimePicker.Value > DateTime.Now) // Valinando que la fecha de ingreso no sea mayor a la actual
             {
                 MyErrorProvider.SetError(FechaDeIngresoDateTimePicker, "La fecha de ingreso no puede ser mayor a la fecha actual"); //Validando que la fecha no se mayor a la fecha actual
                 FechaDeIngresoDateTimePicker.Focus();
@@ -204,7 +204,7 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e) // Del nombre al celular
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -212,7 +212,7 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void CelularMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void CelularMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e) // Del celular al telefono
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -220,7 +220,7 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e) // Del telefono a la fecha de ingreso
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -228,7 +228,7 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void FechaDeIngresoDateTimePicker_KeyPress(object sender, KeyPressEventArgs e)
+        private void FechaDeIngresoDateTimePicker_KeyPress(object sender, KeyPressEventArgs e) // De la Fecha de Ingreso a la direccion
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -236,7 +236,7 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void DireccionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void DireccionTextBox_KeyPress(object sender, KeyPressEventArgs e) // De la direccion al Email
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -244,7 +244,7 @@ namespace BlacksmithManager.Registros
             }
         }
 
-        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e) // Del Email al boton guardar
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {

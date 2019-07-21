@@ -82,6 +82,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(279, 22);
             this.EmailTextBox.TabIndex = 51;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // NombresTextBox
             // 
@@ -101,7 +102,7 @@
             this.EmpleadoIdNumericUpDown.Name = "EmpleadoIdNumericUpDown";
             this.EmpleadoIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.EmpleadoIdNumericUpDown.TabIndex = 49;
-            this.EmpleadoIdNumericUpDown.ValueChanged += new System.EventHandler(this.EmpleadoIdNumericUpDown_ValueChanged);
+            this.EmpleadoIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmpleadoIdNumericUpDown_KeyPress);
             // 
             // Nombres
             // 
@@ -133,6 +134,7 @@
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.CedulaMaskedTextBox.TabIndex = 55;
+            this.CedulaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaMaskedTextBox_KeyPress);
             // 
             // label1
             // 
@@ -155,6 +157,7 @@
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
             this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(98, 22);
             this.FechaDeIngresoDateTimePicker.TabIndex = 56;
+            this.FechaDeIngresoDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechaDeIngresoDateTimePicker_KeyPress);
             // 
             // CelularMaskedTextBox
             // 
@@ -164,6 +167,7 @@
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.CelularMaskedTextBox.TabIndex = 59;
+            this.CelularMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularMaskedTextBox_KeyPress);
             // 
             // Celular
             // 
@@ -210,6 +214,7 @@
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.TelefonoMaskedTextBox.TabIndex = 62;
+            this.TelefonoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoMaskedTextBox_KeyPress);
             // 
             // EliminarButton
             // 
