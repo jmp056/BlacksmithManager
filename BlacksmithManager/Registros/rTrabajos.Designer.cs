@@ -379,8 +379,11 @@
             // DetalleDataGridView
             // 
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DetalleDataGridView.Location = new System.Drawing.Point(30, 330);
+            this.DetalleDataGridView.MultiSelect = false;
             this.DetalleDataGridView.Name = "DetalleDataGridView";
+            this.DetalleDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DetalleDataGridView.Size = new System.Drawing.Size(655, 65);
             this.DetalleDataGridView.TabIndex = 82;
             // 

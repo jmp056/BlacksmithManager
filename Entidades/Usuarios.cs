@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entidades
@@ -11,6 +12,8 @@ namespace Entidades
         public string Email { get; set; }
         public int NivelUsuario { get; set; }
         public string Usuario { get; set; }
+
+        [Browsable(false)]
         public string Clave { get; set; }
         public DateTime FechaIngreso { get; set; }
 

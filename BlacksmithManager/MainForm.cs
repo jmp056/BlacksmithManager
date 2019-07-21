@@ -54,5 +54,11 @@ namespace BlacksmithManager
             rClientes rC = new rClientes();
             rC.ShowDialog();
         }
+
+        private void ConsultarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cCLientes cC = new cCLientes();
+            cC.ShowDialog();
+        }
     }
 }

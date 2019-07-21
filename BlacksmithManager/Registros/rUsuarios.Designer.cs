@@ -200,10 +200,12 @@
             // 
             // ClaveTextBox
             // 
-            this.ClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClaveTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ClaveTextBox.Location = new System.Drawing.Point(297, 165);
             this.ClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClaveTextBox.Name = "ClaveTextBox";
+            this.ClaveTextBox.PasswordChar = '*';
             this.ClaveTextBox.Size = new System.Drawing.Size(98, 22);
             this.ClaveTextBox.TabIndex = 41;
             this.ClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClaveTextBox_KeyPress);
@@ -336,10 +338,12 @@
             // 
             // ConfirmarClaveTextBox
             // 
-            this.ConfirmarClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmarClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmarClaveTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ConfirmarClaveTextBox.Location = new System.Drawing.Point(296, 195);
             this.ConfirmarClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ConfirmarClaveTextBox.Name = "ConfirmarClaveTextBox";
+            this.ConfirmarClaveTextBox.PasswordChar = '*';
             this.ConfirmarClaveTextBox.Size = new System.Drawing.Size(98, 22);
             this.ConfirmarClaveTextBox.TabIndex = 50;
             this.ConfirmarClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ConfirmarClaveTextBox_KeyPress);

@@ -15,7 +15,6 @@ namespace BlacksmithManager.Consultas
         public cUsuarios()
         {
             InitializeComponent();
-            CriterioComboBox.Visible = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -26,19 +25,19 @@ namespace BlacksmithManager.Consultas
             {
                 switch (FiltrarComboBox.SelectedIndex)
                 {
-                    case 0:
+                    case 0: // Filtrando todo
                         {
                             Listado = Repositorio.GetList(p => true);
                             break;
                         }
 
-                    case 1:
+                    case 1: // Filtrando por Id
                         {
                             int id = Convert.ToInt32(CriterioTextBox.Text);
                             Listado = Repositorio.GetList(p => p.UsuarioId == id);
                             break;
                         }
-                    case 2:
+                    case 2: // Filtando por nombre
                         {
                             Listado = Repositorio.GetList(p => p.Nombres.Contains(CriterioTextBox.Text));
                             break;
@@ -71,20 +70,6 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaUsuarios = Listado;
-        }
-
-        private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(FiltrarComboBox.SelectedIndex == 4)
-            {
-                CriterioComboBox.Visible = true;
-                CriterioTextBox.Visible = false;
-            }
-            else
-            {
-                CriterioComboBox.Visible = false;
-                CriterioTextBox.Visible = true;
-            }
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
