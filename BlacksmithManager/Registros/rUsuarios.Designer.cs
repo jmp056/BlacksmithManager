@@ -142,6 +142,7 @@
             this.UsuarioRadioButton.TabStop = true;
             this.UsuarioRadioButton.Text = "Usuario";
             this.UsuarioRadioButton.UseVisualStyleBackColor = true;
+            this.UsuarioRadioButton.CheckedChanged += new System.EventHandler(this.UsuarioRadioButton_CheckedChanged);
             // 
             // SoporteRadioButton
             // 
@@ -155,6 +156,7 @@
             this.SoporteRadioButton.TabStop = true;
             this.SoporteRadioButton.Text = "Soporte";
             this.SoporteRadioButton.UseVisualStyleBackColor = true;
+            this.SoporteRadioButton.CheckedChanged += new System.EventHandler(this.SoporteRadioButton_CheckedChanged);
             // 
             // SupervisorRadioButton
             // 
@@ -168,6 +170,7 @@
             this.SupervisorRadioButton.TabStop = true;
             this.SupervisorRadioButton.Text = "Supervisor";
             this.SupervisorRadioButton.UseVisualStyleBackColor = true;
+            this.SupervisorRadioButton.CheckedChanged += new System.EventHandler(this.SupervisorRadioButton_CheckedChanged);
             // 
             // AdministradorRadioButton
             // 
@@ -181,6 +184,7 @@
             this.AdministradorRadioButton.TabStop = true;
             this.AdministradorRadioButton.Text = "Administrador";
             this.AdministradorRadioButton.UseVisualStyleBackColor = true;
+            this.AdministradorRadioButton.CheckedChanged += new System.EventHandler(this.AdministradorRadioButton_CheckedChanged);
             // 
             // FechaDeIngresoDateTimePicker
             // 
@@ -192,6 +196,7 @@
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
             this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(98, 22);
             this.FechaDeIngresoDateTimePicker.TabIndex = 42;
+            this.FechaDeIngresoDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechaDeIngresoDateTimePicker_KeyPress);
             // 
             // ClaveTextBox
             // 
@@ -201,6 +206,7 @@
             this.ClaveTextBox.Name = "ClaveTextBox";
             this.ClaveTextBox.Size = new System.Drawing.Size(98, 22);
             this.ClaveTextBox.TabIndex = 41;
+            this.ClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClaveTextBox_KeyPress);
             // 
             // UsuarioTextBox
             // 
@@ -210,6 +216,7 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(98, 22);
             this.UsuarioTextBox.TabIndex = 40;
+            this.UsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioTextBox_KeyPress);
             // 
             // EmailTextBox
             // 
@@ -219,6 +226,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(279, 22);
             this.EmailTextBox.TabIndex = 39;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // NombresTextBox
             // 
@@ -228,6 +236,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(279, 22);
             this.NombresTextBox.TabIndex = 37;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // UsuarioIdNumericUpDown
             // 
@@ -237,6 +246,7 @@
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.UsuarioIdNumericUpDown.TabIndex = 36;
+            this.UsuarioIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioIdNumericUpDown_KeyPress);
             // 
             // Nombre
             // 
@@ -332,6 +342,7 @@
             this.ConfirmarClaveTextBox.Name = "ConfirmarClaveTextBox";
             this.ConfirmarClaveTextBox.Size = new System.Drawing.Size(98, 22);
             this.ConfirmarClaveTextBox.TabIndex = 50;
+            this.ConfirmarClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ConfirmarClaveTextBox_KeyPress);
             // 
             // rUsuarios
             // 
