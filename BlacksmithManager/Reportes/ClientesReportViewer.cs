@@ -7,7 +7,7 @@ namespace BlacksmithManager.Reportes
 {
     public partial class ClientesReportViewer : Form
     {
-        List<Clientes> ListaClientes= new List<Clientes>();
+        List<Clientes> ListaClientes = new List<Clientes>();
         public ClientesReportViewer(List<Clientes> clientes)
         {
             this.ListaClientes = clientes;

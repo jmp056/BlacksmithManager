@@ -80,13 +80,16 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            if (ListaClientes.Count == 0 || ListaClientes == null)
+            if (ListaClientes.Count == 0)
             {
                 MessageBox.Show("No hay datos para imprimir");
                 return;
             }
-            ClientesReportViewer clientesReportViewer = new ClientesReportViewer(ListaClientes);
-            clientesReportViewer.ShowDialog();
+            else
+            {
+                ClientesReportViewer clientesReportViewer = new ClientesReportViewer(ListaClientes);
+                clientesReportViewer.ShowDialog();
+            }
         }
     }
 }

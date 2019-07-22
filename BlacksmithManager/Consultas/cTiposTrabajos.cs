@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BlacksmithManager.Reportes;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,13 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-
-        }
+            if (ListaTiposTrabajos.Count == 0)
+            {
+                MessageBox.Show("No hay datos para imprimir");
+                return;
+            }
+                TiposTrabajosReportViewer tiposTrabajosReportViewe = new TiposTrabajosReportViewer(ListaTiposTrabajos);
+                tiposTrabajosReportViewe.ShowDialog();
+            }
     }
 }
