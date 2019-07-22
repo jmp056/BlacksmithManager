@@ -128,10 +128,22 @@
     <Compile Include="Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\EmpleadosReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EmpleadosReportViewer.Designer.cs">
+      <DependentUpon>EmpleadosReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ListadoClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoEmpleados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoEmpleados.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\Modelo.cs">
@@ -140,11 +152,11 @@
       <DependentUpon>Modelo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ReportViewer.cs">
+    <Compile Include="Reportes\ClientesReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\ReportViewer.Designer.cs">
-      <DependentUpon>ReportViewer.cs</DependentUpon>
+    <Compile Include="Reportes\ClientesReportViewer.Designer.cs">
+      <DependentUpon>ClientesReportViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas\cCLientes.resx">
       <DependentUpon>cCLientes.cs</DependentUpon>
@@ -189,16 +201,23 @@
     <EmbeddedResource Include="Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EmpleadosReportViewer.resx">
+      <DependentUpon>EmpleadosReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListadoClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoEmpleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoEmpleados.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Modelo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportViewer.resx">
-      <DependentUpon>ReportViewer.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ClientesReportViewer.resx">
+      <DependentUpon>ClientesReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

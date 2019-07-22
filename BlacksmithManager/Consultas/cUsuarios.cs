@@ -89,8 +89,8 @@ namespace BlacksmithManager.Consultas
                 MessageBox.Show("No hay datos para imprimir");
                 return;
             }
-            ReportViewer usuariosReportViewer = new ReportViewer(ListaUsuarios);
-            usuariosReportViewer.ShowDialog();
+            //ClientesReportViewer usuariosReportViewer = new ClientesReportViewer(ListaUsuarios);
+            //usuariosReportViewer.ShowDialog();
         }
 
         private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BlacksmithManager.Reportes;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -80,13 +81,13 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            /*if (ListaEmpleados.Count == 0)
+            if (ListaEmpleados.Count == 0)
             {
                 MessageBox.Show("No hay datos para imprimir");
                 return;
             }
             EmpleadosReportViewer empleadosReportViewer = new EmpleadosReportViewer(ListaEmpleados);
-            empleadosReportViewer.ShowDialog();*/
+            empleadosReportViewer.ShowDialog();
         }
     }
 }

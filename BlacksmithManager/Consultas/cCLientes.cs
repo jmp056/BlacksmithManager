@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BlacksmithManager.Reportes;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -79,13 +80,13 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            /*if (ListaClientes.Count == 0)
+            if (ListaClientes.Count == 0 || ListaClientes == null)
             {
                 MessageBox.Show("No hay datos para imprimir");
                 return;
             }
             ClientesReportViewer clientesReportViewer = new ClientesReportViewer(ListaClientes);
-            clientesReportViewer.ShowDialog();*/
+            clientesReportViewer.ShowDialog();
         }
     }
 }
