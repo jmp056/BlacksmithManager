@@ -63,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 232);
+            this.label1.Location = new System.Drawing.Point(164, 235);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 16);
@@ -74,7 +74,7 @@
             // 
             this.Clave.AutoSize = true;
             this.Clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clave.Location = new System.Drawing.Point(164, 167);
+            this.Clave.Location = new System.Drawing.Point(164, 175);
             this.Clave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Clave.Name = "Clave";
             this.Clave.Size = new System.Drawing.Size(48, 16);
@@ -85,7 +85,7 @@
             // 
             this.Usuario.AutoSize = true;
             this.Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usuario.Location = new System.Drawing.Point(164, 132);
+            this.Usuario.Location = new System.Drawing.Point(164, 145);
             this.Usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(62, 16);
@@ -96,7 +96,7 @@
             // 
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(25, 95);
+            this.Email.Location = new System.Drawing.Point(20, 95);
             this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(47, 16);
@@ -107,7 +107,7 @@
             // 
             this.ID.AutoSize = true;
             this.ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.Location = new System.Drawing.Point(22, 25);
+            this.ID.Location = new System.Drawing.Point(20, 25);
             this.ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(81, 16);
@@ -191,7 +191,7 @@
             this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDeIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDeIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(297, 230);
+            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(297, 233);
             this.FechaDeIngresoDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
             this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(98, 22);
@@ -202,7 +202,7 @@
             // 
             this.ClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClaveTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.ClaveTextBox.Location = new System.Drawing.Point(297, 165);
+            this.ClaveTextBox.Location = new System.Drawing.Point(297, 173);
             this.ClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClaveTextBox.Name = "ClaveTextBox";
             this.ClaveTextBox.PasswordChar = '*';
@@ -213,7 +213,7 @@
             // UsuarioTextBox
             // 
             this.UsuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioTextBox.Location = new System.Drawing.Point(297, 130);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(297, 143);
             this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(98, 22);
@@ -223,30 +223,30 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTextBox.Location = new System.Drawing.Point(116, 93);
+            this.EmailTextBox.Location = new System.Drawing.Point(112, 93);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(279, 22);
+            this.EmailTextBox.Size = new System.Drawing.Size(281, 22);
             this.EmailTextBox.TabIndex = 39;
             this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // NombresTextBox
             // 
             this.NombresTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresTextBox.Location = new System.Drawing.Point(116, 58);
+            this.NombresTextBox.Location = new System.Drawing.Point(112, 58);
             this.NombresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombresTextBox.Name = "NombresTextBox";
-            this.NombresTextBox.Size = new System.Drawing.Size(279, 22);
+            this.NombresTextBox.Size = new System.Drawing.Size(281, 22);
             this.NombresTextBox.TabIndex = 37;
             this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // UsuarioIdNumericUpDown
             // 
             this.UsuarioIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(116, 23);
+            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(112, 23);
             this.UsuarioIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
-            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
+            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(102, 22);
             this.UsuarioIdNumericUpDown.TabIndex = 36;
             this.UsuarioIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioIdNumericUpDown_KeyPress);
             // 
@@ -254,7 +254,7 @@
             // 
             this.Nombre.AutoSize = true;
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.Location = new System.Drawing.Point(22, 60);
+            this.Nombre.Location = new System.Drawing.Point(20, 60);
             this.Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(71, 16);
@@ -315,7 +315,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::BlacksmithManager.Properties.Resources.BotonBuscar;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(271, 9);
+            this.BuscarButton.Location = new System.Drawing.Point(258, 9);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(94, 36);
@@ -329,7 +329,7 @@
             // 
             this.ConfirmarClave.AutoSize = true;
             this.ConfirmarClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmarClave.Location = new System.Drawing.Point(163, 197);
+            this.ConfirmarClave.Location = new System.Drawing.Point(163, 205);
             this.ConfirmarClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ConfirmarClave.Name = "ConfirmarClave";
             this.ConfirmarClave.Size = new System.Drawing.Size(118, 16);
@@ -340,7 +340,7 @@
             // 
             this.ConfirmarClaveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmarClaveTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.ConfirmarClaveTextBox.Location = new System.Drawing.Point(296, 195);
+            this.ConfirmarClaveTextBox.Location = new System.Drawing.Point(296, 203);
             this.ConfirmarClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ConfirmarClaveTextBox.Name = "ConfirmarClaveTextBox";
             this.ConfirmarClaveTextBox.PasswordChar = '*';
