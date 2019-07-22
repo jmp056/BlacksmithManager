@@ -170,17 +170,17 @@
       <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Modelo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reportes\TiposTrabajosReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\TiposTrabajosReportViewer.Designer.cs">
       <DependentUpon>TiposTrabajosReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\TrabajosReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\TrabajosReportViewer.Designer.cs">
+      <DependentUpon>TrabajosReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\UsuariosReportViewer.cs">
       <SubType>Form</SubType>
@@ -257,12 +257,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Modelo.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Modelo.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\TiposTrabajosReportViewer.resx">
       <DependentUpon>TiposTrabajosReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\TrabajosReportViewer.resx">
+      <DependentUpon>TrabajosReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\UsuariosReportViewer.resx">
       <DependentUpon>UsuariosReportViewer.cs</DependentUpon>
@@ -316,9 +315,6 @@
   <ItemGroup>
     <None Include="Resources\BotonAñadir.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\Listados\" />
-    <Folder Include="Reportes\Vistas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

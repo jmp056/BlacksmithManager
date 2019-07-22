@@ -155,7 +155,16 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-
+            if (ListaTrabajos.Count == 0)
+            {
+                MessageBox.Show("No hay datos para imprimir");
+                return;
+            }
+            else
+            {
+                TrabajosReportViewer trabajosReportViewer = new TrabajosReportViewer(ListaTrabajos);
+                trabajosReportViewer.ShowDialog();
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BlacksmithManager.Reportes
 {
-    partial class ClientesReportViewer
+    partial class TrabajosReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -39,19 +39,19 @@
             this.MyCrystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MyCrystalReportViewer.Location = new System.Drawing.Point(0, 0);
             this.MyCrystalReportViewer.Name = "MyCrystalReportViewer";
-            this.MyCrystalReportViewer.Size = new System.Drawing.Size(1077, 450);
+            this.MyCrystalReportViewer.Size = new System.Drawing.Size(800, 450);
             this.MyCrystalReportViewer.TabIndex = 0;
             // 
-            // ClientesReportViewer
+            // TrabajosReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MyCrystalReportViewer);
-            this.Name = "ClientesReportViewer";
-            this.Text = "ReportViewer";
+            this.Name = "TrabajosReportViewer";
+            this.Text = "TrabajosReportViewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.UsuariosReportViewer_Load);
+            this.Load += new System.EventHandler(this.TrabajosReportViewer_Load);
             this.ResumeLayout(false);
 
         }

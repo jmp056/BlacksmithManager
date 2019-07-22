@@ -50,6 +50,7 @@
             this.Controls.Add(this.MyCrystalReportViewer);
             this.Name = "UsuariosReportViewer";
             this.Text = "UsuariosReportViewer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UsuariosReportViewer_Load);
             this.ResumeLayout(false);
 
