@@ -152,10 +152,10 @@
       <DependentUpon>ListadoTiposTrabajos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Modelo.cs">
+    <Compile Include="Reportes\ListadoTrabajos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.rpt</DependentUpon>
+      <DependentUpon>ListadoTrabajos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\ClientesReportViewer.cs">
@@ -164,11 +164,29 @@
     <Compile Include="Reportes\ClientesReportViewer.Designer.cs">
       <DependentUpon>ClientesReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ListadoUsuarios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Modelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\TiposTrabajosReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\TiposTrabajosReportViewer.Designer.cs">
       <DependentUpon>TiposTrabajosReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\UsuariosReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\UsuariosReportViewer.Designer.cs">
+      <DependentUpon>UsuariosReportViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas\cCLientes.resx">
       <DependentUpon>cCLientes.cs</DependentUpon>
@@ -228,15 +246,26 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoTiposTrabajos.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Modelo.rpt">
+    <EmbeddedResource Include="Reportes\ListadoTrabajos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Modelo.cs</LastGenOutput>
+      <LastGenOutput>ListadoTrabajos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ClientesReportViewer.resx">
       <DependentUpon>ClientesReportViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoUsuarios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Modelo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Modelo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\TiposTrabajosReportViewer.resx">
       <DependentUpon>TiposTrabajosReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\UsuariosReportViewer.resx">
+      <DependentUpon>UsuariosReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -286,6 +315,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonAñadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\Listados\" />
+    <Folder Include="Reportes\Vistas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

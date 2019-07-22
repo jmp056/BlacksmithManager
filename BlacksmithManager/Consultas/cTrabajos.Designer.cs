@@ -64,6 +64,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // FiltroFechaTroupBox
             // 

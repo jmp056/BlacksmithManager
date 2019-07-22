@@ -16,6 +16,7 @@ namespace BlacksmithManager.Consultas
         {
             InitializeComponent();
             CriterioComboBox.Visible = false;
+            ImprimirButton.Enabled = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaUsuarios = Listado;
+            ImprimirButton.Enabled = true;
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
@@ -89,8 +91,8 @@ namespace BlacksmithManager.Consultas
                 MessageBox.Show("No hay datos para imprimir");
                 return;
             }
-            //ClientesReportViewer usuariosReportViewer = new ClientesReportViewer(ListaUsuarios);
-            //usuariosReportViewer.ShowDialog();
+            UsuariosReportViewer usuariosReportViewer = new UsuariosReportViewer(ListaUsuarios);
+            usuariosReportViewer.ShowDialog();
         }
 
         private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)

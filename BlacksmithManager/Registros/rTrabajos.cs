@@ -274,7 +274,7 @@ namespace BlacksmithManager.Registros
             bool paso = true;
             if (TipoMovimientoComboBox.Text == "Cobro al Cliente")
             {
-                if (ValorNumericUpDown.Value + Convert.ToDecimal(BalanceTextBox.Text) > PrecioNumericUpDown.Value)
+                if (ValorNumericUpDown.Value + PrecioNumericUpDown.Value > Convert.ToDecimal(BalanceTextBox.Text))
                 {
                     if (MessageBox.Show("Si agrega este cobro, lo cobrado sera mayor al precio del trabajo, desea continuar?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.Cancel)
                         paso = false;

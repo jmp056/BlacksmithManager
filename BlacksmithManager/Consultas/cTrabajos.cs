@@ -1,13 +1,10 @@
-﻿using BLL;
+﻿using BlacksmithManager.Reportes;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlacksmithManager.Consultas
@@ -22,6 +19,7 @@ namespace BlacksmithManager.Consultas
             DeNumericUpDown.Visible = false;
             ALabel.Visible = false;
             ANumericUpDown.Visible = false;
+            ImprimirButton.Enabled = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -128,6 +126,7 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaTrabajos = Listado;
+            ImprimirButton.Enabled = true;
         }
 
         private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,6 +151,11 @@ namespace BlacksmithManager.Consultas
                 ALabel.Visible = false;
                 ANumericUpDown.Visible = false;
             }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

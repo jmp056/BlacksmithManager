@@ -14,6 +14,7 @@ namespace BlacksmithManager.Consultas
         public cClientes()
         {
             InitializeComponent();
+            ImprimirButton.Enabled = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -70,12 +71,13 @@ namespace BlacksmithManager.Consultas
             {
                 Listado = Repositorio.GetList(p => true);
             }
-                if (FiltrarFechaCheckBox.Checked == true)
-                    Listado = Listado.Where(p => p.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && p.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
+            if (FiltrarFechaCheckBox.Checked == true)
+                Listado = Listado.Where(p => p.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && p.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
 
-                ConsultaDataGridView.DataSource = null;
-                ConsultaDataGridView.DataSource = Listado;
-                ListaClientes = Listado;
+            ConsultaDataGridView.DataSource = null;
+            ConsultaDataGridView.DataSource = Listado;
+            ListaClientes = Listado;
+            ImprimirButton.Enabled = false;
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)

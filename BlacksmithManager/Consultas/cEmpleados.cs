@@ -19,6 +19,7 @@ namespace BlacksmithManager.Consultas
         public cEmpleados()
         {
             InitializeComponent();
+            ImprimirButton.Enabled = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaEmpleados = Listado;
+            ImprimirButton.Enabled = true;
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)

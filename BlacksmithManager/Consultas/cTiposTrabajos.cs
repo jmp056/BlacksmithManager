@@ -3,12 +3,8 @@ using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlacksmithManager.Consultas
@@ -19,6 +15,7 @@ namespace BlacksmithManager.Consultas
         public cTiposTrabajos()
         {
             InitializeComponent();
+            ImprimirButton.Enabled = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -57,6 +54,7 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaTiposTrabajos = Listado;
+            ImprimirButton.Enabled = true;
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
@@ -68,6 +66,6 @@ namespace BlacksmithManager.Consultas
             }
                 TiposTrabajosReportViewer tiposTrabajosReportViewe = new TiposTrabajosReportViewer(ListaTiposTrabajos);
                 tiposTrabajosReportViewe.ShowDialog();
-            }
+        }
     }
 }
