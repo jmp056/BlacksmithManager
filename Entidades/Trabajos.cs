@@ -36,6 +36,8 @@ namespace Entidades
         public decimal Materiales { get; set; }
         public decimal GananciaBruta { get; set; }
         public decimal GananciaNeta { get; set; }
+        public string Estado { get; set; }
+        public string Usuario { get; set; }
 
         public Trabajos()
         {
@@ -56,6 +58,8 @@ namespace Entidades
             Materiales = 0;
             GananciaBruta = 0;
             GananciaNeta = 0;
+            Estado = string.Empty;
+            Usuario = string.Empty;
         }
     }
 
