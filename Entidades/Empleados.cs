@@ -17,7 +17,8 @@ namespace Entidades
         public string Celular { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-
+        public string Estado { get; set; }
+        public string Usuario { get; set; }
         public Empleados()
         {
             EmpleadoId = 0;
@@ -27,6 +28,8 @@ namespace Entidades
             Celular = string.Empty;
             Telefono = string.Empty;
             Email = string.Empty;
+            Estado = string.Empty;
+            Usuario = string.Empty;
         }
     }
 }
