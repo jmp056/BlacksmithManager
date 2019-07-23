@@ -48,14 +48,19 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Direccion = new System.Windows.Forms.Label();
             this.DireccionTextBox = new System.Windows.Forms.TextBox();
+            this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.PorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.MyStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // TelefonoMaskedTextBox
             // 
             this.TelefonoMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(131, 135);
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(120, 128);
             this.TelefonoMaskedTextBox.Mask = "999-999-9999";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -66,7 +71,7 @@
             // 
             this.Telefono.AutoSize = true;
             this.Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefono.Location = new System.Drawing.Point(26, 137);
+            this.Telefono.Location = new System.Drawing.Point(20, 130);
             this.Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(70, 16);
@@ -76,7 +81,7 @@
             // CelularMaskedTextBox
             // 
             this.CelularMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CelularMaskedTextBox.Location = new System.Drawing.Point(130, 89);
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(120, 88);
             this.CelularMaskedTextBox.Mask = "999-999-9999";
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -87,7 +92,7 @@
             // 
             this.Celular.AutoSize = true;
             this.Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Celular.Location = new System.Drawing.Point(25, 91);
+            this.Celular.Location = new System.Drawing.Point(20, 95);
             this.Celular.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Celular.Name = "Celular";
             this.Celular.Size = new System.Drawing.Size(57, 16);
@@ -98,7 +103,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(268, 91);
+            this.label1.Location = new System.Drawing.Point(252, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 16);
@@ -110,7 +115,7 @@
             this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDeIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDeIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(284, 120);
+            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(260, 123);
             this.FechaDeIngresoDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
             this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(105, 22);
@@ -121,7 +126,7 @@
             // 
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(25, 197);
+            this.Email.Location = new System.Drawing.Point(20, 200);
             this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(47, 16);
@@ -132,7 +137,7 @@
             // 
             this.IDCliente.AutoSize = true;
             this.IDCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDCliente.Location = new System.Drawing.Point(25, 25);
+            this.IDCliente.Location = new System.Drawing.Point(20, 25);
             this.IDCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.IDCliente.Name = "IDCliente";
             this.IDCliente.Size = new System.Drawing.Size(79, 16);
@@ -142,27 +147,27 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTextBox.Location = new System.Drawing.Point(130, 195);
+            this.EmailTextBox.Location = new System.Drawing.Point(120, 193);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(279, 22);
+            this.EmailTextBox.Size = new System.Drawing.Size(264, 22);
             this.EmailTextBox.TabIndex = 70;
             this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // NombresTextBox
             // 
             this.NombresTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresTextBox.Location = new System.Drawing.Point(130, 48);
+            this.NombresTextBox.Location = new System.Drawing.Point(120, 58);
             this.NombresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombresTextBox.Name = "NombresTextBox";
-            this.NombresTextBox.Size = new System.Drawing.Size(279, 22);
+            this.NombresTextBox.Size = new System.Drawing.Size(264, 22);
             this.NombresTextBox.TabIndex = 69;
             this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // ClienteIdNumericUpDown
             // 
             this.ClienteIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteIdNumericUpDown.Location = new System.Drawing.Point(130, 13);
+            this.ClienteIdNumericUpDown.Location = new System.Drawing.Point(120, 23);
             this.ClienteIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.ClienteIdNumericUpDown.Name = "ClienteIdNumericUpDown";
             this.ClienteIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
@@ -173,7 +178,7 @@
             // 
             this.Nombres.AutoSize = true;
             this.Nombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombres.Location = new System.Drawing.Point(25, 50);
+            this.Nombres.Location = new System.Drawing.Point(20, 60);
             this.Nombres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombres.Name = "Nombres";
             this.Nombres.Size = new System.Drawing.Size(71, 16);
@@ -185,7 +190,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::BlacksmithManager.Properties.Resources.BotonEliminar;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(297, 234);
+            this.EliminarButton.Location = new System.Drawing.Point(287, 234);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(97, 37);
@@ -215,7 +220,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::BlacksmithManager.Properties.Resources.BotonNuevo;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(28, 234);
+            this.NuevoButton.Location = new System.Drawing.Point(23, 234);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(92, 37);
@@ -230,7 +235,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::BlacksmithManager.Properties.Resources.BotonBuscar;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(284, 4);
+            this.BuscarButton.Location = new System.Drawing.Point(264, 10);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(94, 36);
@@ -248,7 +253,7 @@
             // 
             this.Direccion.AutoSize = true;
             this.Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Direccion.Location = new System.Drawing.Point(25, 165);
+            this.Direccion.Location = new System.Drawing.Point(20, 165);
             this.Direccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Direccion.Name = "Direccion";
             this.Direccion.Size = new System.Drawing.Size(74, 16);
@@ -258,18 +263,51 @@
             // DireccionTextBox
             // 
             this.DireccionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DireccionTextBox.Location = new System.Drawing.Point(130, 163);
+            this.DireccionTextBox.Location = new System.Drawing.Point(120, 163);
             this.DireccionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DireccionTextBox.Name = "DireccionTextBox";
-            this.DireccionTextBox.Size = new System.Drawing.Size(279, 22);
+            this.DireccionTextBox.Size = new System.Drawing.Size(264, 22);
             this.DireccionTextBox.TabIndex = 84;
             this.DireccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DireccionTextBox_KeyPress);
+            // 
+            // MyStatusStrip
+            // 
+            this.MyStatusStrip.Enabled = false;
+            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.PorToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.MyStatusStrip.Location = new System.Drawing.Point(0, 278);
+            this.MyStatusStrip.Name = "MyStatusStrip";
+            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MyStatusStrip.Size = new System.Drawing.Size(405, 22);
+            this.MyStatusStrip.TabIndex = 86;
+            this.MyStatusStrip.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.UsuarioToolStripStatusLabel.Text = "  ";
+            // 
+            // PorToolStripStatusLabel
+            // 
+            this.PorToolStripStatusLabel.Name = "PorToolStripStatusLabel";
+            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(31, 17);
+            this.PorToolStripStatusLabel.Text = " por ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.EstadoToolStripStatusLabel.Text = "  ";
             // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 286);
+            this.ClientSize = new System.Drawing.Size(405, 300);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.Direccion);
             this.Controls.Add(this.DireccionTextBox);
             this.Controls.Add(this.EliminarButton);
@@ -289,9 +327,11 @@
             this.Controls.Add(this.Nombres);
             this.Controls.Add(this.BuscarButton);
             this.Name = "rClientes";
-            this.Text = "rCLientes";
+            this.Text = "Registro de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.MyStatusStrip.ResumeLayout(false);
+            this.MyStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +358,9 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label Direccion;
         private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.StatusStrip MyStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel PorToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

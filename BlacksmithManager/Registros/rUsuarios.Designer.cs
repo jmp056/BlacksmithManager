@@ -54,9 +54,14 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.ConfirmarClave = new System.Windows.Forms.Label();
             this.ConfirmarClaveTextBox = new System.Windows.Forms.TextBox();
+            this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.PorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.NivelDeUsuarioGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.MyStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -348,11 +353,45 @@
             this.ConfirmarClaveTextBox.TabIndex = 50;
             this.ConfirmarClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ConfirmarClaveTextBox_KeyPress);
             // 
+            // MyStatusStrip
+            // 
+            this.MyStatusStrip.Enabled = false;
+            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.PorToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.MyStatusStrip.Location = new System.Drawing.Point(0, 330);
+            this.MyStatusStrip.Name = "MyStatusStrip";
+            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MyStatusStrip.Size = new System.Drawing.Size(417, 22);
+            this.MyStatusStrip.TabIndex = 52;
+            this.MyStatusStrip.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.UsuarioToolStripStatusLabel.Text = "  ";
+            // 
+            // PorToolStripStatusLabel
+            // 
+            this.PorToolStripStatusLabel.Name = "PorToolStripStatusLabel";
+            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(31, 17);
+            this.PorToolStripStatusLabel.Text = " por ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.EstadoToolStripStatusLabel.Text = "  ";
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 337);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(417, 352);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.ConfirmarClave);
             this.Controls.Add(this.ConfirmarClaveTextBox);
             this.Controls.Add(this.EliminarButton);
@@ -381,6 +420,8 @@
             this.NivelDeUsuarioGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.MyStatusStrip.ResumeLayout(false);
+            this.MyStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +453,9 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label ConfirmarClave;
         private System.Windows.Forms.TextBox ConfirmarClaveTextBox;
+        private System.Windows.Forms.StatusStrip MyStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel PorToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

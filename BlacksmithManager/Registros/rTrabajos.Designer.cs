@@ -80,19 +80,30 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.PorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TrabajoGroupBox = new System.Windows.Forms.GroupBox();
+            this.MovimientosGroupBox = new System.Windows.Forms.GroupBox();
+            this.DesgloseGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.MyStatusStrip.SuspendLayout();
+            this.TrabajoGroupBox.SuspendLayout();
+            this.MovimientosGroupBox.SuspendLayout();
+            this.DesgloseGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // IdTrabajo
             // 
             this.IdTrabajo.AutoSize = true;
             this.IdTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdTrabajo.Location = new System.Drawing.Point(27, 33);
+            this.IdTrabajo.Location = new System.Drawing.Point(20, 18);
             this.IdTrabajo.Name = "IdTrabajo";
             this.IdTrabajo.Size = new System.Drawing.Size(82, 16);
             this.IdTrabajo.TabIndex = 0;
@@ -101,7 +112,7 @@
             // TrabajoIdNumericUpDown
             // 
             this.TrabajoIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrabajoIdNumericUpDown.Location = new System.Drawing.Point(139, 28);
+            this.TrabajoIdNumericUpDown.Location = new System.Drawing.Point(125, 16);
             this.TrabajoIdNumericUpDown.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -116,7 +127,7 @@
             // 
             this.FechaInicio.AutoSize = true;
             this.FechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaInicio.Location = new System.Drawing.Point(418, 33);
+            this.FechaInicio.Location = new System.Drawing.Point(420, 18);
             this.FechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.Size = new System.Drawing.Size(114, 16);
@@ -128,7 +139,7 @@
             this.FechaCreacionDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaCreacionDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaCreacionDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaCreacionDateTimePicker.Location = new System.Drawing.Point(575, 33);
+            this.FechaCreacionDateTimePicker.Location = new System.Drawing.Point(560, 16);
             this.FechaCreacionDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaCreacionDateTimePicker.Name = "FechaCreacionDateTimePicker";
             this.FechaCreacionDateTimePicker.Size = new System.Drawing.Size(98, 22);
@@ -138,7 +149,7 @@
             // 
             this.Cliente.AutoSize = true;
             this.Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cliente.Location = new System.Drawing.Point(45, 99);
+            this.Cliente.Location = new System.Drawing.Point(10, 22);
             this.Cliente.Name = "Cliente";
             this.Cliente.Size = new System.Drawing.Size(56, 16);
             this.Cliente.TabIndex = 62;
@@ -149,9 +160,9 @@
             this.ClienteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClienteComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClienteComboBox.FormattingEnabled = true;
-            this.ClienteComboBox.Location = new System.Drawing.Point(120, 94);
+            this.ClienteComboBox.Location = new System.Drawing.Point(109, 20);
             this.ClienteComboBox.Name = "ClienteComboBox";
-            this.ClienteComboBox.Size = new System.Drawing.Size(121, 24);
+            this.ClienteComboBox.Size = new System.Drawing.Size(152, 24);
             this.ClienteComboBox.TabIndex = 63;
             this.ClienteComboBox.Click += new System.EventHandler(this.ClienteComboBox_Click);
             // 
@@ -159,11 +170,10 @@
             // 
             this.AgregarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarClienteButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarClienteButton.Location = new System.Drawing.Point(248, 85);
+            this.AgregarClienteButton.Location = new System.Drawing.Point(270, 17);
             this.AgregarClienteButton.Margin = new System.Windows.Forms.Padding(4);
             this.AgregarClienteButton.Name = "AgregarClienteButton";
-            this.AgregarClienteButton.Size = new System.Drawing.Size(28, 36);
+            this.AgregarClienteButton.Size = new System.Drawing.Size(30, 30);
             this.AgregarClienteButton.TabIndex = 64;
             this.AgregarClienteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarClienteButton.UseVisualStyleBackColor = true;
@@ -174,7 +184,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::BlacksmithManager.Properties.Resources.BotonBuscar;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(293, 23);
+            this.BuscarButton.Location = new System.Drawing.Point(293, 8);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(94, 36);
@@ -188,7 +198,7 @@
             // 
             this.TipoTrabajo.AutoSize = true;
             this.TipoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoTrabajo.Location = new System.Drawing.Point(303, 91);
+            this.TipoTrabajo.Location = new System.Drawing.Point(303, 22);
             this.TipoTrabajo.Name = "TipoTrabajo";
             this.TipoTrabajo.Size = new System.Drawing.Size(115, 16);
             this.TipoTrabajo.TabIndex = 66;
@@ -199,9 +209,9 @@
             this.TipoTrabajoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoTrabajoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoTrabajoComboBox.FormattingEnabled = true;
-            this.TipoTrabajoComboBox.Location = new System.Drawing.Point(424, 91);
+            this.TipoTrabajoComboBox.Location = new System.Drawing.Point(443, 20);
             this.TipoTrabajoComboBox.Name = "TipoTrabajoComboBox";
-            this.TipoTrabajoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.TipoTrabajoComboBox.Size = new System.Drawing.Size(145, 24);
             this.TipoTrabajoComboBox.TabIndex = 67;
             this.TipoTrabajoComboBox.Click += new System.EventHandler(this.TipoTrabajoComboBox_Click);
             // 
@@ -209,11 +219,10 @@
             // 
             this.AgregarTipoTrabajoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarTipoTrabajoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarTipoTrabajoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarTipoTrabajoButton.Location = new System.Drawing.Point(564, 85);
+            this.AgregarTipoTrabajoButton.Location = new System.Drawing.Point(595, 17);
             this.AgregarTipoTrabajoButton.Margin = new System.Windows.Forms.Padding(4);
             this.AgregarTipoTrabajoButton.Name = "AgregarTipoTrabajoButton";
-            this.AgregarTipoTrabajoButton.Size = new System.Drawing.Size(28, 36);
+            this.AgregarTipoTrabajoButton.Size = new System.Drawing.Size(30, 30);
             this.AgregarTipoTrabajoButton.TabIndex = 68;
             this.AgregarTipoTrabajoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarTipoTrabajoButton.UseVisualStyleBackColor = true;
@@ -223,7 +232,7 @@
             // 
             this.DescripcionTrabajo.AutoSize = true;
             this.DescripcionTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionTrabajo.Location = new System.Drawing.Point(50, 137);
+            this.DescripcionTrabajo.Location = new System.Drawing.Point(10, 62);
             this.DescripcionTrabajo.Name = "DescripcionTrabajo";
             this.DescripcionTrabajo.Size = new System.Drawing.Size(91, 16);
             this.DescripcionTrabajo.TabIndex = 69;
@@ -232,18 +241,18 @@
             // DescripcionTrabajoTextBox
             // 
             this.DescripcionTrabajoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionTrabajoTextBox.Location = new System.Drawing.Point(178, 132);
+            this.DescripcionTrabajoTextBox.Location = new System.Drawing.Point(108, 59);
             this.DescripcionTrabajoTextBox.Name = "DescripcionTrabajoTextBox";
-            this.DescripcionTrabajoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DescripcionTrabajoTextBox.Size = new System.Drawing.Size(310, 22);
             this.DescripcionTrabajoTextBox.TabIndex = 70;
             this.DescripcionTrabajoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTrabajoTextBox_KeyPress);
             // 
             // DireccionTextBox
             // 
             this.DireccionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DireccionTextBox.Location = new System.Drawing.Point(178, 160);
+            this.DireccionTextBox.Location = new System.Drawing.Point(108, 95);
             this.DireccionTextBox.Name = "DireccionTextBox";
-            this.DireccionTextBox.Size = new System.Drawing.Size(414, 22);
+            this.DireccionTextBox.Size = new System.Drawing.Size(517, 22);
             this.DireccionTextBox.TabIndex = 72;
             this.DireccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DireccionTextBox_KeyPress);
             // 
@@ -251,7 +260,7 @@
             // 
             this.Direccion.AutoSize = true;
             this.Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Direccion.Location = new System.Drawing.Point(50, 165);
+            this.Direccion.Location = new System.Drawing.Point(10, 97);
             this.Direccion.Name = "Direccion";
             this.Direccion.Size = new System.Drawing.Size(74, 16);
             this.Direccion.TabIndex = 71;
@@ -266,7 +275,7 @@
             0,
             0,
             0});
-            this.PrecioNumericUpDown.Location = new System.Drawing.Point(425, 132);
+            this.PrecioNumericUpDown.Location = new System.Drawing.Point(505, 59);
             this.PrecioNumericUpDown.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -282,7 +291,7 @@
             // 
             this.Precio.AutoSize = true;
             this.Precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Precio.Location = new System.Drawing.Point(313, 137);
+            this.Precio.Location = new System.Drawing.Point(440, 62);
             this.Precio.Name = "Precio";
             this.Precio.Size = new System.Drawing.Size(53, 16);
             this.Precio.TabIndex = 73;
@@ -292,11 +301,10 @@
             // 
             this.AgregarEmpleadoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarEmpleadoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarEmpleadoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarEmpleadoButton.Location = new System.Drawing.Point(300, 211);
+            this.AgregarEmpleadoButton.Location = new System.Drawing.Point(330, 178);
             this.AgregarEmpleadoButton.Margin = new System.Windows.Forms.Padding(4);
             this.AgregarEmpleadoButton.Name = "AgregarEmpleadoButton";
-            this.AgregarEmpleadoButton.Size = new System.Drawing.Size(28, 36);
+            this.AgregarEmpleadoButton.Size = new System.Drawing.Size(30, 27);
             this.AgregarEmpleadoButton.TabIndex = 77;
             this.AgregarEmpleadoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarEmpleadoButton.UseVisualStyleBackColor = true;
@@ -307,9 +315,9 @@
             this.EncargadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EncargadoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EncargadoComboBox.FormattingEnabled = true;
-            this.EncargadoComboBox.Location = new System.Drawing.Point(172, 220);
+            this.EncargadoComboBox.Location = new System.Drawing.Point(124, 182);
             this.EncargadoComboBox.Name = "EncargadoComboBox";
-            this.EncargadoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.EncargadoComboBox.Size = new System.Drawing.Size(196, 24);
             this.EncargadoComboBox.TabIndex = 76;
             this.EncargadoComboBox.Click += new System.EventHandler(this.EncargadoComboBox_Click);
             // 
@@ -317,7 +325,7 @@
             // 
             this.Encargado.AutoSize = true;
             this.Encargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Encargado.Location = new System.Drawing.Point(59, 221);
+            this.Encargado.Location = new System.Drawing.Point(20, 185);
             this.Encargado.Name = "Encargado";
             this.Encargado.Size = new System.Drawing.Size(84, 16);
             this.Encargado.TabIndex = 75;
@@ -332,7 +340,7 @@
             0,
             0,
             0});
-            this.AjusteNumericUpDown.Location = new System.Drawing.Point(472, 211);
+            this.AjusteNumericUpDown.Location = new System.Drawing.Point(445, 183);
             this.AjusteNumericUpDown.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -348,7 +356,7 @@
             // 
             this.Ajuste.AutoSize = true;
             this.Ajuste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ajuste.Location = new System.Drawing.Point(360, 216);
+            this.Ajuste.Location = new System.Drawing.Point(380, 185);
             this.Ajuste.Name = "Ajuste";
             this.Ajuste.Size = new System.Drawing.Size(51, 16);
             this.Ajuste.TabIndex = 78;
@@ -358,7 +366,7 @@
             // 
             this.FechaMovimiento.AutoSize = true;
             this.FechaMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaMovimiento.Location = new System.Drawing.Point(23, 278);
+            this.FechaMovimiento.Location = new System.Drawing.Point(10, 25);
             this.FechaMovimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaMovimiento.Name = "FechaMovimiento";
             this.FechaMovimiento.Size = new System.Drawing.Size(160, 16);
@@ -370,7 +378,7 @@
             this.FechaMovimientoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaMovimientoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaMovimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaMovimientoDateTimePicker.Location = new System.Drawing.Point(195, 272);
+            this.FechaMovimientoDateTimePicker.Location = new System.Drawing.Point(190, 22);
             this.FechaMovimientoDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaMovimientoDateTimePicker.Name = "FechaMovimientoDateTimePicker";
             this.FechaMovimientoDateTimePicker.Size = new System.Drawing.Size(98, 22);
@@ -380,11 +388,11 @@
             // 
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalleDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DetalleDataGridView.Location = new System.Drawing.Point(30, 330);
+            this.DetalleDataGridView.Location = new System.Drawing.Point(10, 95);
             this.DetalleDataGridView.MultiSelect = false;
             this.DetalleDataGridView.Name = "DetalleDataGridView";
             this.DetalleDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DetalleDataGridView.Size = new System.Drawing.Size(655, 65);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(615, 90);
             this.DetalleDataGridView.TabIndex = 82;
             // 
             // TipoMovimientoComboBox
@@ -396,16 +404,16 @@
             "Cobro al Cliente",
             "Pago de Ajuste",
             "Compra de Materiales"});
-            this.TipoMovimientoComboBox.Location = new System.Drawing.Point(472, 267);
+            this.TipoMovimientoComboBox.Location = new System.Drawing.Point(451, 17);
             this.TipoMovimientoComboBox.Name = "TipoMovimientoComboBox";
-            this.TipoMovimientoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.TipoMovimientoComboBox.Size = new System.Drawing.Size(174, 24);
             this.TipoMovimientoComboBox.TabIndex = 84;
             // 
             // TipoMovimiento
             // 
             this.TipoMovimiento.AutoSize = true;
             this.TipoMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoMovimiento.Location = new System.Drawing.Point(319, 275);
+            this.TipoMovimiento.Location = new System.Drawing.Point(300, 25);
             this.TipoMovimiento.Name = "TipoMovimiento";
             this.TipoMovimiento.Size = new System.Drawing.Size(145, 16);
             this.TipoMovimiento.TabIndex = 83;
@@ -414,9 +422,9 @@
             // DescripcionMovimientoTextBox
             // 
             this.DescripcionMovimientoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionMovimientoTextBox.Location = new System.Drawing.Point(159, 302);
+            this.DescripcionMovimientoTextBox.Location = new System.Drawing.Point(109, 60);
             this.DescripcionMovimientoTextBox.Name = "DescripcionMovimientoTextBox";
-            this.DescripcionMovimientoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DescripcionMovimientoTextBox.Size = new System.Drawing.Size(265, 22);
             this.DescripcionMovimientoTextBox.TabIndex = 86;
             this.DescripcionMovimientoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionMovimientoTextBox_KeyPress);
             // 
@@ -424,7 +432,7 @@
             // 
             this.DescripcionMovimiento.AutoSize = true;
             this.DescripcionMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionMovimiento.Location = new System.Drawing.Point(31, 307);
+            this.DescripcionMovimiento.Location = new System.Drawing.Point(10, 60);
             this.DescripcionMovimiento.Name = "DescripcionMovimiento";
             this.DescripcionMovimiento.Size = new System.Drawing.Size(91, 16);
             this.DescripcionMovimiento.TabIndex = 85;
@@ -439,7 +447,7 @@
             0,
             0,
             0});
-            this.ValorNumericUpDown.Location = new System.Drawing.Point(391, 303);
+            this.ValorNumericUpDown.Location = new System.Drawing.Point(451, 58);
             this.ValorNumericUpDown.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -454,7 +462,7 @@
             // 
             this.Valor.AutoSize = true;
             this.Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Valor.Location = new System.Drawing.Point(279, 308);
+            this.Valor.Location = new System.Drawing.Point(390, 60);
             this.Valor.Name = "Valor";
             this.Valor.Size = new System.Drawing.Size(45, 16);
             this.Valor.TabIndex = 87;
@@ -464,11 +472,10 @@
             // 
             this.AgregarMovimientoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarMovimientoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarMovimientoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarMovimientoButton.Location = new System.Drawing.Point(609, 289);
+            this.AgregarMovimientoButton.Location = new System.Drawing.Point(595, 53);
             this.AgregarMovimientoButton.Margin = new System.Windows.Forms.Padding(4);
             this.AgregarMovimientoButton.Name = "AgregarMovimientoButton";
-            this.AgregarMovimientoButton.Size = new System.Drawing.Size(28, 36);
+            this.AgregarMovimientoButton.Size = new System.Drawing.Size(30, 30);
             this.AgregarMovimientoButton.TabIndex = 89;
             this.AgregarMovimientoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarMovimientoButton.UseVisualStyleBackColor = true;
@@ -478,7 +485,7 @@
             // 
             this.RemoverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoverButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RemoverButton.Location = new System.Drawing.Point(34, 401);
+            this.RemoverButton.Location = new System.Drawing.Point(10, 192);
             this.RemoverButton.Name = "RemoverButton";
             this.RemoverButton.Size = new System.Drawing.Size(180, 30);
             this.RemoverButton.TabIndex = 90;
@@ -491,7 +498,7 @@
             // 
             this.Cobrado.AutoSize = true;
             this.Cobrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cobrado.Location = new System.Drawing.Point(58, 472);
+            this.Cobrado.Location = new System.Drawing.Point(60, 30);
             this.Cobrado.Name = "Cobrado";
             this.Cobrado.Size = new System.Drawing.Size(68, 16);
             this.Cobrado.TabIndex = 91;
@@ -501,7 +508,7 @@
             // 
             this.Balance.AutoSize = true;
             this.Balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Balance.Location = new System.Drawing.Point(50, 531);
+            this.Balance.Location = new System.Drawing.Point(62, 85);
             this.Balance.Name = "Balance";
             this.Balance.Size = new System.Drawing.Size(65, 16);
             this.Balance.TabIndex = 92;
@@ -511,7 +518,7 @@
             // 
             this.BalanceTextBox.Enabled = false;
             this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalanceTextBox.Location = new System.Drawing.Point(62, 550);
+            this.BalanceTextBox.Location = new System.Drawing.Point(44, 105);
             this.BalanceTextBox.Name = "BalanceTextBox";
             this.BalanceTextBox.Size = new System.Drawing.Size(100, 22);
             this.BalanceTextBox.TabIndex = 93;
@@ -521,7 +528,7 @@
             // 
             this.CobradoTextBox.Enabled = false;
             this.CobradoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CobradoTextBox.Location = new System.Drawing.Point(62, 491);
+            this.CobradoTextBox.Location = new System.Drawing.Point(44, 50);
             this.CobradoTextBox.Name = "CobradoTextBox";
             this.CobradoTextBox.Size = new System.Drawing.Size(100, 22);
             this.CobradoTextBox.TabIndex = 94;
@@ -532,7 +539,7 @@
             // 
             this.AjustePagadoTextBox.Enabled = false;
             this.AjustePagadoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjustePagadoTextBox.Location = new System.Drawing.Point(228, 491);
+            this.AjustePagadoTextBox.Location = new System.Drawing.Point(201, 50);
             this.AjustePagadoTextBox.Name = "AjustePagadoTextBox";
             this.AjustePagadoTextBox.Size = new System.Drawing.Size(100, 22);
             this.AjustePagadoTextBox.TabIndex = 98;
@@ -543,7 +550,7 @@
             // 
             this.AjustePendienteTextBox.Enabled = false;
             this.AjustePendienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjustePendienteTextBox.Location = new System.Drawing.Point(228, 550);
+            this.AjustePendienteTextBox.Location = new System.Drawing.Point(201, 105);
             this.AjustePendienteTextBox.Name = "AjustePendienteTextBox";
             this.AjustePendienteTextBox.Size = new System.Drawing.Size(100, 22);
             this.AjustePendienteTextBox.TabIndex = 97;
@@ -553,7 +560,7 @@
             // 
             this.AjustePendiente.AutoSize = true;
             this.AjustePendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjustePendiente.Location = new System.Drawing.Point(216, 531);
+            this.AjustePendiente.Location = new System.Drawing.Point(189, 85);
             this.AjustePendiente.Name = "AjustePendiente";
             this.AjustePendiente.Size = new System.Drawing.Size(125, 16);
             this.AjustePendiente.TabIndex = 96;
@@ -563,7 +570,7 @@
             // 
             this.AjustePagado.AutoSize = true;
             this.AjustePagado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjustePagado.Location = new System.Drawing.Point(224, 472);
+            this.AjustePagado.Location = new System.Drawing.Point(196, 30);
             this.AjustePagado.Name = "AjustePagado";
             this.AjustePagado.Size = new System.Drawing.Size(110, 16);
             this.AjustePagado.TabIndex = 95;
@@ -573,7 +580,7 @@
             // 
             this.GastosTextBox.Enabled = false;
             this.GastosTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GastosTextBox.Location = new System.Drawing.Point(411, 472);
+            this.GastosTextBox.Location = new System.Drawing.Point(367, 50);
             this.GastosTextBox.Name = "GastosTextBox";
             this.GastosTextBox.Size = new System.Drawing.Size(100, 22);
             this.GastosTextBox.TabIndex = 102;
@@ -584,7 +591,7 @@
             // 
             this.GananciaBrutaTextBox.Enabled = false;
             this.GananciaBrutaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GananciaBrutaTextBox.Location = new System.Drawing.Point(411, 531);
+            this.GananciaBrutaTextBox.Location = new System.Drawing.Point(367, 105);
             this.GananciaBrutaTextBox.Name = "GananciaBrutaTextBox";
             this.GananciaBrutaTextBox.Size = new System.Drawing.Size(100, 22);
             this.GananciaBrutaTextBox.TabIndex = 101;
@@ -595,7 +602,7 @@
             // 
             this.GananciaBruta.AutoSize = true;
             this.GananciaBruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GananciaBruta.Location = new System.Drawing.Point(399, 512);
+            this.GananciaBruta.Location = new System.Drawing.Point(360, 85);
             this.GananciaBruta.Name = "GananciaBruta";
             this.GananciaBruta.Size = new System.Drawing.Size(114, 16);
             this.GananciaBruta.TabIndex = 100;
@@ -605,7 +612,7 @@
             // 
             this.GastosEnMateriales.AutoSize = true;
             this.GastosEnMateriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GastosEnMateriales.Location = new System.Drawing.Point(407, 453);
+            this.GastosEnMateriales.Location = new System.Drawing.Point(340, 30);
             this.GastosEnMateriales.Name = "GastosEnMateriales";
             this.GastosEnMateriales.Size = new System.Drawing.Size(155, 16);
             this.GastosEnMateriales.TabIndex = 99;
@@ -615,7 +622,7 @@
             // 
             this.GananciaNetaTextBox.Enabled = false;
             this.GananciaNetaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GananciaNetaTextBox.Location = new System.Drawing.Point(369, 586);
+            this.GananciaNetaTextBox.Location = new System.Drawing.Point(513, 95);
             this.GananciaNetaTextBox.Name = "GananciaNetaTextBox";
             this.GananciaNetaTextBox.Size = new System.Drawing.Size(100, 22);
             this.GananciaNetaTextBox.TabIndex = 106;
@@ -625,11 +632,11 @@
             // 
             this.GananciaNeta.AutoSize = true;
             this.GananciaNeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GananciaNeta.Location = new System.Drawing.Point(252, 592);
+            this.GananciaNeta.Location = new System.Drawing.Point(524, 50);
             this.GananciaNeta.Name = "GananciaNeta";
-            this.GananciaNeta.Size = new System.Drawing.Size(111, 16);
+            this.GananciaNeta.Size = new System.Drawing.Size(78, 32);
             this.GananciaNeta.TabIndex = 105;
-            this.GananciaNeta.Text = "Ganancia Neta";
+            this.GananciaNeta.Text = "Ganancia \r\n    Neta";
             // 
             // EliminarButton
             // 
@@ -637,10 +644,10 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::BlacksmithManager.Properties.Resources.BotonEliminar;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(402, 623);
+            this.EliminarButton.Location = new System.Drawing.Point(511, 598);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(97, 37);
+            this.EliminarButton.Size = new System.Drawing.Size(97, 34);
             this.EliminarButton.TabIndex = 109;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -652,10 +659,10 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::BlacksmithManager.Properties.Resources.BotonGuardar;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(266, 623);
+            this.GuardarButton.Location = new System.Drawing.Point(271, 598);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(93, 37);
+            this.GuardarButton.Size = new System.Drawing.Size(93, 34);
             this.GuardarButton.TabIndex = 108;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -667,10 +674,10 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::BlacksmithManager.Properties.Resources.BotonNuevo;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(133, 623);
+            this.NuevoButton.Location = new System.Drawing.Point(49, 598);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(92, 37);
+            this.NuevoButton.Size = new System.Drawing.Size(92, 34);
             this.NuevoButton.TabIndex = 107;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -681,56 +688,120 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // MyStatusStrip
+            // 
+            this.MyStatusStrip.Enabled = false;
+            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.PorToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.MyStatusStrip.Location = new System.Drawing.Point(0, 638);
+            this.MyStatusStrip.Name = "MyStatusStrip";
+            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MyStatusStrip.Size = new System.Drawing.Size(682, 22);
+            this.MyStatusStrip.TabIndex = 110;
+            this.MyStatusStrip.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.UsuarioToolStripStatusLabel.Text = "  ";
+            // 
+            // PorToolStripStatusLabel
+            // 
+            this.PorToolStripStatusLabel.Name = "PorToolStripStatusLabel";
+            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(31, 17);
+            this.PorToolStripStatusLabel.Text = " por ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.EstadoToolStripStatusLabel.Text = "  ";
+            // 
+            // TrabajoGroupBox
+            // 
+            this.TrabajoGroupBox.Controls.Add(this.Cliente);
+            this.TrabajoGroupBox.Controls.Add(this.ClienteComboBox);
+            this.TrabajoGroupBox.Controls.Add(this.AgregarClienteButton);
+            this.TrabajoGroupBox.Controls.Add(this.TipoTrabajo);
+            this.TrabajoGroupBox.Controls.Add(this.TipoTrabajoComboBox);
+            this.TrabajoGroupBox.Controls.Add(this.AgregarTipoTrabajoButton);
+            this.TrabajoGroupBox.Controls.Add(this.DescripcionTrabajo);
+            this.TrabajoGroupBox.Controls.Add(this.DescripcionTrabajoTextBox);
+            this.TrabajoGroupBox.Controls.Add(this.Direccion);
+            this.TrabajoGroupBox.Controls.Add(this.DireccionTextBox);
+            this.TrabajoGroupBox.Controls.Add(this.Precio);
+            this.TrabajoGroupBox.Controls.Add(this.PrecioNumericUpDown);
+            this.TrabajoGroupBox.Location = new System.Drawing.Point(20, 51);
+            this.TrabajoGroupBox.Name = "TrabajoGroupBox";
+            this.TrabajoGroupBox.Size = new System.Drawing.Size(643, 123);
+            this.TrabajoGroupBox.TabIndex = 111;
+            this.TrabajoGroupBox.TabStop = false;
+            // 
+            // MovimientosGroupBox
+            // 
+            this.MovimientosGroupBox.Controls.Add(this.FechaMovimiento);
+            this.MovimientosGroupBox.Controls.Add(this.FechaMovimientoDateTimePicker);
+            this.MovimientosGroupBox.Controls.Add(this.DetalleDataGridView);
+            this.MovimientosGroupBox.Controls.Add(this.TipoMovimiento);
+            this.MovimientosGroupBox.Controls.Add(this.TipoMovimientoComboBox);
+            this.MovimientosGroupBox.Controls.Add(this.DescripcionMovimiento);
+            this.MovimientosGroupBox.Controls.Add(this.DescripcionMovimientoTextBox);
+            this.MovimientosGroupBox.Controls.Add(this.Valor);
+            this.MovimientosGroupBox.Controls.Add(this.ValorNumericUpDown);
+            this.MovimientosGroupBox.Controls.Add(this.AgregarMovimientoButton);
+            this.MovimientosGroupBox.Controls.Add(this.RemoverButton);
+            this.MovimientosGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovimientosGroupBox.Location = new System.Drawing.Point(20, 214);
+            this.MovimientosGroupBox.Name = "MovimientosGroupBox";
+            this.MovimientosGroupBox.Size = new System.Drawing.Size(643, 227);
+            this.MovimientosGroupBox.TabIndex = 112;
+            this.MovimientosGroupBox.TabStop = false;
+            this.MovimientosGroupBox.Text = "Movimientos";
+            // 
+            // DesgloseGroupBox
+            // 
+            this.DesgloseGroupBox.Controls.Add(this.CobradoTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.Cobrado);
+            this.DesgloseGroupBox.Controls.Add(this.Balance);
+            this.DesgloseGroupBox.Controls.Add(this.BalanceTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.AjustePagado);
+            this.DesgloseGroupBox.Controls.Add(this.AjustePendiente);
+            this.DesgloseGroupBox.Controls.Add(this.GananciaNetaTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.AjustePendienteTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.GananciaNeta);
+            this.DesgloseGroupBox.Controls.Add(this.AjustePagadoTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.GastosTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.GastosEnMateriales);
+            this.DesgloseGroupBox.Controls.Add(this.GananciaBrutaTextBox);
+            this.DesgloseGroupBox.Controls.Add(this.GananciaBruta);
+            this.DesgloseGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DesgloseGroupBox.Location = new System.Drawing.Point(20, 450);
+            this.DesgloseGroupBox.Name = "DesgloseGroupBox";
+            this.DesgloseGroupBox.Size = new System.Drawing.Size(643, 137);
+            this.DesgloseGroupBox.TabIndex = 113;
+            this.DesgloseGroupBox.TabStop = false;
+            this.DesgloseGroupBox.Text = "Desglose";
+            // 
             // rTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 673);
+            this.ClientSize = new System.Drawing.Size(682, 660);
+            this.Controls.Add(this.DesgloseGroupBox);
+            this.Controls.Add(this.MovimientosGroupBox);
+            this.Controls.Add(this.TrabajoGroupBox);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
-            this.Controls.Add(this.GananciaNetaTextBox);
-            this.Controls.Add(this.GananciaNeta);
-            this.Controls.Add(this.GastosTextBox);
-            this.Controls.Add(this.GananciaBrutaTextBox);
-            this.Controls.Add(this.GananciaBruta);
-            this.Controls.Add(this.GastosEnMateriales);
-            this.Controls.Add(this.AjustePagadoTextBox);
-            this.Controls.Add(this.AjustePendienteTextBox);
-            this.Controls.Add(this.AjustePendiente);
-            this.Controls.Add(this.AjustePagado);
-            this.Controls.Add(this.CobradoTextBox);
-            this.Controls.Add(this.BalanceTextBox);
-            this.Controls.Add(this.Balance);
-            this.Controls.Add(this.Cobrado);
-            this.Controls.Add(this.RemoverButton);
-            this.Controls.Add(this.AgregarMovimientoButton);
-            this.Controls.Add(this.ValorNumericUpDown);
-            this.Controls.Add(this.Valor);
-            this.Controls.Add(this.DescripcionMovimientoTextBox);
-            this.Controls.Add(this.DescripcionMovimiento);
-            this.Controls.Add(this.TipoMovimientoComboBox);
-            this.Controls.Add(this.TipoMovimiento);
-            this.Controls.Add(this.DetalleDataGridView);
-            this.Controls.Add(this.FechaMovimiento);
-            this.Controls.Add(this.FechaMovimientoDateTimePicker);
             this.Controls.Add(this.AjusteNumericUpDown);
             this.Controls.Add(this.Ajuste);
             this.Controls.Add(this.AgregarEmpleadoButton);
             this.Controls.Add(this.EncargadoComboBox);
             this.Controls.Add(this.Encargado);
-            this.Controls.Add(this.PrecioNumericUpDown);
-            this.Controls.Add(this.Precio);
-            this.Controls.Add(this.DireccionTextBox);
-            this.Controls.Add(this.Direccion);
-            this.Controls.Add(this.DescripcionTrabajoTextBox);
-            this.Controls.Add(this.DescripcionTrabajo);
-            this.Controls.Add(this.AgregarTipoTrabajoButton);
-            this.Controls.Add(this.TipoTrabajoComboBox);
-            this.Controls.Add(this.TipoTrabajo);
-            this.Controls.Add(this.AgregarClienteButton);
-            this.Controls.Add(this.ClienteComboBox);
-            this.Controls.Add(this.Cliente);
             this.Controls.Add(this.FechaInicio);
             this.Controls.Add(this.FechaCreacionDateTimePicker);
             this.Controls.Add(this.BuscarButton);
@@ -745,6 +816,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.MyStatusStrip.ResumeLayout(false);
+            this.MyStatusStrip.PerformLayout();
+            this.TrabajoGroupBox.ResumeLayout(false);
+            this.TrabajoGroupBox.PerformLayout();
+            this.MovimientosGroupBox.ResumeLayout(false);
+            this.MovimientosGroupBox.PerformLayout();
+            this.DesgloseGroupBox.ResumeLayout(false);
+            this.DesgloseGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -803,5 +882,12 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.StatusStrip MyStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel PorToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
+        private System.Windows.Forms.GroupBox TrabajoGroupBox;
+        private System.Windows.Forms.GroupBox MovimientosGroupBox;
+        private System.Windows.Forms.GroupBox DesgloseGroupBox;
     }
 }
