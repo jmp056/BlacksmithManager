@@ -16,6 +16,8 @@ namespace Entidades
         [Browsable(false)]
         public string Clave { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public string Estado { get; set; }
+        public string UsuarioR { get; set; }
 
         public Usuarios()
         {
@@ -26,6 +28,8 @@ namespace Entidades
             Usuario = string.Empty;
             Clave = string.Empty;
             FechaIngreso = DateTime.Now;
+            Estado = string.Empty;
+            UsuarioR = string.Empty;
         }
     }
 }
