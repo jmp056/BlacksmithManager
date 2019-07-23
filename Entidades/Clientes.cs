@@ -13,6 +13,7 @@ namespace Entidades
         public string Email { get; set; }
         public string  Direccion { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public decimal Balance { get; set; }
         public string Estado { get; set; }
         public string Usuario { get; set; }
 
@@ -25,6 +26,7 @@ namespace Entidades
             Email = string.Empty;
             Direccion = string.Empty;
             FechaIngreso = DateTime.Now;
+            Balance = 0;
             Estado = string.Empty;
             Usuario = string.Empty;
         }

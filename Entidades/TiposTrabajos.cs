@@ -13,12 +13,16 @@ namespace Entidades
         public int TipoTrabajoId { get; set; }
         public string Descripcion { get; set; }
         public DateTime FechaCreacion { get; set; }
+        public string Estado { get; set; }
+        public string Usuario { get; set; }
 
         public TiposTrabajos()
         {
             TipoTrabajoId = 0;
             Descripcion = string.Empty;
             FechaCreacion = DateTime.Now;
+            Estado = string.Empty;
+            Usuario = string.Empty;
         }
     }
 }
