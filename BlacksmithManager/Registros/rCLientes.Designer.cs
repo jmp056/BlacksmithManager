@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rClientes));
             this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.Telefono = new System.Windows.Forms.Label();
             this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -326,6 +327,7 @@
             this.Controls.Add(this.ClienteIdNumericUpDown);
             this.Controls.Add(this.Nombres);
             this.Controls.Add(this.BuscarButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rClientes";
             this.Text = "Registro de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).EndInit();

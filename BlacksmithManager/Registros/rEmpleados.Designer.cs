@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rEmpleados));
             this.Email = new System.Windows.Forms.Label();
             this.IDEmpleado = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
@@ -326,8 +327,9 @@
             this.Controls.Add(this.EmpleadoIdNumericUpDown);
             this.Controls.Add(this.Nombres);
             this.Controls.Add(this.BuscarButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rEmpleados";
-            this.Text = "rEmpleados";
+            this.Text = "Registro de Empleados";
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.MyStatusStrip.ResumeLayout(false);

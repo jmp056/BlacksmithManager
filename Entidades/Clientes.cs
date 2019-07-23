@@ -13,6 +13,8 @@ namespace Entidades
         public string Email { get; set; }
         public string  Direccion { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public string Estado { get; set; }
+        public string Usuario { get; set; }
 
         public Clientes()
         {
@@ -23,6 +25,8 @@ namespace Entidades
             Email = string.Empty;
             Direccion = string.Empty;
             FechaIngreso = DateTime.Now;
+            Estado = string.Empty;
+            Usuario = string.Empty;
         }
     }
 }
