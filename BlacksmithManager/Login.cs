@@ -56,7 +56,7 @@ namespace BlacksmithManager
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
             var Listado = new List<Usuarios>();
 
-            Listado = Repositorio.GetList(p => p.Usuario.Equals(UsuarioTextBox.Text) && p.Clave.Equals(ClaveTextBox.Text));
+            Listado = Repositorio.GetList(p => p.Usuario.Equals(UsuarioTextBox.Text) && p.Clave.CompareTo(ClaveTextBox.Text) == 0);
 
             Usuarios UsuarioLagueado = (Listado != null && Listado.Count > 0) ? Listado[0] : null;
 

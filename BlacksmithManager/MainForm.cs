@@ -15,11 +15,13 @@ namespace BlacksmithManager
     public partial class MainForm : Form
     {
         string nombreUsuario;
+        int nivelUsuario;
         public MainForm(string NombreUsuario, int NivelUsuario)
         {
             InitializeComponent();
             UsuarioToolStripStatusLabel.Text = NombreUsuario;
             this.nombreUsuario = NombreUsuario;
+            this.nivelUsuario = NivelUsuario;
             switch (NivelUsuario)
             {
                 case 1:
@@ -72,7 +74,7 @@ namespace BlacksmithManager
 
         private void RegistroDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rTrabajos rT = new rTrabajos();
+            rTrabajos rT = new rTrabajos(nombreUsuario, nivelUsuario);
             rT.ShowDialog();
         }
 

@@ -364,24 +364,27 @@
             this.MyStatusStrip.Name = "MyStatusStrip";
             this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.MyStatusStrip.Size = new System.Drawing.Size(417, 22);
-            this.MyStatusStrip.TabIndex = 52;
+            this.MyStatusStrip.TabIndex = 87;
             this.MyStatusStrip.Text = "statusStrip1";
             // 
             // UsuarioToolStripStatusLabel
             // 
             this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
             this.UsuarioToolStripStatusLabel.Text = "  ";
             // 
             // PorToolStripStatusLabel
             // 
             this.PorToolStripStatusLabel.Name = "PorToolStripStatusLabel";
-            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(31, 17);
-            this.PorToolStripStatusLabel.Text = " por ";
+            this.PorToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(25, 17);
+            this.PorToolStripStatusLabel.Text = "por";
             // 
             // EstadoToolStripStatusLabel
             // 
             this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
             this.EstadoToolStripStatusLabel.Text = "  ";
             // 

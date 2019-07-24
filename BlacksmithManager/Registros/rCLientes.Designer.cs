@@ -49,12 +49,12 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Direccion = new System.Windows.Forms.Label();
             this.DireccionTextBox = new System.Windows.Forms.TextBox();
+            this.BalanceLabal = new System.Windows.Forms.Label();
+            this.BalanceTextBox = new System.Windows.Forms.TextBox();
             this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.BalanceLabal = new System.Windows.Forms.Label();
-            this.BalanceTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.MyStatusStrip.SuspendLayout();
@@ -273,6 +273,27 @@
             this.DireccionTextBox.TabIndex = 84;
             this.DireccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DireccionTextBox_KeyPress);
             // 
+            // BalanceLabal
+            // 
+            this.BalanceLabal.AutoSize = true;
+            this.BalanceLabal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceLabal.Location = new System.Drawing.Point(20, 235);
+            this.BalanceLabal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BalanceLabal.Name = "BalanceLabal";
+            this.BalanceLabal.Size = new System.Drawing.Size(65, 16);
+            this.BalanceLabal.TabIndex = 88;
+            this.BalanceLabal.Text = "Balance";
+            // 
+            // BalanceTextBox
+            // 
+            this.BalanceTextBox.Enabled = false;
+            this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceTextBox.Location = new System.Drawing.Point(120, 233);
+            this.BalanceTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.BalanceTextBox.Name = "BalanceTextBox";
+            this.BalanceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.BalanceTextBox.TabIndex = 87;
+            // 
             // MyStatusStrip
             // 
             this.MyStatusStrip.Enabled = false;
@@ -284,7 +305,7 @@
             this.MyStatusStrip.Name = "MyStatusStrip";
             this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.MyStatusStrip.Size = new System.Drawing.Size(405, 22);
-            this.MyStatusStrip.TabIndex = 86;
+            this.MyStatusStrip.TabIndex = 89;
             this.MyStatusStrip.Text = "statusStrip1";
             // 
             // UsuarioToolStripStatusLabel
@@ -308,35 +329,14 @@
             this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
             this.EstadoToolStripStatusLabel.Text = "  ";
             // 
-            // BalanceLabal
-            // 
-            this.BalanceLabal.AutoSize = true;
-            this.BalanceLabal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalanceLabal.Location = new System.Drawing.Point(20, 235);
-            this.BalanceLabal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.BalanceLabal.Name = "BalanceLabal";
-            this.BalanceLabal.Size = new System.Drawing.Size(65, 16);
-            this.BalanceLabal.TabIndex = 88;
-            this.BalanceLabal.Text = "Balance";
-            // 
-            // BalanceTextBox
-            // 
-            this.BalanceTextBox.Enabled = false;
-            this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalanceTextBox.Location = new System.Drawing.Point(120, 233);
-            this.BalanceTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.BalanceTextBox.Name = "BalanceTextBox";
-            this.BalanceTextBox.Size = new System.Drawing.Size(100, 22);
-            this.BalanceTextBox.TabIndex = 87;
-            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 350);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.BalanceLabal);
             this.Controls.Add(this.BalanceTextBox);
-            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.Direccion);
             this.Controls.Add(this.DireccionTextBox);
             this.Controls.Add(this.EliminarButton);
@@ -388,11 +388,11 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label Direccion;
         private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.Label BalanceLabal;
+        private System.Windows.Forms.TextBox BalanceTextBox;
         private System.Windows.Forms.StatusStrip MyStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel PorToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
-        private System.Windows.Forms.Label BalanceLabal;
-        private System.Windows.Forms.TextBox BalanceTextBox;
     }
 }

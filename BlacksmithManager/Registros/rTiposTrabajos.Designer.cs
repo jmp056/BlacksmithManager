@@ -189,7 +189,7 @@
             this.MyStatusStrip.Name = "MyStatusStrip";
             this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.MyStatusStrip.Size = new System.Drawing.Size(418, 22);
-            this.MyStatusStrip.TabIndex = 88;
+            this.MyStatusStrip.TabIndex = 87;
             this.MyStatusStrip.Text = "statusStrip1";
             // 
             // UsuarioToolStripStatusLabel

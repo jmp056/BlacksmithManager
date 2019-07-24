@@ -10,11 +10,16 @@ namespace BlacksmithManager.Registros
     public partial class rTrabajos : Form
     {
         public List<Movimientos> Detalle;
-
-        public rTrabajos()
+        string nombreUsuario;
+        int nivelUsuario;
+        public rTrabajos(string NombreUsuario, int NivelUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
+            this.nivelUsuario = NivelUsuario;
             InitializeComponent();
             Detalle = new List<Movimientos>();
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private void Calculadora() // Funcion que hac el calculo cuando se agrega un movimiento
@@ -72,6 +77,9 @@ namespace BlacksmithManager.Registros
             GananciaBrutaTextBox.Text = "0";
             GananciaNetaTextBox.Text = "0";
             EliminarButton.Enabled = false;
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private void LimpiarMovimiento() // Funcion encargada de limpiar todos los campos de movimientos
@@ -140,6 +148,8 @@ namespace BlacksmithManager.Registros
             Trabajo.Materiales = Convert.ToDecimal(GastosTextBox.Text);
             Trabajo.GananciaNeta = Convert.ToDecimal(GananciaNetaTextBox.Text);
             Trabajo.GananciaBruta = Convert.ToDecimal(GananciaBrutaTextBox.Text);
+            Trabajo.Estado = (TrabajoIdNumericUpDown.Value != 0) ? "Modificado" : "Registrado";
+            Trabajo.Usuario = nombreUsuario;
             return Trabajo;
         } 
 
@@ -165,6 +175,9 @@ namespace BlacksmithManager.Registros
             GastosTextBox.Text = Convert.ToString(Trabajo.Materiales);
             GananciaBrutaTextBox.Text = Convert.ToString(Trabajo.GananciaBruta);
             GananciaNetaTextBox.Text = Convert.ToString(Trabajo.GananciaNeta);
+            EstadoToolStripStatusLabel.Text = Trabajo.Estado;
+            PorToolStripStatusLabel.Text = "por";
+            UsuarioToolStripStatusLabel.Text = Trabajo.Usuario;
         } 
 
         private void RTrabajos_Load(object sender, EventArgs e) // Llena todos los ComboBox al cargar el registro de trabajos
@@ -315,20 +328,20 @@ namespace BlacksmithManager.Registros
 
         private void AgregarClienteButton_Click(object sender, EventArgs e) //Boton que abre el registro de clientes
         {
-            //rClientes rC = new rClientes();
-            //rC.Show();
+            rClientes rC = new rClientes(nombreUsuario);
+            rC.Show();
         } 
 
         private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e) //Boton que abre el registro de tipos de trabajo
         {
-            //rTiposTrabajos rTT = new rTiposTrabajos();
-            //rTT.Show();
+            rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario);
+            rTT.Show();
         } 
 
         private void AgregarEmpleadoButton_Click(object sender, EventArgs e) //Boton que abre el registro de empleados
         {
-            //rEmpleados rE = new rEmpleados();
-            //rE.Show();
+            rEmpleados rE = new rEmpleados(nombreUsuario);
+            rE.Show();
         } 
 
         private void AgregarMovimientoButton_Click(object sender, EventArgs e) //Boton que agrega los movimientos

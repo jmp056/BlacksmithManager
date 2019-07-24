@@ -80,23 +80,23 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TrabajoGroupBox = new System.Windows.Forms.GroupBox();
+            this.MovimientosGroupBox = new System.Windows.Forms.GroupBox();
+            this.DesgloseGroupBox = new System.Windows.Forms.GroupBox();
             this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TrabajoGroupBox = new System.Windows.Forms.GroupBox();
-            this.MovimientosGroupBox = new System.Windows.Forms.GroupBox();
-            this.DesgloseGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AjusteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
-            this.MyStatusStrip.SuspendLayout();
             this.TrabajoGroupBox.SuspendLayout();
             this.MovimientosGroupBox.SuspendLayout();
             this.DesgloseGroupBox.SuspendLayout();
+            this.MyStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // IdTrabajo
@@ -688,38 +688,6 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // MyStatusStrip
-            // 
-            this.MyStatusStrip.Enabled = false;
-            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.UsuarioToolStripStatusLabel,
-            this.PorToolStripStatusLabel,
-            this.EstadoToolStripStatusLabel});
-            this.MyStatusStrip.Location = new System.Drawing.Point(0, 638);
-            this.MyStatusStrip.Name = "MyStatusStrip";
-            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.MyStatusStrip.Size = new System.Drawing.Size(682, 22);
-            this.MyStatusStrip.TabIndex = 110;
-            this.MyStatusStrip.Text = "statusStrip1";
-            // 
-            // UsuarioToolStripStatusLabel
-            // 
-            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
-            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
-            this.UsuarioToolStripStatusLabel.Text = "  ";
-            // 
-            // PorToolStripStatusLabel
-            // 
-            this.PorToolStripStatusLabel.Name = "PorToolStripStatusLabel";
-            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(31, 17);
-            this.PorToolStripStatusLabel.Text = " por ";
-            // 
-            // EstadoToolStripStatusLabel
-            // 
-            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
-            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
-            this.EstadoToolStripStatusLabel.Text = "  ";
-            // 
             // TrabajoGroupBox
             // 
             this.TrabajoGroupBox.Controls.Add(this.Cliente);
@@ -785,16 +753,51 @@
             this.DesgloseGroupBox.TabStop = false;
             this.DesgloseGroupBox.Text = "Desglose";
             // 
+            // MyStatusStrip
+            // 
+            this.MyStatusStrip.Enabled = false;
+            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.PorToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.MyStatusStrip.Location = new System.Drawing.Point(0, 638);
+            this.MyStatusStrip.Name = "MyStatusStrip";
+            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MyStatusStrip.Size = new System.Drawing.Size(682, 22);
+            this.MyStatusStrip.TabIndex = 114;
+            this.MyStatusStrip.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.UsuarioToolStripStatusLabel.Text = "  ";
+            // 
+            // PorToolStripStatusLabel
+            // 
+            this.PorToolStripStatusLabel.Name = "PorToolStripStatusLabel";
+            this.PorToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PorToolStripStatusLabel.Size = new System.Drawing.Size(25, 17);
+            this.PorToolStripStatusLabel.Text = "por";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.EstadoToolStripStatusLabel.Text = "  ";
+            // 
             // rTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(682, 660);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.DesgloseGroupBox);
             this.Controls.Add(this.MovimientosGroupBox);
             this.Controls.Add(this.TrabajoGroupBox);
-            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -820,14 +823,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
-            this.MyStatusStrip.ResumeLayout(false);
-            this.MyStatusStrip.PerformLayout();
             this.TrabajoGroupBox.ResumeLayout(false);
             this.TrabajoGroupBox.PerformLayout();
             this.MovimientosGroupBox.ResumeLayout(false);
             this.MovimientosGroupBox.PerformLayout();
             this.DesgloseGroupBox.ResumeLayout(false);
             this.DesgloseGroupBox.PerformLayout();
+            this.MyStatusStrip.ResumeLayout(false);
+            this.MyStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -886,12 +889,12 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.GroupBox TrabajoGroupBox;
+        private System.Windows.Forms.GroupBox MovimientosGroupBox;
+        private System.Windows.Forms.GroupBox DesgloseGroupBox;
         private System.Windows.Forms.StatusStrip MyStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel PorToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
-        private System.Windows.Forms.GroupBox TrabajoGroupBox;
-        private System.Windows.Forms.GroupBox MovimientosGroupBox;
-        private System.Windows.Forms.GroupBox DesgloseGroupBox;
     }
 }

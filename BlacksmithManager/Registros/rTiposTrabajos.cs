@@ -126,17 +126,17 @@ namespace BlacksmithManager.Registros
             TipoTrabajo = LlenaClase();
 
             RepositorioBase<TiposTrabajos> Repositorio2 = new RepositorioBase<TiposTrabajos>();
-            TiposTrabajos TipoTrabajo2 = new TiposTrabajos();
+            TiposTrabajos TipoTrabajo2;
             int id;
             int.TryParse(TipoTrabajoIdNumericUpDown.Text, out id);
             TipoTrabajo2 = Repositorio2.Buscar(id);
 
             if (TipoTrabajoIdNumericUpDown.Value == 0)
             {
-                if (TiposTrabajosBLL.Existe(TipoTrabajoIdNumericUpDown.Text) == true) // Validando que la descripcion no exista, en caso de ser nuevo
+                if (TiposTrabajosBLL.Existe(DescripcionTextBox.Text) == true) // Validando que el tipo de trabajo no exista, en caso de ser nuevo
                 {
-                    MyErrorProvider.SetError(TipoTrabajoIdNumericUpDown, "Ya este tipo de trabajo existe!");
-                    TipoTrabajoIdNumericUpDown.Focus();
+                    MyErrorProvider.SetError(DescripcionTextBox, "Ya este tipo de trabajo existe");
+                    DescripcionTextBox.Focus();
                     return;
                 }
                 else
@@ -156,7 +156,7 @@ namespace BlacksmithManager.Registros
                 }
                 else if (TiposTrabajosBLL.Existe(DescripcionTextBox.Text) == true && string.Equals(Convert.ToString(TipoTrabajo.Descripcion), Convert.ToString(TipoTrabajo2.Descripcion)) == false) // Validando que el tipo de trabajo no exista, en caso de ser estar modificando
                 {
-                    MyErrorProvider.SetError(DescripcionTextBox, "Ya este tipo de trabajo existe, por favor eliga otro");
+                    MyErrorProvider.SetError(DescripcionTextBox, "Ya este tipo de trabajo existe");
                     DescripcionTextBox.Focus();
                     return;
                 }
