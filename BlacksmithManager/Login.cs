@@ -24,34 +24,6 @@ namespace BlacksmithManager
             InitializeComponent();
         }
 
-
-        /*SqlConnection con = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = BlacksmithManagerDb;  Integrated Security = True");
-
-
-        public void Laguear(string Usuario, string Clave)
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Usuario FROM Usuarios where Usuario = @Usuario AND Clave = @Clave", con);
-            cmd.Parameters.AddWithValue("Usuario", Usuario);
-            cmd.Parameters.AddWithValue("Clave", Clave);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-
-            if (dt.Rows.Count > 0)
-            {
-                SqlCommand comando = new SqlCommand("SELECT UsuarioId FROM Usuarios WHERE Usuario = @usuario", con);
-                comando.Parameters.AddWithValue("Usuario", Usuario);
-                SqlDataReader Registro = comando.ExecuteReader();
-                int nivel = Convert.ToInt32(Registro["UsuarioId"].ToString());
-                this.Hide();
-                new MainForm(Usuario).Show();
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o Clave incorrect@");
-            }
-        }*/
         private void Limpiar() // Funcion encargada de limpiar la ventana 
         {
             UsuarioTextBox.Text = string.Empty;
@@ -66,6 +38,7 @@ namespace BlacksmithManager
             if (UsuarioTextBox.Text == string.Empty)
             {
                 MyErrorProvider.SetError(UsuarioTextBox, "Debe elegir un Usuario");
+                UsuarioTextBox.Focus();
                 paso = false;
             }
 
@@ -73,15 +46,13 @@ namespace BlacksmithManager
             {
                 MyErrorProvider.SetError(ClaveTextBox, "Ingrese una contraseña");
                 paso = false;
+                ClaveTextBox.Focus();
             }
             return paso;
         }
 
-        private void IngresarButton_Click(object sender, EventArgs e)
+        private void Laguear() // Funcion encargada de hacer el Login
         {
-            if (!Validar())
-                return;
-
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
             var Listado = new List<Usuarios>();
 
@@ -100,10 +71,25 @@ namespace BlacksmithManager
             {
                 MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ClaveTextBox.Text = string.Empty;
+                ClaveTextBox.Focus();
+                return;
             }
         }
 
-        private void UsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void IngresarButton_Click(object sender, EventArgs e) // Boton ingresar
+        {
+            if (!Validar())
+                return;
+            Laguear();
+
+        }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        } // Boton cancelar
+
+        private void UsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e) // Del Usuario a la clave
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -111,7 +97,7 @@ namespace BlacksmithManager
             }
         }
 
-        private void ClaveTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void ClaveTextBox_KeyPress(object sender, KeyPressEventArgs e) // De la Clave al boton Ingresar
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {

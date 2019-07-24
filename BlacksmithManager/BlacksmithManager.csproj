@@ -327,5 +327,17 @@
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenClave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonIngresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonCancelar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

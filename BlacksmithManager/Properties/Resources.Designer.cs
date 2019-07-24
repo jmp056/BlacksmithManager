@@ -83,6 +83,16 @@ namespace BlacksmithManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonCancelar {
+            get {
+                object obj = ResourceManager.GetObject("BotonCancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonConsultarEstudiantes {
             get {
                 object obj = ResourceManager.GetObject("BotonConsultarEstudiantes", resourceCulture);
@@ -113,9 +123,39 @@ namespace BlacksmithManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonIngresar {
+            get {
+                object obj = ResourceManager.GetObject("BotonIngresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonNuevo {
             get {
                 object obj = ResourceManager.GetObject("BotonNuevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImagenClave {
+            get {
+                object obj = ResourceManager.GetObject("ImagenClave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImagenUsuario {
+            get {
+                object obj = ResourceManager.GetObject("ImagenUsuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

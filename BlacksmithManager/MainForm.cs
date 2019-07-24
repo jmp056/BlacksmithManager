@@ -22,7 +22,22 @@ namespace BlacksmithManager
             {
                 case 1:
                     {
-                        NivelUsuarioToolStripStatusLabel.Text = "Administrador";
+                        NivelUsuarioToolStripStatusLabel.Text = "Administrador  ";
+                        break;
+                    }
+                case 2:
+                    {
+                        NivelUsuarioToolStripStatusLabel.Text = "Supervisor  ";
+                        break;
+                    }
+                case 3:
+                    {
+                        NivelUsuarioToolStripStatusLabel.Text = "Soporte  ";
+                        break;
+                    }
+                default:
+                    {
+                        NivelUsuarioToolStripStatusLabel.Text = "Usuario  ";
                         break;
                     }
             }
