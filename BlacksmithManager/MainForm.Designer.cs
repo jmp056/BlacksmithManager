@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeTiposDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarTiposDeTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.NivelUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.GuienToolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.registroDeTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeTiposDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarTiposDeTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BlacksmithManagerlabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.MyStatusStrip.SuspendLayout();
@@ -77,6 +77,46 @@
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
+            // registroDeTrabajosToolStripMenuItem
+            // 
+            this.registroDeTrabajosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeTrabajosToolStripMenuItem.Image")));
+            this.registroDeTrabajosToolStripMenuItem.Name = "registroDeTrabajosToolStripMenuItem";
+            this.registroDeTrabajosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.registroDeTrabajosToolStripMenuItem.Text = "Registro de Trabajos";
+            this.registroDeTrabajosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeTrabajosToolStripMenuItem_Click);
+            // 
+            // registroDeClientesToolStripMenuItem
+            // 
+            this.registroDeClientesToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenCliente;
+            this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
+            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.registroDeClientesToolStripMenuItem.Text = "Registro de Clientes";
+            this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeClientesToolStripMenuItem_Click);
+            // 
+            // registroDeEmpleadosToolStripMenuItem
+            // 
+            this.registroDeEmpleadosToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenEmpleado;
+            this.registroDeEmpleadosToolStripMenuItem.Name = "registroDeEmpleadosToolStripMenuItem";
+            this.registroDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.registroDeEmpleadosToolStripMenuItem.Text = "Registro de Empleados";
+            this.registroDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeEmpleadosToolStripMenuItem_Click);
+            // 
+            // registroDeTiposDeTrabajoToolStripMenuItem
+            // 
+            this.registroDeTiposDeTrabajoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeTiposDeTrabajoToolStripMenuItem.Image")));
+            this.registroDeTiposDeTrabajoToolStripMenuItem.Name = "registroDeTiposDeTrabajoToolStripMenuItem";
+            this.registroDeTiposDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.registroDeTiposDeTrabajoToolStripMenuItem.Text = "Registro de Tipos de Trabajo";
+            this.registroDeTiposDeTrabajoToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeTiposDeTrabajoToolStripMenuItem_Click);
+            // 
+            // registroDeUsuariosToolStripMenuItem
+            // 
+            this.registroDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeUsuariosToolStripMenuItem.Image")));
+            this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
+            this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -88,6 +128,46 @@
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // consultarTrabajosToolStripMenuItem
+            // 
+            this.consultarTrabajosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarTrabajosToolStripMenuItem.Image")));
+            this.consultarTrabajosToolStripMenuItem.Name = "consultarTrabajosToolStripMenuItem";
+            this.consultarTrabajosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.consultarTrabajosToolStripMenuItem.Text = "Consultar  Trabajos";
+            this.consultarTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTrabajosToolStripMenuItem_Click);
+            // 
+            // consultarClientesToolStripMenuItem
+            // 
+            this.consultarClientesToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenCliente1;
+            this.consultarClientesToolStripMenuItem.Name = "consultarClientesToolStripMenuItem";
+            this.consultarClientesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.consultarClientesToolStripMenuItem.Text = "Consultar Clientes";
+            this.consultarClientesToolStripMenuItem.Click += new System.EventHandler(this.ConsultarClientesToolStripMenuItem_Click);
+            // 
+            // consultaEmpleadosToolStripMenuItem
+            // 
+            this.consultaEmpleadosToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenCliente1;
+            this.consultaEmpleadosToolStripMenuItem.Name = "consultaEmpleadosToolStripMenuItem";
+            this.consultaEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.consultaEmpleadosToolStripMenuItem.Text = "Consulta Empleados";
+            this.consultaEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.ConsultaEmpleadosToolStripMenuItem_Click);
+            // 
+            // consultarTiposDeTrabajosToolStripMenuItem
+            // 
+            this.consultarTiposDeTrabajosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarTiposDeTrabajosToolStripMenuItem.Image")));
+            this.consultarTiposDeTrabajosToolStripMenuItem.Name = "consultarTiposDeTrabajosToolStripMenuItem";
+            this.consultarTiposDeTrabajosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.consultarTiposDeTrabajosToolStripMenuItem.Text = "Consultar Tipos de Trabajos";
+            this.consultarTiposDeTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTiposDeTrabajosToolStripMenuItem_Click);
+            // 
+            // consultarUsuariosToolStripMenuItem
+            // 
+            this.consultarUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarUsuariosToolStripMenuItem.Image")));
+            this.consultarUsuariosToolStripMenuItem.Name = "consultarUsuariosToolStripMenuItem";
+            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.consultarUsuariosToolStripMenuItem.Text = "Consultar Usuarios";
+            this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarUsuariosToolStripMenuItem_Click);
             // 
             // MyStatusStrip
             // 
@@ -140,90 +220,11 @@
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
             // 
-            // registroDeTrabajosToolStripMenuItem
-            // 
-            this.registroDeTrabajosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeTrabajosToolStripMenuItem.Image")));
-            this.registroDeTrabajosToolStripMenuItem.Name = "registroDeTrabajosToolStripMenuItem";
-            this.registroDeTrabajosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.registroDeTrabajosToolStripMenuItem.Text = "Registro de Trabajos";
-            this.registroDeTrabajosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeTrabajosToolStripMenuItem_Click);
-            // 
-            // registroDeClientesToolStripMenuItem
-            // 
-            this.registroDeClientesToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenCliente;
-            this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
-            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.registroDeClientesToolStripMenuItem.Text = "Registro de Clientes";
-            this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeClientesToolStripMenuItem_Click);
-            // 
-            // registroDeEmpleadosToolStripMenuItem
-            // 
-            this.registroDeEmpleadosToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenEmpleado;
-            this.registroDeEmpleadosToolStripMenuItem.Name = "registroDeEmpleadosToolStripMenuItem";
-            this.registroDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.registroDeEmpleadosToolStripMenuItem.Text = "Registro de Empleados";
-            this.registroDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeEmpleadosToolStripMenuItem_Click);
-            // 
-            // registroDeTiposDeTrabajoToolStripMenuItem
-            // 
-            this.registroDeTiposDeTrabajoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeTiposDeTrabajoToolStripMenuItem.Image")));
-            this.registroDeTiposDeTrabajoToolStripMenuItem.Name = "registroDeTiposDeTrabajoToolStripMenuItem";
-            this.registroDeTiposDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.registroDeTiposDeTrabajoToolStripMenuItem.Text = "Registro de Tipos de Trabajo";
-            this.registroDeTiposDeTrabajoToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeTiposDeTrabajoToolStripMenuItem_Click);
-            // 
-            // registroDeUsuariosToolStripMenuItem
-            // 
-            this.registroDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeUsuariosToolStripMenuItem.Image")));
-            this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
-            this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
-            // 
-            // consultarTrabajosToolStripMenuItem
-            // 
-            this.consultarTrabajosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarTrabajosToolStripMenuItem.Image")));
-            this.consultarTrabajosToolStripMenuItem.Name = "consultarTrabajosToolStripMenuItem";
-            this.consultarTrabajosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.consultarTrabajosToolStripMenuItem.Text = "Consultar  Trabajos";
-            this.consultarTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTrabajosToolStripMenuItem_Click);
-            // 
-            // consultarClientesToolStripMenuItem
-            // 
-            this.consultarClientesToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenCliente1;
-            this.consultarClientesToolStripMenuItem.Name = "consultarClientesToolStripMenuItem";
-            this.consultarClientesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.consultarClientesToolStripMenuItem.Text = "Consultar Clientes";
-            this.consultarClientesToolStripMenuItem.Click += new System.EventHandler(this.ConsultarClientesToolStripMenuItem_Click);
-            // 
-            // consultaEmpleadosToolStripMenuItem
-            // 
-            this.consultaEmpleadosToolStripMenuItem.Image = global::BlacksmithManager.Properties.Resources.ImagenCliente1;
-            this.consultaEmpleadosToolStripMenuItem.Name = "consultaEmpleadosToolStripMenuItem";
-            this.consultaEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.consultaEmpleadosToolStripMenuItem.Text = "Consulta Empleados";
-            this.consultaEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.ConsultaEmpleadosToolStripMenuItem_Click);
-            // 
-            // consultarTiposDeTrabajosToolStripMenuItem
-            // 
-            this.consultarTiposDeTrabajosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarTiposDeTrabajosToolStripMenuItem.Image")));
-            this.consultarTiposDeTrabajosToolStripMenuItem.Name = "consultarTiposDeTrabajosToolStripMenuItem";
-            this.consultarTiposDeTrabajosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.consultarTiposDeTrabajosToolStripMenuItem.Text = "Consultar Tipos de Trabajos";
-            this.consultarTiposDeTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTiposDeTrabajosToolStripMenuItem_Click);
-            // 
-            // consultarUsuariosToolStripMenuItem
-            // 
-            this.consultarUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarUsuariosToolStripMenuItem.Image")));
-            this.consultarUsuariosToolStripMenuItem.Name = "consultarUsuariosToolStripMenuItem";
-            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.consultarUsuariosToolStripMenuItem.Text = "Consultar Usuarios";
-            this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarUsuariosToolStripMenuItem_Click);
-            // 
             // BlacksmithManagerlabel
             // 
             this.BlacksmithManagerlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BlacksmithManagerlabel.AutoSize = true;
+            this.BlacksmithManagerlabel.BackColor = System.Drawing.Color.Transparent;
             this.BlacksmithManagerlabel.Font = new System.Drawing.Font("Permanent Marker", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BlacksmithManagerlabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BlacksmithManagerlabel.Location = new System.Drawing.Point(391, 247);
@@ -248,6 +249,7 @@
             this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.MyStatusStrip.ResumeLayout(false);

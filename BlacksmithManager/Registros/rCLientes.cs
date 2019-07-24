@@ -14,10 +14,15 @@ namespace BlacksmithManager.Registros
 {
     public partial class rClientes : Form
     {
-        public rClientes()
+        string nombreUsuario;
+        public rClientes(String NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;
+            BalanceTextBox.Text = "0.00";
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -30,7 +35,11 @@ namespace BlacksmithManager.Registros
             FechaDeIngresoDateTimePicker.Value = DateTime.Now;
             DireccionTextBox.Text = string.Empty;
             EmailTextBox.Text = string.Empty;
+            BalanceTextBox.Text = "0.00";
             EliminarButton.Enabled = false;
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private Clientes LlenaClase() // Funcion encargada de llenar el objeto
@@ -43,6 +52,8 @@ namespace BlacksmithManager.Registros
             Cliente.Direccion = DireccionTextBox.Text;
             Cliente.Email = EmailTextBox.Text;
             Cliente.FechaIngreso = FechaDeIngresoDateTimePicker.Value;
+            Cliente.Estado = (ClienteIdNumericUpDown.Value != 0) ? "Modificado" : "Registrado";
+            Cliente.Usuario = nombreUsuario;
             return Cliente;
         }
 
@@ -54,7 +65,11 @@ namespace BlacksmithManager.Registros
             TelefonoMaskedTextBox.Text = Cliente.Telefono;
             DireccionTextBox.Text = Cliente.Direccion;
             EmailTextBox.Text = Cliente.Email;
+            BalanceTextBox.Text = Convert.ToString(Cliente.Balance);
             FechaDeIngresoDateTimePicker.Value = Cliente.FechaIngreso;
+            EstadoToolStripStatusLabel.Text = Cliente.Estado;
+            PorToolStripStatusLabel.Text = "por";
+            UsuarioToolStripStatusLabel.Text = Cliente.Usuario;
         }
 
         private bool Validar() //Funcion que valida todo el registro

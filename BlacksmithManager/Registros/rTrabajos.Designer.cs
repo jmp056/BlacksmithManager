@@ -789,6 +789,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(682, 660);
             this.Controls.Add(this.DesgloseGroupBox);
             this.Controls.Add(this.MovimientosGroupBox);
@@ -807,7 +808,10 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.TrabajoIdNumericUpDown);
             this.Controls.Add(this.IdTrabajo);
+            this.Location = new System.Drawing.Point(300, 25);
+            this.MaximizeBox = false;
             this.Name = "rTrabajos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "rTrabajos";
             this.Load += new System.EventHandler(this.RTrabajos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TrabajoIdNumericUpDown)).EndInit();

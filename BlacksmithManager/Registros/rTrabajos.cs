@@ -315,8 +315,8 @@ namespace BlacksmithManager.Registros
 
         private void AgregarClienteButton_Click(object sender, EventArgs e) //Boton que abre el registro de clientes
         {
-            rClientes rC = new rClientes();
-            rC.Show();
+            //rClientes rC = new rClientes();
+            //rC.Show();
         } 
 
         private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e) //Boton que abre el registro de tipos de trabajo
