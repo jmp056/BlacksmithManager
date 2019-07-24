@@ -7,14 +7,14 @@ namespace BlacksmithManager.Registros
 {
     public partial class rEmpleados : Form
     {
-        string nombreEmpleado;
-        public rEmpleados(string NombreEmpleado)
+        string nombreUsuario;
+        public rEmpleados(string NombreUsuario)
         {
-            this.nombreEmpleado = NombreEmpleado;
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;
             PorToolStripStatusLabel.Text = "Usuario:";
-            UsuarioToolStripStatusLabel.Text = nombreEmpleado;
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -30,7 +30,7 @@ namespace BlacksmithManager.Registros
             EliminarButton.Enabled = false;
             EstadoToolStripStatusLabel.Text = string.Empty;
             PorToolStripStatusLabel.Text = "Usuario:";
-            UsuarioToolStripStatusLabel.Text = nombreEmpleado;
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private Empleados LlenaClase()  // Funcion encargada de llenar el objeto
@@ -44,7 +44,7 @@ namespace BlacksmithManager.Registros
             Empleado.Telefono = CelularMaskedTextBox.Text;
             Empleado.FechaIngreso = FechaDeIngresoDateTimePicker.Value;
             Empleado.Estado = (EmpleadoIdNumericUpDown.Value != 0) ? "Modificado" : "Registrado";
-            Empleado.Usuario = nombreEmpleado;
+            Empleado.Usuario = nombreUsuario;
             return Empleado;
         }
 

@@ -154,7 +154,7 @@ namespace BlacksmithManager.Registros
             Usuario = LlenaClase();
 
             RepositorioBase<Usuarios> Repositorio2 = new RepositorioBase<Usuarios>();
-            Usuarios Usuario2 = new Usuarios();
+            Usuarios Usuario2;
             int id;
             int.TryParse(UsuarioIdNumericUpDown.Text, out id);
             Usuario2 = Repositorio2.Buscar(id);

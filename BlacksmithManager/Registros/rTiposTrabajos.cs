@@ -14,10 +14,14 @@ namespace BlacksmithManager.Registros
 {
     public partial class rTiposTrabajos : Form
     {
-        public rTiposTrabajos()
+        string nombreUsuario;
+        public rTiposTrabajos(string NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -27,6 +31,9 @@ namespace BlacksmithManager.Registros
             DescripcionTextBox.Text = string.Empty;
             FechaCreacionDateTimePicker.Value = DateTime.Now;
             EliminarButton.Enabled = false;
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
         private TiposTrabajos LlenaClase()  // Funcion encargada de llenar el objeto
@@ -35,6 +42,8 @@ namespace BlacksmithManager.Registros
             TipoTrabajo.TipoTrabajoId = Convert.ToInt32(TipoTrabajoIdNumericUpDown.Value);
             TipoTrabajo.Descripcion = DescripcionTextBox.Text;
             TipoTrabajo.FechaCreacion = FechaCreacionDateTimePicker.Value; ;
+            TipoTrabajo.Estado = (TipoTrabajoIdNumericUpDown.Value != 0) ? "Modificado" : "Registrado";
+            TipoTrabajo.Usuario = nombreUsuario;
             return TipoTrabajo;
         }
 
@@ -43,6 +52,9 @@ namespace BlacksmithManager.Registros
             TipoTrabajoIdNumericUpDown.Value = TipoTrabajo.TipoTrabajoId;
             DescripcionTextBox.Text = TipoTrabajo.Descripcion;
             FechaCreacionDateTimePicker.Value = TipoTrabajo.FechaCreacion;
+            EstadoToolStripStatusLabel.Text = TipoTrabajo.Estado;
+            PorToolStripStatusLabel.Text = "por";
+            UsuarioToolStripStatusLabel.Text = TipoTrabajo.Usuario;
         }
 
         private bool Validar()  //Funcion que valida todo el registro
@@ -121,9 +133,19 @@ namespace BlacksmithManager.Registros
 
             if (TipoTrabajoIdNumericUpDown.Value == 0)
             {
-                paso = Repositorio.Guardar(TipoTrabajo);
-                MessageBox.Show("Tipo de trabajo guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
+                if (TiposTrabajosBLL.Existe(TipoTrabajoIdNumericUpDown.Text) == true) // Validando que la descripcion no exista, en caso de ser nuevo
+                {
+                    MyErrorProvider.SetError(TipoTrabajoIdNumericUpDown, "Ya este tipo de trabajo existe!");
+                    TipoTrabajoIdNumericUpDown.Focus();
+                    return;
+                }
+                else
+                {
+                    paso = Repositorio.Guardar(TipoTrabajo);
+                    MessageBox.Show("Tipo de trabajo guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+
             }
             else
             {
@@ -132,9 +154,9 @@ namespace BlacksmithManager.Registros
                     MessageBox.Show("No se puede modificar un tipo de trabajo que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                else if (TiposTrabajosBLL.Existe(DescripcionTextBox.Text) == true && string.Equals(Convert.ToString(TipoTrabajo.Descripcion), Convert.ToString(TipoTrabajo2.Descripcion)) == false)
+                else if (TiposTrabajosBLL.Existe(DescripcionTextBox.Text) == true && string.Equals(Convert.ToString(TipoTrabajo.Descripcion), Convert.ToString(TipoTrabajo2.Descripcion)) == false) // Validando que el tipo de trabajo no exista, en caso de ser estar modificando
                 {
-                    MyErrorProvider.SetError(DescripcionTextBox, "Ya este tipo de trbajo existe");
+                    MyErrorProvider.SetError(DescripcionTextBox, "Ya este tipo de trabajo existe, por favor eliga otro");
                     DescripcionTextBox.Focus();
                     return;
                 }

@@ -90,6 +90,7 @@ namespace BlacksmithManager
         } // Boton cancelar
 
         private void UsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e) // Del Usuario a la clave
+
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {

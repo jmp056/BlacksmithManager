@@ -7,13 +7,13 @@ namespace BLL
 {
     public class UsuariosBLL
     {
-        public static bool Existe(string descipcion)
+        public static bool Existe(string usuario)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Usuarios.Any(p => p.Usuario.Equals(descipcion)))
+                if (contexto.Usuarios.Any(p => p.Usuario.Equals(usuario)))
                     paso = true;
             }
             catch (Exception)

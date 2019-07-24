@@ -321,8 +321,8 @@ namespace BlacksmithManager.Registros
 
         private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e) //Boton que abre el registro de tipos de trabajo
         {
-            rTiposTrabajos rTT = new rTiposTrabajos();
-            rTT.Show();
+            //rTiposTrabajos rTT = new rTiposTrabajos();
+            //rTT.Show();
         } 
 
         private void AgregarEmpleadoButton_Click(object sender, EventArgs e) //Boton que abre el registro de empleados
