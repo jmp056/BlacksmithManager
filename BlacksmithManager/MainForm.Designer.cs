@@ -41,7 +41,13 @@
             this.consultaEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTiposDeTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.GuienToolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.NivelUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.MyStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -149,18 +155,62 @@
             this.consultarTrabajosToolStripMenuItem.Text = "Consultar  Trabajos";
             this.consultarTrabajosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarTrabajosToolStripMenuItem_Click);
             // 
+            // MyStatusStrip
+            // 
+            this.MyStatusStrip.Enabled = false;
+            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NivelUsuarioToolStripStatusLabel,
+            this.GuienToolStripStatusLabel1,
+            this.UsuarioToolStripStatusLabel,
+            this.ToolStripStatusLabel});
+            this.MyStatusStrip.Location = new System.Drawing.Point(0, 428);
+            this.MyStatusStrip.Name = "MyStatusStrip";
+            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MyStatusStrip.Size = new System.Drawing.Size(800, 22);
+            this.MyStatusStrip.TabIndex = 87;
+            this.MyStatusStrip.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.UsuarioToolStripStatusLabel.Text = "  ";
+            // 
+            // ToolStripStatusLabel
+            // 
+            this.ToolStripStatusLabel.Name = "ToolStripStatusLabel";
+            this.ToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ToolStripStatusLabel.Size = new System.Drawing.Size(53, 17);
+            this.ToolStripStatusLabel.Text = "Usuario: ";
+            // 
+            // GuienToolStripStatusLabel1
+            // 
+            this.GuienToolStripStatusLabel1.Name = "GuienToolStripStatusLabel1";
+            this.GuienToolStripStatusLabel1.Size = new System.Drawing.Size(18, 17);
+            this.GuienToolStripStatusLabel1.Text = " - ";
+            // 
+            // NivelUsuarioToolStripStatusLabel
+            // 
+            this.NivelUsuarioToolStripStatusLabel.Name = "NivelUsuarioToolStripStatusLabel";
+            this.NivelUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.MyStatusStrip.ResumeLayout(false);
+            this.MyStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +231,11 @@
         private System.Windows.Forms.ToolStripMenuItem consultaEmpleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarTiposDeTrabajosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarTrabajosToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip MyStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel NivelUsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel GuienToolStripStatusLabel1;
     }
 }
 

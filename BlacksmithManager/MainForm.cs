@@ -14,10 +14,20 @@ namespace BlacksmithManager
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(string NombreUsuario, int NivelUsuario)
         {
             InitializeComponent();
+            UsuarioToolStripStatusLabel.Text = NombreUsuario;
+            switch (NivelUsuario)
+            {
+                case 1:
+                    {
+                        NivelUsuarioToolStripStatusLabel.Text = "Administrador";
+                        break;
+                    }
+            }
         }
+    
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -77,6 +87,11 @@ namespace BlacksmithManager
         {
             cTrabajos cT = new cTrabajos();
             cT.ShowDialog();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
