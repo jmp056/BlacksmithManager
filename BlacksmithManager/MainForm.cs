@@ -50,7 +50,7 @@ namespace BlacksmithManager
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios rU = new rUsuarios();
+            rUsuarios rU = new rUsuarios(nombreUsuario);
             rU.ShowDialog();
         }
 
