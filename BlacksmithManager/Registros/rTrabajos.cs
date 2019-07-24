@@ -327,8 +327,8 @@ namespace BlacksmithManager.Registros
 
         private void AgregarEmpleadoButton_Click(object sender, EventArgs e) //Boton que abre el registro de empleados
         {
-            rEmpleados rE = new rEmpleados();
-            rE.Show();
+            //rEmpleados rE = new rEmpleados();
+            //rE.Show();
         } 
 
         private void AgregarMovimientoButton_Click(object sender, EventArgs e) //Boton que agrega los movimientos

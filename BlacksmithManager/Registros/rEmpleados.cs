@@ -7,10 +7,14 @@ namespace BlacksmithManager.Registros
 {
     public partial class rEmpleados : Form
     {
-        public rEmpleados()
+        string nombreEmpleado;
+        public rEmpleados(string NombreEmpleado)
         {
+            this.nombreEmpleado = NombreEmpleado;
             InitializeComponent();
             EliminarButton.Enabled = false;
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreEmpleado;
         }
 
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -24,6 +28,9 @@ namespace BlacksmithManager.Registros
             TelefonoMaskedTextBox.Text = string.Empty;
             FechaDeIngresoDateTimePicker.Value = DateTime.Now;
             EliminarButton.Enabled = false;
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            PorToolStripStatusLabel.Text = "Usuario:";
+            UsuarioToolStripStatusLabel.Text = nombreEmpleado;
         }
 
         private Empleados LlenaClase()  // Funcion encargada de llenar el objeto
@@ -36,6 +43,8 @@ namespace BlacksmithManager.Registros
             Empleado.Celular = CelularMaskedTextBox.Text;
             Empleado.Telefono = CelularMaskedTextBox.Text;
             Empleado.FechaIngreso = FechaDeIngresoDateTimePicker.Value;
+            Empleado.Estado = (EmpleadoIdNumericUpDown.Value != 0) ? "Modificado" : "Registrado";
+            Empleado.Usuario = nombreEmpleado;
             return Empleado;
         }
 
@@ -48,6 +57,9 @@ namespace BlacksmithManager.Registros
             TelefonoMaskedTextBox.Text = Empleado.Telefono;
             EmailTextBox.Text = Empleado.Email;
             FechaDeIngresoDateTimePicker.Value = Empleado.FechaIngreso;
+            EstadoToolStripStatusLabel.Text = Empleado.Estado;
+            PorToolStripStatusLabel.Text = "por";
+            UsuarioToolStripStatusLabel.Text = Empleado.Usuario;
         }
 
         private bool Validar() //Funcion que valida todo el registro

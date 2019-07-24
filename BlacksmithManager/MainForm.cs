@@ -60,7 +60,7 @@ namespace BlacksmithManager
 
         private void RegistroDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEmpleados rE = new rEmpleados();
+            rEmpleados rE = new rEmpleados(nombreUsuario);
             rE.ShowDialog();
         }
 
