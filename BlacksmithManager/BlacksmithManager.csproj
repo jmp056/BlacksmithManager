@@ -104,6 +104,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,14 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,9 +328,6 @@
     <None Include="Resources\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImagenUsuario.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ImagenClave.png" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +335,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonCancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenTrabajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenCliente1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenUsuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenEmpleado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoTallerMaximoHierro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoLimpio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -118,29 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BotonGuardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonGuardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImagenUsuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenUsuario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonBuscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonBuscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BotonEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BotonConsultarEstudiantes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonConsultarEstudiantes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BotonNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImagenUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImagenUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImagenClave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImagenClave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImagenCliente1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenCliente1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BotonIngresar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonIngresar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,7 +133,43 @@
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonGuardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonGuardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenEmpleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenEmpleado1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenTrabajo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenTrabajo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonConsultarEstudiantes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonConsultarEstudiantes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoTallerMaximoHierro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoTallerMaximoHierro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonBuscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonBuscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenClave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenClave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoLimpio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoLimpio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

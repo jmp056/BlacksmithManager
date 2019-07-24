@@ -35,11 +35,11 @@
             this.ClaveTextBox = new System.Windows.Forms.TextBox();
             this.ClaveLlabel = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CancelarButton = new System.Windows.Forms.Button();
+            this.IngresarButton = new System.Windows.Forms.Button();
             this.ClavePictureBox = new System.Windows.Forms.PictureBox();
             this.UsuarioPictureBox = new System.Windows.Forms.PictureBox();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.CancelarButton = new System.Windows.Forms.Button();
-            this.IngresarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClavePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioPictureBox)).BeginInit();
@@ -89,36 +89,6 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // ClavePictureBox
-            // 
-            this.ClavePictureBox.BackgroundImage = global::BlacksmithManager.Properties.Resources.ImagenClave;
-            this.ClavePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClavePictureBox.Location = new System.Drawing.Point(20, 70);
-            this.ClavePictureBox.Name = "ClavePictureBox";
-            this.ClavePictureBox.Size = new System.Drawing.Size(25, 25);
-            this.ClavePictureBox.TabIndex = 8;
-            this.ClavePictureBox.TabStop = false;
-            // 
-            // UsuarioPictureBox
-            // 
-            this.UsuarioPictureBox.BackgroundImage = global::BlacksmithManager.Properties.Resources.ImagenUsuario;
-            this.UsuarioPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UsuarioPictureBox.Location = new System.Drawing.Point(20, 25);
-            this.UsuarioPictureBox.Name = "UsuarioPictureBox";
-            this.UsuarioPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.UsuarioPictureBox.TabIndex = 7;
-            this.UsuarioPictureBox.TabStop = false;
-            // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.BackgroundImage = global::BlacksmithManager.Properties.Resources.Logo;
-            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LogoPictureBox.Location = new System.Drawing.Point(234, 3);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(288, 168);
-            this.LogoPictureBox.TabIndex = 6;
-            this.LogoPictureBox.TabStop = false;
-            // 
             // CancelarButton
             // 
             this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,6 +118,36 @@
             this.IngresarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.IngresarButton.UseVisualStyleBackColor = true;
             this.IngresarButton.Click += new System.EventHandler(this.IngresarButton_Click);
+            // 
+            // ClavePictureBox
+            // 
+            this.ClavePictureBox.BackgroundImage = global::BlacksmithManager.Properties.Resources.ImagenClave;
+            this.ClavePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClavePictureBox.Location = new System.Drawing.Point(20, 70);
+            this.ClavePictureBox.Name = "ClavePictureBox";
+            this.ClavePictureBox.Size = new System.Drawing.Size(25, 25);
+            this.ClavePictureBox.TabIndex = 8;
+            this.ClavePictureBox.TabStop = false;
+            // 
+            // UsuarioPictureBox
+            // 
+            this.UsuarioPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UsuarioPictureBox.BackgroundImage")));
+            this.UsuarioPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UsuarioPictureBox.Location = new System.Drawing.Point(20, 25);
+            this.UsuarioPictureBox.Name = "UsuarioPictureBox";
+            this.UsuarioPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.UsuarioPictureBox.TabIndex = 7;
+            this.UsuarioPictureBox.TabStop = false;
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.BackgroundImage = global::BlacksmithManager.Properties.Resources.Logo;
+            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogoPictureBox.Location = new System.Drawing.Point(234, 3);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(288, 168);
+            this.LogoPictureBox.TabIndex = 6;
+            this.LogoPictureBox.TabStop = false;
             // 
             // Login
             // 
