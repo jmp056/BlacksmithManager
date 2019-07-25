@@ -191,24 +191,29 @@ namespace BlacksmithManager.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e) // Boton Eliminar
         {
-            if (MessageBox.Show("Esta seguro que desea eliminar este cliente?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if (nivelUsuario <= 2)
             {
-                RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
-                MyErrorProvider.Clear();
-                int id;
-                int.TryParse(ClienteIdNumericUpDown.Text, out id);
-                if (Repositorio.Eliminar(id))
+                if (MessageBox.Show("Esta seguro que desea eliminar este cliente?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-                    MessageBox.Show("El cliente fue eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                    EliminarButton.Enabled = false;
+                    RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
+                    MyErrorProvider.Clear();
+                    int id;
+                    int.TryParse(ClienteIdNumericUpDown.Text, out id);
+                    if (Repositorio.Eliminar(id))
+                    {
+                        MessageBox.Show("El cliente fue eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                        EliminarButton.Enabled = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
             }
             else
-            {
-                MessageBox.Show("El cliente no pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
         //--------------------------------------------------------------------------------------------------------
 

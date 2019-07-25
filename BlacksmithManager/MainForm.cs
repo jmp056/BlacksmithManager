@@ -50,26 +50,46 @@ namespace BlacksmithManager
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios rU = new rUsuarios(nombreUsuario, nivelUsuario);
-            rU.ShowDialog();
+            if (nivelUsuario <= 1)
+            {
+                rUsuarios rU = new rUsuarios(nombreUsuario, nivelUsuario);
+                rU.ShowDialog();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
 
         private void ConsultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cUsuarios cU = new cUsuarios(nombreUsuario);
-            cU.ShowDialog();
+            if (nivelUsuario <= 1)
+            {
+                cUsuarios cU = new cUsuarios(nombreUsuario);
+                cU.ShowDialog();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
 
         private void RegistroDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEmpleados rE = new rEmpleados(nombreUsuario, nivelUsuario);
-            rE.ShowDialog();
+            if(nivelUsuario <= 2)
+            {
+                rEmpleados rE = new rEmpleados(nombreUsuario, nivelUsuario);
+                rE.ShowDialog();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
 
         private void RegistroDeTiposDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario, nivelUsuario);
-            rTT.ShowDialog();
+            if (nivelUsuario <= 2)
+            {
+                rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario, nivelUsuario);
+                rTT.ShowDialog();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
 
         private void RegistroDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,8 +112,13 @@ namespace BlacksmithManager
 
         private void ConsultaEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cEmpleados cE = new cEmpleados(nombreUsuario);
-            cE.ShowDialog();
+            if (nivelUsuario <= 2)
+            {
+                cEmpleados cE = new cEmpleados(nombreUsuario);
+                cE.ShowDialog();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
 
         private void ConsultarTiposDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)

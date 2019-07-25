@@ -287,7 +287,7 @@ namespace BlacksmithManager.Registros
             bool paso = true;
             if (TipoMovimientoComboBox.Text == "Cobro al Cliente")
             {
-                if (ValorNumericUpDown.Value + PrecioNumericUpDown.Value > Convert.ToDecimal(BalanceTextBox.Text))
+                if (ValorNumericUpDown.Value + Convert.ToDecimal(CobradoTextBox.Text) > PrecioNumericUpDown.Value)
                 {
                     if (MessageBox.Show("Si agrega este cobro, lo cobrado sera mayor al precio del trabajo, desea continuar?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.Cancel)
                         paso = false;
@@ -334,14 +334,24 @@ namespace BlacksmithManager.Registros
 
         private void AgregarTipoTrabajoButton_Click(object sender, EventArgs e) //Boton que abre el registro de tipos de trabajo
         {
-            rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario, nivelUsuario);
-            rTT.Show();
+            if (nivelUsuario <= 2)
+            {
+                rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario, nivelUsuario);
+                rTT.Show();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         } 
 
         private void AgregarEmpleadoButton_Click(object sender, EventArgs e) //Boton que abre el registro de empleados
         {
-            rEmpleados rE = new rEmpleados(nombreUsuario, nivelUsuario);
-            rE.Show();
+            if (nivelUsuario <= 2)
+            {
+                rEmpleados rE = new rEmpleados(nombreUsuario, nivelUsuario);
+                rE.Show();
+            }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         } 
 
         private void AgregarMovimientoButton_Click(object sender, EventArgs e) //Boton que agrega los movimientos
@@ -374,44 +384,49 @@ namespace BlacksmithManager.Registros
 
         private void RemoverButton_Click(object sender, EventArgs e) //Boton que remueve los movimientos
         {
-            if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
+            if (nivelUsuario <= 2) // Validando el nivel del usuario
             {
-                if (string.Compare("Cobro al Cliente", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// verificando el tipo de movimiento que sera eliminado
+                if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
                 {
-                    decimal valor, cobrado;
+                    if (string.Compare("Cobro al Cliente", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// verificando el tipo de movimiento que sera eliminado
+                    {
+                        decimal valor, cobrado;
 
-                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString()); // Tomando el valor de el registro que sera eliminado
+                        valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString()); // Tomando el valor de el registro que sera eliminado
 
-                    if (CobradoTextBox.Text == string.Empty)
-                        CobradoTextBox.Text = "0";
-                    cobrado = Convert.ToDecimal(CobradoTextBox.Text);
+                        if (CobradoTextBox.Text == string.Empty)
+                            CobradoTextBox.Text = "0";
+                        cobrado = Convert.ToDecimal(CobradoTextBox.Text);
 
-                    CobradoTextBox.Text = Convert.ToString(cobrado - valor);
+                        CobradoTextBox.Text = Convert.ToString(cobrado - valor);
+                    }
+                    else if (string.Compare("Pago de Ajuste", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// verificando el tipo de movimiento que sera eliminado
+                    {
+                        decimal valor, pagado;
+
+                        valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());// Tomando el valor de el registro que sera eliminado
+
+                        pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
+
+                        AjustePagadoTextBox.Text = Convert.ToString(pagado - valor);
+                    }
+                    else // Eliminando gastos en materiales 
+                    {
+                        decimal valor, gastos;
+
+                        valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());// Tomando el valor de el registro que sera eliminado
+
+                        gastos = Convert.ToDecimal(GastosTextBox.Text);
+
+                        GastosTextBox.Text = Convert.ToString(gastos - valor);
+                    }
+
+                    Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
+                    CargaGrid();
                 }
-                else if (string.Compare("Pago de Ajuste", DetalleDataGridView.CurrentRow.Cells["TipoMovimiento"].Value.ToString()) == 0)// verificando el tipo de movimiento que sera eliminado
-                {
-                    decimal valor, pagado;
-
-                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());// Tomando el valor de el registro que sera eliminado
-
-                    pagado = Convert.ToDecimal(AjustePagadoTextBox.Text);
-
-                    AjustePagadoTextBox.Text = Convert.ToString(pagado - valor);
-                }
-                else // Eliminando gastos en materiales 
-                {
-                    decimal valor, gastos;
-
-                    valor = Convert.ToDecimal(DetalleDataGridView.CurrentRow.Cells["Valor"].Value.ToString());// Tomando el valor de el registro que sera eliminado
-
-                    gastos = Convert.ToDecimal(GastosTextBox.Text);
-
-                    GastosTextBox.Text = Convert.ToString(gastos - valor);
-                }
-
-                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
-                CargaGrid();
             }
+            else
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         } 
 
         private void NuevoButton_Click(object sender, EventArgs e) //Boton nuevo 
@@ -455,23 +470,28 @@ namespace BlacksmithManager.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e) //Boton Eliminar
         {
-            if (MessageBox.Show("Esta seguro que desea eliminar este trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if (nivelUsuario <= 2)
             {
-                MyErrorProvider.Clear();
-                int id;
-                int.TryParse(TrabajoIdNumericUpDown.Text, out id);
-                if (BLL.TrabajosBLL.Eliminar(id))
+                if (MessageBox.Show("Esta seguro que desea eliminar este trabajo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-                    MessageBox.Show("El trabajo fue eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                    EliminarButton.Enabled = false;
+                    MyErrorProvider.Clear();
+                    int id;
+                    int.TryParse(TrabajoIdNumericUpDown.Text, out id);
+                    if (BLL.TrabajosBLL.Eliminar(id))
+                    {
+                        MessageBox.Show("El trabajo fue eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                        EliminarButton.Enabled = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El trabajo no pudo ser eliminada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
             }
             else
-            {
-                MessageBox.Show("El trabajo no pudo ser eliminada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                MessageBox.Show("No tiene permiso para realizar esta tarea");
         }
 
         //--------------------------------------------------------------------------------------------------------
