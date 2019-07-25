@@ -8,9 +8,11 @@ namespace BlacksmithManager.Registros
     public partial class rUsuarios : Form
     {
         string nombreUsuario;
-        public rUsuarios(String NombreUsuario)
+        int nivelDeUsuario;
+        public rUsuarios(String NombreUsuario, int NivelDeUsuario)
         {
             this.nombreUsuario = NombreUsuario;
+            this.nivelDeUsuario = NivelDeUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;
             PorToolStripStatusLabel.Text = "Usuario:";

@@ -16,8 +16,10 @@ namespace BlacksmithManager.Consultas
     public partial class cEmpleados : Form
     {
         private List<Empleados> ListaEmpleados;
-        public cEmpleados()
+        string nombreUsuario;
+        public cEmpleados(string NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             ImprimirButton.Enabled = false;
         }

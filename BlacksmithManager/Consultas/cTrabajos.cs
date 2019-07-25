@@ -12,8 +12,10 @@ namespace BlacksmithManager.Consultas
     public partial class cTrabajos : Form
     {
         private List<Trabajos> ListaTrabajos;
-        public cTrabajos()
+        string nombreUsuario;
+        public cTrabajos(string NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             Delabel.Visible = false;
             DeNumericUpDown.Visible = false;
@@ -126,7 +128,7 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaTrabajos = Listado;
-            ImprimirButton.Enabled = true;
+            //ImprimirButton.Enabled = true;
         }
 
         private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,7 +157,7 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            if (ListaTrabajos.Count == 0)
+            /*if (ListaTrabajos.Count == 0)
             {
                 MessageBox.Show("No hay datos para imprimir");
                 return;
@@ -164,7 +166,7 @@ namespace BlacksmithManager.Consultas
             {
                 TrabajosReportViewer trabajosReportViewer = new TrabajosReportViewer(ListaTrabajos);
                 trabajosReportViewer.ShowDialog();
-            }
+            }*/
         }
     }
 }

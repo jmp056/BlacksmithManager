@@ -50,25 +50,25 @@ namespace BlacksmithManager
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios rU = new rUsuarios(nombreUsuario);
+            rUsuarios rU = new rUsuarios(nombreUsuario, nivelUsuario);
             rU.ShowDialog();
         }
 
         private void ConsultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cUsuarios cU = new cUsuarios();
+            cUsuarios cU = new cUsuarios(nombreUsuario);
             cU.ShowDialog();
         }
 
         private void RegistroDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEmpleados rE = new rEmpleados(nombreUsuario);
+            rEmpleados rE = new rEmpleados(nombreUsuario, nivelUsuario);
             rE.ShowDialog();
         }
 
         private void RegistroDeTiposDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario);
+            rTiposTrabajos rTT = new rTiposTrabajos(nombreUsuario, nivelUsuario);
             rTT.ShowDialog();
         }
 
@@ -80,42 +80,37 @@ namespace BlacksmithManager
 
         private void RegistroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rClientes rC = new rClientes(nombreUsuario);
+            rClientes rC = new rClientes(nombreUsuario, nivelUsuario);
             rC.ShowDialog();
         }
 
         private void ConsultarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cClientes cC = new cClientes();
+            cClientes cC = new cClientes(nombreUsuario);
             cC.ShowDialog();
         }
 
         private void ConsultaEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cEmpleados cE = new cEmpleados();
+            cEmpleados cE = new cEmpleados(nombreUsuario);
             cE.ShowDialog();
         }
 
         private void ConsultarTiposDeTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cTiposTrabajos cTT = new cTiposTrabajos();
+            cTiposTrabajos cTT = new cTiposTrabajos(nombreUsuario);
             cTT.ShowDialog();
         }
 
         private void ConsultarTrabajosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cTrabajos cT = new cTrabajos();
+            cTrabajos cT = new cTrabajos(nombreUsuario);
             cT.ShowDialog();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

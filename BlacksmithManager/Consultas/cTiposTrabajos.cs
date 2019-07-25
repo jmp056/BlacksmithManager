@@ -12,8 +12,10 @@ namespace BlacksmithManager.Consultas
     public partial class cTiposTrabajos : Form
     {
         private List<TiposTrabajos> ListaTiposTrabajos;
-        public cTiposTrabajos()
+        string nombreUsuario;
+        public cTiposTrabajos(string NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             ImprimirButton.Enabled = false;
         }

@@ -8,8 +8,10 @@ namespace BlacksmithManager.Registros
     public partial class rEmpleados : Form
     {
         string nombreUsuario;
-        public rEmpleados(string NombreUsuario)
+        int nivelUsuario;
+        public rEmpleados(string NombreUsuario, int NivelUsuario)
         {
+            this.nivelUsuario = NivelUsuario;
             this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;

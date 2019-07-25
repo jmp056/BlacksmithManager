@@ -15,9 +15,11 @@ namespace BlacksmithManager.Registros
     public partial class rClientes : Form
     {
         string nombreUsuario;
-        public rClientes(String NombreUsuario)
+        int nivelUsuario;
+        public rClientes(String NombreUsuario, int NivelUsuario)
         {
             this.nombreUsuario = NombreUsuario;
+            this.nivelUsuario = NivelUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;
             BalanceTextBox.Text = "0.00";

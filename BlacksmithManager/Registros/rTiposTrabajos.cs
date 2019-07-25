@@ -15,9 +15,11 @@ namespace BlacksmithManager.Registros
     public partial class rTiposTrabajos : Form
     {
         string nombreUsuario;
-        public rTiposTrabajos(string NombreUsuario)
+        int nivelUsuario;
+        public rTiposTrabajos(string NombreUsuario, int NivelUsuario)
         {
             this.nombreUsuario = NombreUsuario;
+            this.nivelUsuario = NivelUsuario;
             InitializeComponent();
             EliminarButton.Enabled = false;
             PorToolStripStatusLabel.Text = "Usuario:";

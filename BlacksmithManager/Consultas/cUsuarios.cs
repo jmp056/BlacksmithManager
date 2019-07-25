@@ -12,8 +12,10 @@ namespace BlacksmithManager.Consultas
     public partial class cUsuarios : Form
     {
         private List<Usuarios> ListaUsuarios;
-        public cUsuarios()
+        string nombreUsuario;
+        public cUsuarios(string NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             CriterioComboBox.Visible = false;
             ImprimirButton.Enabled = false;

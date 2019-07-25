@@ -11,8 +11,10 @@ namespace BlacksmithManager.Consultas
     public partial class cClientes : Form
     {
         private List<Clientes> ListaClientes;
-        public cClientes()
+        string nombreUsuario;
+        public cClientes(string NombreUsuario)
         {
+            this.nombreUsuario = NombreUsuario;
             InitializeComponent();
             ImprimirButton.Enabled = false;
         }
@@ -77,7 +79,7 @@ namespace BlacksmithManager.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
             ListaClientes = Listado;
-            ImprimirButton.Enabled = false;
+            ImprimirButton.Enabled = true;
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
