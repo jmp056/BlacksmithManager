@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BlacksmithManager.Reportes;
+using BLL;
 using DAL;
 using Entidades;
 using System;
@@ -22,7 +23,7 @@ namespace BlacksmithManager.Registros
             UsuarioToolStripStatusLabel.Text = nombreUsuario;
         }
 
-        private void Calculadora() // Funcion que hac el calculo cuando se agrega un movimiento
+        private void Calculadora() // Funcion que hace el calculo cuando se agrega un movimiento
         {
             if(TipoMovimientoComboBox.Text == "Cobro al Cliente") // Haciendo el calculo de cuando se le cobra al cliente
             {
@@ -31,6 +32,9 @@ namespace BlacksmithManager.Registros
                 valor = Convert.ToDecimal(CobradoTextBox.Text);
 
                 CobradoTextBox.Text = Convert.ToString(valor + ValorNumericUpDown.Value);//Sumando a cobrado
+
+                Recivo();
+
             }
             else if (TipoMovimientoComboBox.Text == "Pago de Ajuste") // Haciendo el calculo de cuando se paga al empleado
             {
@@ -49,7 +53,27 @@ namespace BlacksmithManager.Registros
                 GastosTextBox.Text = Convert.ToString(gastos + ValorNumericUpDown.Value);// Sumando a gastos en materiales
             }
 
-        } 
+        }
+
+        private void Recivo() // Funcion encargada de generar el recio
+        {
+            RepositorioBase<RecibosIngresos> Repositorio = new RepositorioBase<RecibosIngresos>(); // Creando el recibo de ingreso
+            RecibosIngresos Recibo = new RecibosIngresos();
+            Recibo.Fecha = FechaMovimientoDateTimePicker.Value;
+            Recibo.Cliente = ClienteComboBox.Text;
+            Recibo.Trabajo = DescripcionTrabajoTextBox.Text;
+            Recibo.Descripcion = DescripcionMovimientoTextBox.Text;
+            Recibo.Monto = Convert.ToDecimal(ValorNumericUpDown.Value);
+            Repositorio.Guardar(Recibo);
+
+            if (MessageBox.Show("Desea generar el recibo de pago?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK) // Haciendo el recibo de pago
+            {
+                List<RecibosIngresos> ReciboDeIngreso = new List<RecibosIngresos>();
+                ReciboDeIngreso.Insert(0, Recibo);
+                ReciboDePagoReportViewer reciboDePagoReportViewer = new ReciboDePagoReportViewer(ReciboDeIngreso);
+                reciboDePagoReportViewer.ShowDialog();
+            }
+        }
 
         //Limpiadores -------------------------------------------------------------------------------------------
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -357,6 +381,10 @@ namespace BlacksmithManager.Registros
         private void AgregarMovimientoButton_Click(object sender, EventArgs e) //Boton que agrega los movimientos
         {
             MyErrorProvider.Clear();
+
+            if (!Validar())
+                return;
+
             if (!ValidarDetalle())
                 return;
 

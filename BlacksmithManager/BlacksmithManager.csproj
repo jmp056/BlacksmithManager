@@ -187,6 +187,12 @@
       <DependentUpon>ReciboDePago.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\ReciboDePagoReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReciboDePagoReportViewer.Designer.cs">
+      <DependentUpon>ReciboDePagoReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\TiposTrabajosReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     <EmbeddedResource Include="Reportes\ReciboDePago.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReciboDePago.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReciboDePagoReportViewer.resx">
+      <DependentUpon>ReciboDePagoReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\TiposTrabajosReportViewer.resx">
       <DependentUpon>TiposTrabajosReportViewer.cs</DependentUpon>
