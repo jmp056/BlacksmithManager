@@ -19,6 +19,7 @@ namespace BLL
             {
                 if (db.Trabajos.Add(Trabajo) != null)
                 {
+                    db.Clientes.Find(Trabajo.ClienteId).Balance += Trabajo.Balance;
                     paso = db.SaveChanges() > 0;
                 }
 
@@ -60,6 +61,7 @@ namespace BLL
                         db.Entry(item).State = EntityState.Modified;
                     }
                 }
+                db.Clientes.Find(Trabajo.ClienteId).Balance = Trabajo.Balance;
                 db.Entry(Trabajo).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
@@ -84,6 +86,7 @@ namespace BLL
                 var eliminar = db.Trabajos.Find(id);
                 Trabajos Trabajo = Buscar(eliminar.TrabajoId);
                 db.Entry(eliminar).State = EntityState.Deleted;
+                db.Clientes.Find(Trabajo.ClienteId).Balance -= Trabajo.Balance;
                 paso = db.SaveChanges() > 0;
             }
             catch (Exception)
