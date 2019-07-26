@@ -11,6 +11,7 @@ namespace DAL
         public DbSet<TiposTrabajos> TiposTrabajos { get; set; }
         public DbSet<Trabajos> Trabajos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<RecibosIngresos> RecibosIngresos { get; set; }
         public Contexto() : base("ConStr")
         { }
     }
