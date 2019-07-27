@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rTiposTrabajos));
             this.IdTipoTrabajo = new System.Windows.Forms.Label();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.TipoTrabajoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -217,6 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(418, 209);
             this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.EliminarButton);
@@ -229,8 +231,11 @@
             this.Controls.Add(this.TipoTrabajoIdNumericUpDown);
             this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.BuscarButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "rTiposTrabajos";
-            this.Text = "rTiposTrabajos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro de Tipos de Trabajos";
             ((System.ComponentModel.ISupportInitialize)(this.TipoTrabajoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.MyStatusStrip.ResumeLayout(false);

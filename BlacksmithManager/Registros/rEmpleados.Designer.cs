@@ -310,6 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(401, 312);
             this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.EliminarButton);
@@ -331,7 +332,9 @@
             this.Controls.Add(this.Nombres);
             this.Controls.Add(this.BuscarButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "rEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Empleados";
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();

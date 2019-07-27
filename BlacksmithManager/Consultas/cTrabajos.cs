@@ -21,7 +21,7 @@ namespace BlacksmithManager.Consultas
             DeNumericUpDown.Visible = false;
             ALabel.Visible = false;
             ANumericUpDown.Visible = false;
-            ImprimirButton.Enabled = false;
+            //ImprimirButton.Enabled = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace BlacksmithManager.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            /*if (ListaTrabajos.Count == 0)
+            if (ListaTrabajos.Count == 0)
             {
                 MessageBox.Show("No hay datos para imprimir");
                 return;
@@ -166,7 +166,7 @@ namespace BlacksmithManager.Consultas
             {
                 TrabajosReportViewer trabajosReportViewer = new TrabajosReportViewer(ListaTrabajos);
                 trabajosReportViewer.ShowDialog();
-            }*/
+            }
         }
     }
 }

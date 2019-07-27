@@ -210,9 +210,9 @@
             this.ClaveTextBox.Location = new System.Drawing.Point(297, 173);
             this.ClaveTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClaveTextBox.Name = "ClaveTextBox";
-            this.ClaveTextBox.PasswordChar = '*';
             this.ClaveTextBox.Size = new System.Drawing.Size(98, 22);
             this.ClaveTextBox.TabIndex = 41;
+            this.ClaveTextBox.UseSystemPasswordChar = true;
             this.ClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ClaveTextBox_KeyPress);
             // 
             // UsuarioTextBox
@@ -351,6 +351,7 @@
             this.ConfirmarClaveTextBox.PasswordChar = '*';
             this.ConfirmarClaveTextBox.Size = new System.Drawing.Size(98, 22);
             this.ConfirmarClaveTextBox.TabIndex = 50;
+            this.ConfirmarClaveTextBox.UseSystemPasswordChar = true;
             this.ConfirmarClaveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ConfirmarClaveTextBox_KeyPress);
             // 
             // MyStatusStrip
@@ -417,7 +418,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "rUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuarios";
             this.NivelDeUsuarioGroupBox.ResumeLayout(false);
             this.NivelDeUsuarioGroupBox.PerformLayout();

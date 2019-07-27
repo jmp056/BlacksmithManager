@@ -376,5 +376,8 @@
   <ItemGroup>
     <None Include="Resources\LogoLimpio.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonRemover.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

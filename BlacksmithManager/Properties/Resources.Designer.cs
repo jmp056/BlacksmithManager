@@ -143,6 +143,16 @@ namespace BlacksmithManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonRemover {
+            get {
+                object obj = ResourceManager.GetObject("BotonRemover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImagenClave {
             get {
                 object obj = ResourceManager.GetObject("ImagenClave", resourceCulture);

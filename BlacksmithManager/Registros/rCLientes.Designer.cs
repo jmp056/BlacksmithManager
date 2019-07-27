@@ -333,6 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(405, 350);
             this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.BalanceLabal);
@@ -356,7 +357,9 @@
             this.Controls.Add(this.Nombres);
             this.Controls.Add(this.BuscarButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "rClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
