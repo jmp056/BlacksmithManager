@@ -75,6 +75,14 @@
       <Project>{85ECC8F8-3523-40D0-97B7-9DA41BF349C8}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{315EBEDB-5154-42F2-BA8A-D010BBC4A461}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{8A56757D-81BA-40BB-9350-8F34CBAB0195}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
