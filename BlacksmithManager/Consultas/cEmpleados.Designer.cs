@@ -42,8 +42,10 @@
             this.Filtro = new System.Windows.Forms.Label();
             this.Criterio = new System.Windows.Forms.Label();
             this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
+            this.FiltroGroupBox = new System.Windows.Forms.GroupBox();
             this.FiltroFechaTroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
+            this.FiltroGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImprimirButton
@@ -51,7 +53,7 @@
             this.ImprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
             this.ImprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImprimirButton.Location = new System.Drawing.Point(457, 79);
+            this.ImprimirButton.Location = new System.Drawing.Point(835, 26);
             this.ImprimirButton.Name = "ImprimirButton";
             this.ImprimirButton.Size = new System.Drawing.Size(105, 35);
             this.ImprimirButton.TabIndex = 52;
@@ -67,9 +69,9 @@
             this.FiltroFechaTroupBox.Controls.Add(this.HastaDateTimePicker);
             this.FiltroFechaTroupBox.Controls.Add(this.DesdeDateTimePicker);
             this.FiltroFechaTroupBox.Controls.Add(this.Hasta);
-            this.FiltroFechaTroupBox.Location = new System.Drawing.Point(232, 5);
+            this.FiltroFechaTroupBox.Location = new System.Drawing.Point(15, 10);
             this.FiltroFechaTroupBox.Name = "FiltroFechaTroupBox";
-            this.FiltroFechaTroupBox.Size = new System.Drawing.Size(203, 126);
+            this.FiltroFechaTroupBox.Size = new System.Drawing.Size(318, 58);
             this.FiltroFechaTroupBox.TabIndex = 51;
             this.FiltroFechaTroupBox.TabStop = false;
             // 
@@ -77,7 +79,7 @@
             // 
             this.Desde.AutoSize = true;
             this.Desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Desde.Location = new System.Drawing.Point(10, 55);
+            this.Desde.Location = new System.Drawing.Point(10, 30);
             this.Desde.Name = "Desde";
             this.Desde.Size = new System.Drawing.Size(54, 16);
             this.Desde.TabIndex = 24;
@@ -87,7 +89,7 @@
             // 
             this.FiltrarFechaCheckBox.AutoSize = true;
             this.FiltrarFechaCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FiltrarFechaCheckBox.Location = new System.Drawing.Point(10, 20);
+            this.FiltrarFechaCheckBox.Location = new System.Drawing.Point(6, 0);
             this.FiltrarFechaCheckBox.Name = "FiltrarFechaCheckBox";
             this.FiltrarFechaCheckBox.Size = new System.Drawing.Size(187, 20);
             this.FiltrarFechaCheckBox.TabIndex = 25;
@@ -96,29 +98,29 @@
             // 
             // HastaDateTimePicker
             // 
-            this.HastaDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.HastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(75, 87);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(220, 27);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
-            this.HastaDateTimePicker.Size = new System.Drawing.Size(110, 22);
+            this.HastaDateTimePicker.Size = new System.Drawing.Size(90, 22);
             this.HastaDateTimePicker.TabIndex = 21;
             // 
             // DesdeDateTimePicker
             // 
-            this.DesdeDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.DesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdeDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(75, 52);
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(70, 27);
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
-            this.DesdeDateTimePicker.Size = new System.Drawing.Size(110, 22);
+            this.DesdeDateTimePicker.Size = new System.Drawing.Size(90, 22);
             this.DesdeDateTimePicker.TabIndex = 22;
             // 
             // Hasta
             // 
             this.Hasta.AutoSize = true;
             this.Hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hasta.Location = new System.Drawing.Point(10, 90);
+            this.Hasta.Location = new System.Drawing.Point(165, 30);
             this.Hasta.Name = "Hasta";
             this.Hasta.Size = new System.Drawing.Size(49, 16);
             this.Hasta.TabIndex = 23;
@@ -129,7 +131,7 @@
             this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultarButton.Image = global::BlacksmithManager.Properties.Resources.BotonConsultarEstudiantes;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarButton.Location = new System.Drawing.Point(457, 31);
+            this.ConsultarButton.Location = new System.Drawing.Point(710, 26);
             this.ConsultarButton.Name = "ConsultarButton";
             this.ConsultarButton.Size = new System.Drawing.Size(105, 35);
             this.ConsultarButton.TabIndex = 50;
@@ -139,18 +141,21 @@
             // 
             // ConsultaDataGridView
             // 
+            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultaDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(12, 145);
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(11, 84);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(550, 150);
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(929, 295);
             this.ConsultaDataGridView.TabIndex = 49;
             // 
             // CriterioTextBox
             // 
             this.CriterioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriterioTextBox.Location = new System.Drawing.Point(92, 87);
+            this.CriterioTextBox.Location = new System.Drawing.Point(236, 19);
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(120, 22);
             this.CriterioTextBox.TabIndex = 48;
@@ -159,7 +164,7 @@
             // 
             this.Filtro.AutoSize = true;
             this.Filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Filtro.Location = new System.Drawing.Point(12, 40);
+            this.Filtro.Location = new System.Drawing.Point(6, 22);
             this.Filtro.Name = "Filtro";
             this.Filtro.Size = new System.Drawing.Size(43, 16);
             this.Filtro.TabIndex = 47;
@@ -169,7 +174,7 @@
             // 
             this.Criterio.AutoSize = true;
             this.Criterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Criterio.Location = new System.Drawing.Point(12, 90);
+            this.Criterio.Location = new System.Drawing.Point(176, 22);
             this.Criterio.Name = "Criterio";
             this.Criterio.Size = new System.Drawing.Size(58, 16);
             this.Criterio.TabIndex = 46;
@@ -188,31 +193,43 @@
             "Telefono",
             "Direccion",
             "Email"});
-            this.FiltrarComboBox.Location = new System.Drawing.Point(92, 37);
+            this.FiltrarComboBox.Location = new System.Drawing.Point(51, 19);
             this.FiltrarComboBox.Name = "FiltrarComboBox";
             this.FiltrarComboBox.Size = new System.Drawing.Size(119, 24);
             this.FiltrarComboBox.TabIndex = 45;
+            // 
+            // FiltroGroupBox
+            // 
+            this.FiltroGroupBox.Controls.Add(this.CriterioTextBox);
+            this.FiltroGroupBox.Controls.Add(this.FiltrarComboBox);
+            this.FiltroGroupBox.Controls.Add(this.Criterio);
+            this.FiltroGroupBox.Controls.Add(this.Filtro);
+            this.FiltroGroupBox.Location = new System.Drawing.Point(339, 10);
+            this.FiltroGroupBox.Name = "FiltroGroupBox";
+            this.FiltroGroupBox.Size = new System.Drawing.Size(364, 58);
+            this.FiltroGroupBox.TabIndex = 53;
+            this.FiltroGroupBox.TabStop = false;
             // 
             // cEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(948, 388);
+            this.Controls.Add(this.FiltroGroupBox);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.FiltroFechaTroupBox);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ConsultaDataGridView);
-            this.Controls.Add(this.CriterioTextBox);
-            this.Controls.Add(this.Filtro);
-            this.Controls.Add(this.Criterio);
-            this.Controls.Add(this.FiltrarComboBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cEmpleados";
-            this.Text = "cEmpleados";
+            this.Text = "Consulta de Empleados";
             this.FiltroFechaTroupBox.ResumeLayout(false);
             this.FiltroFechaTroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
+            this.FiltroGroupBox.ResumeLayout(false);
+            this.FiltroGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -231,5 +248,6 @@
         private System.Windows.Forms.Label Filtro;
         private System.Windows.Forms.Label Criterio;
         private System.Windows.Forms.ComboBox FiltrarComboBox;
+        private System.Windows.Forms.GroupBox FiltroGroupBox;
     }
 }

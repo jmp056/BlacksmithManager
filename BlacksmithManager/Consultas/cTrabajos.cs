@@ -22,6 +22,7 @@ namespace BlacksmithManager.Consultas
             ALabel.Visible = false;
             ANumericUpDown.Visible = false;
             //ImprimirButton.Enabled = false;
+            ImprimirButton.Visible = false;
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
