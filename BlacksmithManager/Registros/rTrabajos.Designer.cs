@@ -73,16 +73,16 @@
             this.GananciaNeta = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TrabajoGroupBox = new System.Windows.Forms.GroupBox();
+            this.AgregarClienteButton = new System.Windows.Forms.Button();
+            this.AgregarTipoTrabajoButton = new System.Windows.Forms.Button();
             this.MovimientosGroupBox = new System.Windows.Forms.GroupBox();
+            this.AgregarMovimientoButton = new System.Windows.Forms.Button();
+            this.RemoverButton = new System.Windows.Forms.Button();
             this.DesgloseGroupBox = new System.Windows.Forms.GroupBox();
             this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.AgregarMovimientoButton = new System.Windows.Forms.Button();
-            this.RemoverButton = new System.Windows.Forms.Button();
-            this.AgregarClienteButton = new System.Windows.Forms.Button();
-            this.AgregarTipoTrabajoButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
@@ -583,6 +583,32 @@
             this.TrabajoGroupBox.TabIndex = 111;
             this.TrabajoGroupBox.TabStop = false;
             // 
+            // AgregarClienteButton
+            // 
+            this.AgregarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarClienteButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
+            this.AgregarClienteButton.Location = new System.Drawing.Point(270, 17);
+            this.AgregarClienteButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarClienteButton.Name = "AgregarClienteButton";
+            this.AgregarClienteButton.Size = new System.Drawing.Size(30, 30);
+            this.AgregarClienteButton.TabIndex = 64;
+            this.AgregarClienteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarClienteButton.UseVisualStyleBackColor = true;
+            this.AgregarClienteButton.Click += new System.EventHandler(this.AgregarClienteButton_Click);
+            // 
+            // AgregarTipoTrabajoButton
+            // 
+            this.AgregarTipoTrabajoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarTipoTrabajoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
+            this.AgregarTipoTrabajoButton.Location = new System.Drawing.Point(595, 17);
+            this.AgregarTipoTrabajoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarTipoTrabajoButton.Name = "AgregarTipoTrabajoButton";
+            this.AgregarTipoTrabajoButton.Size = new System.Drawing.Size(30, 30);
+            this.AgregarTipoTrabajoButton.TabIndex = 68;
+            this.AgregarTipoTrabajoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarTipoTrabajoButton.UseVisualStyleBackColor = true;
+            this.AgregarTipoTrabajoButton.Click += new System.EventHandler(this.AgregarTipoTrabajoButton_Click);
+            // 
             // MovimientosGroupBox
             // 
             this.MovimientosGroupBox.Controls.Add(this.FechaMovimiento);
@@ -603,6 +629,33 @@
             this.MovimientosGroupBox.TabIndex = 112;
             this.MovimientosGroupBox.TabStop = false;
             this.MovimientosGroupBox.Text = "Movimientos";
+            // 
+            // AgregarMovimientoButton
+            // 
+            this.AgregarMovimientoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarMovimientoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
+            this.AgregarMovimientoButton.Location = new System.Drawing.Point(595, 53);
+            this.AgregarMovimientoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarMovimientoButton.Name = "AgregarMovimientoButton";
+            this.AgregarMovimientoButton.Size = new System.Drawing.Size(30, 30);
+            this.AgregarMovimientoButton.TabIndex = 89;
+            this.AgregarMovimientoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarMovimientoButton.UseVisualStyleBackColor = true;
+            this.AgregarMovimientoButton.Click += new System.EventHandler(this.AgregarMovimientoButton_Click);
+            // 
+            // RemoverButton
+            // 
+            this.RemoverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoverButton.Image = global::BlacksmithManager.Properties.Resources.BotonRemover;
+            this.RemoverButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RemoverButton.Location = new System.Drawing.Point(10, 192);
+            this.RemoverButton.Name = "RemoverButton";
+            this.RemoverButton.Size = new System.Drawing.Size(184, 30);
+            this.RemoverButton.TabIndex = 90;
+            this.RemoverButton.Text = "Remover Movimiento";
+            this.RemoverButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RemoverButton.UseVisualStyleBackColor = true;
+            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
             // DesgloseGroupBox
             // 
@@ -662,59 +715,6 @@
             this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
             this.EstadoToolStripStatusLabel.Text = "  ";
-            // 
-            // AgregarMovimientoButton
-            // 
-            this.AgregarMovimientoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarMovimientoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarMovimientoButton.Location = new System.Drawing.Point(595, 53);
-            this.AgregarMovimientoButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AgregarMovimientoButton.Name = "AgregarMovimientoButton";
-            this.AgregarMovimientoButton.Size = new System.Drawing.Size(30, 30);
-            this.AgregarMovimientoButton.TabIndex = 89;
-            this.AgregarMovimientoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarMovimientoButton.UseVisualStyleBackColor = true;
-            this.AgregarMovimientoButton.Click += new System.EventHandler(this.AgregarMovimientoButton_Click);
-            // 
-            // RemoverButton
-            // 
-            this.RemoverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoverButton.Image = global::BlacksmithManager.Properties.Resources.BotonRemover;
-            this.RemoverButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RemoverButton.Location = new System.Drawing.Point(10, 192);
-            this.RemoverButton.Name = "RemoverButton";
-            this.RemoverButton.Size = new System.Drawing.Size(184, 30);
-            this.RemoverButton.TabIndex = 90;
-            this.RemoverButton.Text = "Remover Movimiento";
-            this.RemoverButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RemoverButton.UseVisualStyleBackColor = true;
-            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
-            // 
-            // AgregarClienteButton
-            // 
-            this.AgregarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarClienteButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarClienteButton.Location = new System.Drawing.Point(270, 17);
-            this.AgregarClienteButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AgregarClienteButton.Name = "AgregarClienteButton";
-            this.AgregarClienteButton.Size = new System.Drawing.Size(30, 30);
-            this.AgregarClienteButton.TabIndex = 64;
-            this.AgregarClienteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarClienteButton.UseVisualStyleBackColor = true;
-            this.AgregarClienteButton.Click += new System.EventHandler(this.AgregarClienteButton_Click);
-            // 
-            // AgregarTipoTrabajoButton
-            // 
-            this.AgregarTipoTrabajoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarTipoTrabajoButton.Image = global::BlacksmithManager.Properties.Resources.BotonAñadir;
-            this.AgregarTipoTrabajoButton.Location = new System.Drawing.Point(595, 17);
-            this.AgregarTipoTrabajoButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AgregarTipoTrabajoButton.Name = "AgregarTipoTrabajoButton";
-            this.AgregarTipoTrabajoButton.Size = new System.Drawing.Size(30, 30);
-            this.AgregarTipoTrabajoButton.TabIndex = 68;
-            this.AgregarTipoTrabajoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarTipoTrabajoButton.UseVisualStyleBackColor = true;
-            this.AgregarTipoTrabajoButton.Click += new System.EventHandler(this.AgregarTipoTrabajoButton_Click);
             // 
             // EliminarButton
             // 

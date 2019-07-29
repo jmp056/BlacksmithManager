@@ -221,8 +221,10 @@
             this.Controls.Add(this.FiltroFechaTroupBox);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ConsultaDataGridView);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cClientes";
+            this.ShowInTaskbar = false;
             this.Text = "Consulta de Clientes";
             this.FiltroFechaTroupBox.ResumeLayout(false);
             this.FiltroFechaTroupBox.PerformLayout();
